@@ -1,9 +1,5 @@
 sceneSetups:
-- path: Assets/Tintin(The Next Hideo Kojima)/Scenes/Main Menu.unity
+- path: Assets/Stephen/Scenes/SampleScene.unity
   isLoaded: 1
   isActive: 1
-  isSubScene: 0
-- path: Assets/Stephen/Scenes/SampleScene.unity
-  isLoaded: 0
-  isActive: 0
   isSubScene: 0
