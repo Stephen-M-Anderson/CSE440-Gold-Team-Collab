@@ -412,8 +412,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1363203457
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2454334b771f04b418d8b867a794fb7c, type: 3}
   m_Color: {r: 0.20425417, g: 0.25032392, b: 0.8490566, a: 1}
@@ -519,9 +519,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1363203457
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2454334b771f04b418d8b867a794fb7c, type: 3}
   m_Color: {r: 0.20425417, g: 0.25032392, b: 0.8490566, a: 1}
   m_FlipX: 0
@@ -757,7 +757,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.610948
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -782,7 +782,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7125, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -992,10 +992,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   coverPoint: {x: 0, y: 0}
-  coverMinEdge: {x: 0, y: 0}
-  coverMaxEdge: {x: 0, y: 0}
   coverSide: 0
   atCoverCorner: 0
+  distanceToCorner: 0
+  cornerDistanceThreshold: 0.8
+  speedMultiplier: 0.5
 --- !u!1 &597424127
 GameObject:
   m_ObjectHideFlags: 0

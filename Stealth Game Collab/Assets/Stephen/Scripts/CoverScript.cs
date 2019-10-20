@@ -8,16 +8,14 @@ public class CoverScript : MonoBehaviour
     private PlayerWalking playerStats; // allows this script to access the PlayerWalking script
     public bool inCover; // if true, the player is in cover. 
     public LayerMask wall; // which Layer will be considered cover by the script
-//    private float distanceToCover; // holds the distance to the closest cover
-//    private float tempDTC; // temp value for comparing distances to cover
     public Vector2 coverPoint; // stores the Vector2 position for the closest point on the perimter of a cover's collider, ie where the player will move to when in cover
     private Vector2 direction;
-    public Vector2 coverMinEdge, coverMaxEdge;
     public int coverSide; // 0 = not aligned on axis, 1 = top / north, 2 = right / east, 3 = bottom / south, 4 = left / west
     public bool atCoverCorner; // if true, the player is at one of the corners 
+    public float distanceToCorner;
+    public float cornerDistanceThreshold;
+    public float speedMultiplier;
 
-    private int coverCount; // stores the number of valid covers within coverRange
-//    private Collider2D[] coverList; // stores all of the valid covers within coverRange
     private Collider2D nearestCover; // stores the Collder2D compontnent for the nearest valid cover to the player
     private ContactFilter2D filter;
 
@@ -46,9 +44,8 @@ public class CoverScript : MonoBehaviour
 
                 if (!inCover) // if player is just entering cover
                 {
+                    playerStats.moveSpeed = playerStats.moveSpeed * speedMultiplier;
                     inCover = true;
-                    coverMinEdge = nearestCover.bounds.min;
-                    coverMaxEdge = nearestCover.bounds.max;
                     Debug.Log("Extents: " + nearestCover.bounds.extents);
 
                     if (playerStats.transform.up == Vector3.up)
@@ -71,31 +68,61 @@ public class CoverScript : MonoBehaviour
                         coverSide = 0;
                 }
                 
-                if (Vector2.Distance(coverPoint, coverMaxEdge) < 0.5f) // top right corner
+                if (coverSide == 1 || coverSide == 3) // if top or bottom 
                 {
-                    atCoverCorner = true;
+                    if (playerStats.rb.position.x < nearestCover.bounds.center.x)
+                    {
+                        distanceToCorner = playerStats.rb.position.x - nearestCover.bounds.min.x;
+                        if (distanceToCorner < cornerDistanceThreshold)
+                        {
+                            atCoverCorner = true;
+                        }
+                        else
+                            atCoverCorner = false;
+                    }
+                    else if (playerStats.rb.position.x > nearestCover.bounds.center.x)
+                    {
+                        distanceToCorner = playerStats.rb.position.x - nearestCover.bounds.max.x;
+                        if (distanceToCorner > 0 - cornerDistanceThreshold)
+                        {
+                            atCoverCorner = true;
+                        }
+                        else
+                            atCoverCorner = false;
+                    }
                 }
-                if (Vector2.Distance(coverPoint, new Vector2 (coverMaxEdge.x, coverMinEdge.y)) < 0.5f) // bottom right corner
+                else if (coverSide == 2 || coverSide == 4) // if left or right
                 {
-                    atCoverCorner = true;
-                }
-                if (Vector2.Distance(coverPoint, coverMinEdge) < 0.5f) // bottom left corner
-                {
-                    atCoverCorner = true;
-                }
-                if (Vector2.Distance(coverPoint, new Vector2(coverMinEdge.x, coverMaxEdge.y)) < 0.5f) // top left corner
-                {
-                    atCoverCorner = true;
-                }
-                else
-                {
-                    atCoverCorner = false;
+                    if (playerStats.rb.position.y < nearestCover.bounds.center.y)
+                    {
+                        distanceToCorner = playerStats.rb.position.y - nearestCover.bounds.min.y;
+                        if (distanceToCorner < cornerDistanceThreshold)
+                        {
+                            atCoverCorner = true;
+                            Debug.Log("I'm here!");
+                        }
+                        else
+                            atCoverCorner = false;
+                    }
+                    else if (playerStats.rb.position.y > nearestCover.bounds.center.y)
+                    {
+                        distanceToCorner = playerStats.rb.position.y - nearestCover.bounds.max.y;
+                        if (distanceToCorner > 0 - cornerDistanceThreshold)
+                        {
+                            atCoverCorner = true;
+                            Debug.Log("I'm here!");
+                        }
+                        else
+                            atCoverCorner = false;
+                    }
                 }
             }
         }
-        if (!Input.GetKey(playerStats.cover)) // if cover button isn't pressed, inCover = false
+        if (!Input.GetKey(playerStats.cover) && inCover == true) // if cover button isn't pressed, inCover = false
         { 
             inCover = false;
+            atCoverCorner = false;
+            playerStats.moveSpeed = playerStats.moveSpeed / speedMultiplier;
             playerStats.rb.constraints = RigidbodyConstraints2D.None;
         }
     }
