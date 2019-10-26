@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
+    public CoverScript coverscript;
     public string walking = "walking";
     public string standing = "standing";
     public Text stance;
@@ -38,10 +39,19 @@ public class HUD : MonoBehaviour
         if (isMoving)
         {
             stance.text = walking;
+            if(coverscript.inCover)
+            {
+                stance.text = "taking cover";
+            }
         }
+       
         else
         {
             stance.text = standing;
+            if (coverscript.inCover)
+            {
+                stance.text = "taking cover";
+            }
         }
     }
 }
