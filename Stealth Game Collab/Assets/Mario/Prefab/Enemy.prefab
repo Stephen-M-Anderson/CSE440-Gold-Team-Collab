@@ -57,6 +57,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -188,6 +189,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -223,4 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71764c3b058357e4f9faaff999aea031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inView: 0
+  speed: 2
+  startWaitTime: 3
+  routes:
+  - {fileID: 786246770204499755, guid: 578fc52ead31f1848b5af898f71b982f, type: 3}
+  - {fileID: 200434119763059432, guid: 322e137408574c74281758ad9ca8cb4d, type: 3}
