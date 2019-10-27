@@ -8,11 +8,17 @@ public class FlashlightDetection : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D o)
     {
-        
+        if (o.gameObject.tag == "Player")
+        {
+            
+        }
     }
 
     void OnTriggerExit2D(Collider2D o)
     {
-        
+        if (o.gameObject.tag == "Player")
+        {
+            
+        }
     }
 }
