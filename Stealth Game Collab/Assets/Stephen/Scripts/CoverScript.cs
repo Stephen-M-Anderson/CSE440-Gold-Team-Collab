@@ -15,6 +15,7 @@ public class CoverScript : MonoBehaviour
     public float distanceToCorner;
     public float cornerDistanceThreshold;
     public float speedMultiplier;
+    public bool whichCornerBool; // if true / 1, player is at the corner with highest position magnitude (ie right or top), else player is at the other corner
 
     private Collider2D nearestCover; // stores the Collder2D compontnent for the nearest valid cover to the player
     private ContactFilter2D filter;
@@ -68,49 +69,51 @@ public class CoverScript : MonoBehaviour
                         coverSide = 0;
                 }
                 
-                if (coverSide == 1 || coverSide == 3) // if top or bottom 
+                if (coverSide == 1 || coverSide == 3) // if player is taking cover on the top or bottom of the cover 
                 {
-                    if (playerStats.rb.position.x < nearestCover.bounds.center.x)
+                    if (playerStats.rb.position.x < nearestCover.bounds.center.x) // the player is on the left half of the cover
                     {
                         distanceToCorner = playerStats.rb.position.x - nearestCover.bounds.min.x;
-                        if (distanceToCorner < cornerDistanceThreshold)
+                        if (distanceToCorner < cornerDistanceThreshold) // player is at left corner
                         {
                             atCoverCorner = true;
+                            whichCornerBool = false;
                         }
                         else
                             atCoverCorner = false;
                     }
-                    else if (playerStats.rb.position.x > nearestCover.bounds.center.x)
+                    else if (playerStats.rb.position.x > nearestCover.bounds.center.x) // player is on the right half of the cover
                     {
                         distanceToCorner = playerStats.rb.position.x - nearestCover.bounds.max.x;
-                        if (distanceToCorner > 0 - cornerDistanceThreshold)
+                        if (distanceToCorner > 0 - cornerDistanceThreshold) // player is at right corner
                         {
                             atCoverCorner = true;
+                            whichCornerBool = true;
                         }
                         else
                             atCoverCorner = false;
                     }
                 }
-                else if (coverSide == 2 || coverSide == 4) // if left or right
+                else if (coverSide == 2 || coverSide == 4) // if the player is taking cover on the left or right of the cover
                 {
-                    if (playerStats.rb.position.y < nearestCover.bounds.center.y)
+                    if (playerStats.rb.position.y < nearestCover.bounds.center.y) // player is in the bottom half of the cover
                     {
                         distanceToCorner = playerStats.rb.position.y - nearestCover.bounds.min.y;
-                        if (distanceToCorner < cornerDistanceThreshold)
+                        if (distanceToCorner < cornerDistanceThreshold) // player is at bottom corner
                         {
                             atCoverCorner = true;
-                            Debug.Log("I'm here!");
+                            whichCornerBool = false;
                         }
                         else
                             atCoverCorner = false;
                     }
-                    else if (playerStats.rb.position.y > nearestCover.bounds.center.y)
+                    else if (playerStats.rb.position.y > nearestCover.bounds.center.y) // player is in the top half of the cover
                     {
                         distanceToCorner = playerStats.rb.position.y - nearestCover.bounds.max.y;
-                        if (distanceToCorner > 0 - cornerDistanceThreshold)
+                        if (distanceToCorner > 0 - cornerDistanceThreshold) // player is at top corner
                         {
                             atCoverCorner = true;
-                            Debug.Log("I'm here!");
+                            whichCornerBool = true;
                         }
                         else
                             atCoverCorner = false;

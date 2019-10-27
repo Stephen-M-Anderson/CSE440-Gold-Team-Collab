@@ -73,29 +73,78 @@ public class PlayerWalking : MonoBehaviour
                 rb.position = newMovement;
             }
         }
-        else if (cc.inCover)
+        else if (cc.inCover) // if the player is in cover
         {
-            if (Input.GetKey(moveRight) && (cc.coverSide == 1 || cc.coverSide == 3))
+            if (cc.coverSide == 1 || cc.coverSide == 3) // player is against horizontal cover (they are facing up or down)
             {
-                newMovement = new Vector2(rb.position.x + (moveSpeed * Time.deltaTime), rb.position.y);
-                rb.position = newMovement;
+                if (cc.atCoverCorner) // if the player is at a corner of their cover
+                {
+                    if (cc.whichCornerBool == true) // if the player is at the top or bottom right corner, player can only move left
+                    {
+                        if (Input.GetKey(moveLeft))
+                        {
+                            newMovement = new Vector2(rb.position.x - (moveSpeed * Time.deltaTime), rb.position.y);
+                            rb.position = newMovement;
+                        }
+                    }
+                    else                            // if the player is at the top or bottom left corner, player can only move right
+                    {
+                        if (Input.GetKey(moveRight))
+                        {
+                            newMovement = new Vector2(rb.position.x + (moveSpeed * Time.deltaTime), rb.position.y);
+                            rb.position = newMovement;
+                        }
+                    } 
+                }
+                else                                // the player is not at a corner of their cover, they can move left or right
+                {
+                    if (Input.GetKey(moveRight))
+                    {
+                        newMovement = new Vector2(rb.position.x + (moveSpeed * Time.deltaTime), rb.position.y);
+                        rb.position = newMovement;
+                    }
+                    if (Input.GetKey(moveLeft))
+                    {
+                        newMovement = new Vector2(rb.position.x - (moveSpeed * Time.deltaTime), rb.position.y);
+                        rb.position = newMovement;
+                    }
+                }
             }
-            if (Input.GetKey(moveLeft) && (cc.coverSide == 1 || cc.coverSide == 3))
+            else if (cc.coverSide == 2 || cc.coverSide == 4) // player is against verticle cover
             {
-                newMovement = new Vector2(rb.position.x - (moveSpeed * Time.deltaTime), rb.position.y);
-                rb.position = newMovement;
+                if (cc.atCoverCorner) // if the player is at a corner of their cover
+                {
+                    if (cc.whichCornerBool == true) // if the player is at the top left or right corner, player can only move down
+                    {
+                        if (Input.GetKey(moveDown))
+                        {
+                            newMovement = new Vector2(rb.position.x, rb.position.y - (moveSpeed * Time.deltaTime));
+                            rb.position = newMovement;
+                        }
+                    }
+                    else                            // if the player is at the bottom left or right corner, player can only move up
+                    {
+                        if (Input.GetKey(moveUp))
+                        {
+                            newMovement = new Vector2(rb.position.x, rb.position.y + (moveSpeed * Time.deltaTime));
+                            rb.position = newMovement;
+                        }
+                    }
+                }
+                else                                // the player is not at a corner of their cover, they can move up or down
+                {
+                    if (Input.GetKey(moveUp))
+                    {
+                        newMovement = new Vector2(rb.position.x, rb.position.y + (moveSpeed * Time.deltaTime));
+                        rb.position = newMovement;
+                    }
+                    if (Input.GetKey(moveDown))
+                    {
+                        newMovement = new Vector2(rb.position.x, rb.position.y - (moveSpeed * Time.deltaTime));
+                        rb.position = newMovement;
+                    }
+                }
             }
-            if (Input.GetKey(moveUp) && (cc.coverSide == 2 || cc.coverSide == 4))
-            {
-                newMovement = new Vector2(rb.position.x, rb.position.y + (moveSpeed * Time.deltaTime));
-                rb.position = newMovement;
-            }
-            if (Input.GetKey(moveDown) && (cc.coverSide == 2 || cc.coverSide == 4))
-            {
-                newMovement = new Vector2(rb.position.x, rb.position.y - (moveSpeed * Time.deltaTime));
-                rb.position = newMovement;
-            }
-
         }
         /*        if (Input.GetKeyDown(dash) && rb.velocity.sqrMagnitude != 0)
                 {
