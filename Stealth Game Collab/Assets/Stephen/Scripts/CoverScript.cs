@@ -17,7 +17,7 @@ public class CoverScript : MonoBehaviour
     public float speedMultiplier;
     public bool whichCornerBool; // if true / 1, player is at the corner with highest position magnitude (ie right or top), else player is at the other corner
 
-    private Collider2D nearestCover; // stores the Collder2D compontnent for the nearest valid cover to the player
+    public Collider2D nearestCover; // stores the Collder2D compontnent for the nearest valid cover to the player
     private ContactFilter2D filter;
 
     // Start is called before the first frame update

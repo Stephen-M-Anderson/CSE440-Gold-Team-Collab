@@ -22,7 +22,8 @@ public class PlayerWalking : MonoBehaviour
     private Vector2 dashStart;
 
     public Rigidbody2D rb;
-    private CoverScript cc;
+    public CoverScript cc;
+    public bool peeking;
 
     // Start is called before the first frame 
     void Start()
@@ -86,6 +87,12 @@ public class PlayerWalking : MonoBehaviour
                             newMovement = new Vector2(rb.position.x - (moveSpeed * Time.deltaTime), rb.position.y);
                             rb.position = newMovement;
                         }
+                        if (Input.GetKey(interact))
+                        {
+                            peeking = true;
+                        }
+                        else
+                            peeking = false;
                     }
                     else                            // if the player is at the top or bottom left corner, player can only move right
                     {
@@ -94,6 +101,12 @@ public class PlayerWalking : MonoBehaviour
                             newMovement = new Vector2(rb.position.x + (moveSpeed * Time.deltaTime), rb.position.y);
                             rb.position = newMovement;
                         }
+                        if (Input.GetKey(interact))
+                        {
+                            peeking = true;
+                        }
+                        else
+                            peeking = false;
                     } 
                 }
                 else                                // the player is not at a corner of their cover, they can move left or right
@@ -121,6 +134,12 @@ public class PlayerWalking : MonoBehaviour
                             newMovement = new Vector2(rb.position.x, rb.position.y - (moveSpeed * Time.deltaTime));
                             rb.position = newMovement;
                         }
+                        if (Input.GetKey(interact))
+                        {
+                            peeking = true;
+                        }
+                        else
+                            peeking = false;
                     }
                     else                            // if the player is at the bottom left or right corner, player can only move up
                     {
@@ -129,6 +148,12 @@ public class PlayerWalking : MonoBehaviour
                             newMovement = new Vector2(rb.position.x, rb.position.y + (moveSpeed * Time.deltaTime));
                             rb.position = newMovement;
                         }
+                        if (Input.GetKey(interact))
+                        {
+                            peeking = true;
+                        }
+                        else
+                            peeking = false;
                     }
                 }
                 else                                // the player is not at a corner of their cover, they can move up or down

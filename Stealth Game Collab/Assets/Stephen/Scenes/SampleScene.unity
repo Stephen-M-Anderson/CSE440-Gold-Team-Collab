@@ -146,8 +146,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365776733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6, y: 1.08, z: 6.1893086}
-  m_LocalScale: {x: 6.3475695, y: 0.4236065, z: 1.113684}
+  m_LocalPosition: {x: 1.27, y: 4.84, z: 6.1893086}
+  m_LocalScale: {x: 6.3475695, y: 3.5019548, z: 1.113684}
   m_Children: []
   m_Father: {fileID: 535747198}
   m_RootOrder: 0
@@ -373,7 +373,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7a2dd0efe5a45499121cd23f17db86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCopy: {fileID: 580641432}
   zoom: -10
+  camSpeed: 3
+  peekDistance: 3
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -520,6 +523,8 @@ MonoBehaviour:
   dashSpeed: 25
   dashDistance: 2
   rb: {fileID: 580641436}
+  cc: {fileID: 0}
+  peeking: 0
 --- !u!60 &580641435
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -639,9 +644,10 @@ MonoBehaviour:
   coverSide: 0
   atCoverCorner: 0
   distanceToCorner: 0
-  cornerDistanceThreshold: 0.8
+  cornerDistanceThreshold: 0.6
   speedMultiplier: 0.5
   whichCornerBool: 0
+  nearestCover: {fileID: 0}
 --- !u!1 &858588503
 GameObject:
   m_ObjectHideFlags: 0
