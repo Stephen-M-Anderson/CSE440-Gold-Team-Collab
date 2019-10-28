@@ -125,6 +125,7 @@ public class CoverScript : MonoBehaviour
         { 
             inCover = false;
             atCoverCorner = false;
+            playerStats.peeking = false;
             playerStats.moveSpeed = playerStats.moveSpeed / speedMultiplier;
             playerStats.rb.constraints = RigidbodyConstraints2D.None;
         }
