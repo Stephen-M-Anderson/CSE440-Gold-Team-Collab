@@ -339,8 +339,90 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8955949284331359619, guid: 1ffad6a7189ea734f8d2232536b2ea0e,
+        type: 3}
+      propertyPath: fuckingplayer
+      value: 
+      objectReference: {fileID: 1711226897}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ffad6a7189ea734f8d2232536b2ea0e, type: 3}
+--- !u!1 &1711226897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3848207859077888568, guid: 506df8a86f9dbdc408524a255cafcfd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 312432735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1711226900
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711226897}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1711226901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711226897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 376b8248808d71848b68a805a46bbc5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveLeft: 97
+  moveRight: 100
+  moveUp: 119
+  moveDown: 115
+  interact: 101
+  dash: 32
+  cover: 306
+  moveSpeed: 5
+  dashSpeed: 0
+  dashDistance: 0
+  rb: {fileID: 1711226900}
+  cc: {fileID: 1711226902}
+  peeking: 0
+--- !u!114 &1711226902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711226897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa79906d9b1004340b8ae545a95e1a71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coverRange: 0
+  inCover: 0
+  wall:
+    serializedVersion: 2
+    m_Bits: 0
+  coverPoint: {x: 0, y: 0}
+  coverSide: 0
+  atCoverCorner: 0
+  distanceToCorner: 0
+  cornerDistanceThreshold: 0
+  speedMultiplier: 0
+  whichCornerBool: 0
+  nearestCover: {fileID: 0}
 --- !u!1001 &200434119905755966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -348,6 +430,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 200434119763059435, guid: 322e137408574c74281758ad9ca8cb4d,
+        type: 3}
+      propertyPath: m_Name
+      value: Point2
+      objectReference: {fileID: 0}
     - target: {fileID: 200434119763059432, guid: 322e137408574c74281758ad9ca8cb4d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -403,11 +490,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 200434119763059435, guid: 322e137408574c74281758ad9ca8cb4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Point2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 322e137408574c74281758ad9ca8cb4d, type: 3}
 --- !u!1001 &786246770279373671
@@ -417,6 +499,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 786246770204499756, guid: 578fc52ead31f1848b5af898f71b982f,
+        type: 3}
+      propertyPath: m_Name
+      value: Point1
+      objectReference: {fileID: 0}
     - target: {fileID: 786246770204499755, guid: 578fc52ead31f1848b5af898f71b982f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -471,11 +558,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 786246770204499756, guid: 578fc52ead31f1848b5af898f71b982f,
-        type: 3}
-      propertyPath: m_Name
-      value: Point1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 578fc52ead31f1848b5af898f71b982f, type: 3}

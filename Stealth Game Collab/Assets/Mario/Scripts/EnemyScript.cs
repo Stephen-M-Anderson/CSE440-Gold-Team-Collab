@@ -7,9 +7,13 @@ public class EnemyScript : MonoBehaviour
     public float speed;
     private float waitTime;
     public float startWaitTime;
+    public GameObject fuckingplayer;
+
+
 
     public Transform[] routes;
     private int randomRoute;
+
 
     void Start()
     {
@@ -27,10 +31,16 @@ public class EnemyScript : MonoBehaviour
             {
                 randomRoute = Random.Range(0, routes.Length);
                 waitTime = startWaitTime;
-            } else
+            }
+            else
             {
                 waitTime -= Time.deltaTime;
             }
         }
+
+        Vector2 playerPosition = fuckingplayer.transform.position;
+        Vector2 direction = new Vector2(playerPosition.x - transform.position.x, playerPosition.y - transform.position.y);
+        direction = direction.normalized;
+        transform.up = direction;
     }
 }
