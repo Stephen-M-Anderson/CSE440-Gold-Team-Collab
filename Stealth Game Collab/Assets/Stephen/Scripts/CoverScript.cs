@@ -47,6 +47,7 @@ public class CoverScript : MonoBehaviour
                 {
                     playerStats.moveSpeed = playerStats.moveSpeed * speedMultiplier;
                     inCover = true;
+                    
                     Debug.Log("Extents: " + nearestCover.bounds.extents);
 
                     if (playerStats.transform.up == Vector3.up)

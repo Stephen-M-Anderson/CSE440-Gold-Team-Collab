@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI;  //Really important
 
 public class HUD : MonoBehaviour
 {
-    public CoverScript coverscript;
-    public string walking = "walking";
+    
+    public CoverScript coverscript;  // This line is a bit weird. If you want to know when the PLAYER is inCover. Don't take a related script. 
+                                     // You HAVE to take the PLAYER GAMEOBJECT into the PUBLIC COVERSCRIPT empty slot. It will then
+                                     // take in the GAMEOBJECT but specifically look into the gameobject's coverscript. Therefore taking in only when
+                                     // the player himself has entered cover. Its wierd but makes sense
+    public string walking = "walking";  
     public string standing = "standing";
-    public Text stance;
+    public Text stance;  // To connect the script to the text you want to change.
     bool isMoving = false;
 
     public KeyCode moveLeft = KeyCode.A;
@@ -41,6 +45,7 @@ public class HUD : MonoBehaviour
             stance.text = walking;
             if(coverscript.inCover)
             {
+                Debug.Log("At some point I was in cover");  // A test to see if the script is referencing correctly
                 stance.text = "taking cover";
             }
         }
@@ -52,6 +57,7 @@ public class HUD : MonoBehaviour
             {
                 stance.text = "taking cover";
             }
+            
         }
     }
 }
