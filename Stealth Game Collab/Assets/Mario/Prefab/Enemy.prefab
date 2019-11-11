@@ -227,7 +227,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   startWaitTime: 3
-  actualPlayer: {fileID: 0}
   routes:
   - {fileID: 786246770204499755, guid: 578fc52ead31f1848b5af898f71b982f, type: 3}
   - {fileID: 200434119763059432, guid: 322e137408574c74281758ad9ca8cb4d, type: 3}

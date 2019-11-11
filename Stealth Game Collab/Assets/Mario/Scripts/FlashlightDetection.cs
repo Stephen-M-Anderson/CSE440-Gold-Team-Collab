@@ -10,8 +10,7 @@ public class FlashlightDetection : MonoBehaviour
     {
         if (o.gameObject.tag == "Player")
         {
-            enemyScript.inView = true;
-            Debug.Log("HEY");
+            
         }
     }
 
@@ -19,8 +18,7 @@ public class FlashlightDetection : MonoBehaviour
     {
         if (o.gameObject.tag == "Player")
         {
-            enemyScript.inView = false;
-            Debug.Log("Must Have Been the Wind");
+            
         }
     }
 }

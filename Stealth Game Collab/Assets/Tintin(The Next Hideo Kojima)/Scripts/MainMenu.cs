@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject MainMenuUI; 
+    public GameObject MainMenuUI;
 
 
     // Update is called once per frame
@@ -42,9 +42,8 @@ public class MainMenu : MonoBehaviour
      */
     public void StartGame()
     {
-        Time.timeScale = 1f;     //resumes0 time. This line doesn't really mean anything. Its just to fool mortals into thinking I don't psychically begin the game.
-                                 // jkjk. Line actually resumes time within the game
-        SceneManager.LoadScene("Main Scene"); 
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Main Scene");
     }
 
     public void LoadSettings()
@@ -54,7 +53,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();  
+        Application.Quit();
     }
 }
 
