@@ -57,3 +57,9 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+*.json
+Stealth Game Collab/Library/ShaderCache/EditorEncounteredVariants
+*.asset
+*.txt
+*.dwlt
+Stealth Game Collab/Library/ArtifactDB
