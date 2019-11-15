@@ -9,12 +9,13 @@ public class EnemyScript : MonoBehaviour
     public float startWaitTime;
     public GameObject actualPlayer;
     public bool inView = false;
-
+    
 
     public Transform[] routes;
     private int randomRoute;
 
     private Transform playerPosition;
+    
 
     void Start()
     {
@@ -34,32 +35,36 @@ public class EnemyScript : MonoBehaviour
         {
             chase();
         }
-        /**Vector2 playerPosition = actualPlayer.transform.position;
-        Vector2 direction = new Vector2(playerPosition.x - transform.position.x, playerPosition.y - transform.position.y);
-        direction = direction.normalized;
-        transform.up = direction;**/
     }
 
     public void chase()
     {
         transform.position = Vector2.MoveTowards(transform.position, playerPosition.position, speed * Time.deltaTime);
-        
+        Vector2 direction = new Vector2(playerPosition.position.x - transform.position.x, playerPosition.position.y - transform.position.y);
+        direction = direction.normalized;
+        transform.up = direction;
     }
 
     public void patrol()
     {
         transform.position = Vector2.MoveTowards(transform.position, routes[randomRoute].position, speed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, routes[randomRoute].position) < 0.2f)
+        if (Vector2.Distance(transform.position, routes[randomRoute].position) < 0.1f)
         {
             if (waitTime <= 0)
             {
                 randomRoute = Random.Range(0, routes.Length);
                 waitTime = startWaitTime;
+
+                transform.position = Vector2.MoveTowards(transform.position, routes[randomRoute].position, speed * Time.deltaTime);
+                Vector2 direction = new Vector2(routes[randomRoute].position.x - transform.position.x, routes[randomRoute].position.y - transform.position.y);
+                direction = direction.normalized;
+                transform.up = direction;
             }
             else
             {
                 waitTime -= Time.deltaTime;
+
             }
         }
     }
