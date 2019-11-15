@@ -27,5 +27,10 @@ public class SecCam : MonoBehaviour
 
         }
         Debug.Log("Trigger detected.");
+
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Player spotted by camera");
+        }
     }
 }
