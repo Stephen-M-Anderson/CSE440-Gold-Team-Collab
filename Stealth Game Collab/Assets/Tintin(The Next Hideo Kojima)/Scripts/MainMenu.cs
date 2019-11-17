@@ -7,8 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject MainMenuUI; 
-
+    public GameObject MainMenuUI;
+   // static bool isLoaded = false;
 
     // Update is called once per frame
     /*void Update()
@@ -47,6 +47,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Main Scene"); 
     }
 
+    
     public void LoadSettings()
     {
         //SceneManager.LoadScene("SampleScene");

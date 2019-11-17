@@ -7,6 +7,19 @@ public class Player : MonoBehaviour
 {
     public PauseMenu pausemenuscript;
     public Text saveconfirmation;
+    
+
+    
+                                   // An attempt at loading player stuff on wake.
+    private void Start()
+    {
+        GameObject immortal = GameObject.Find("Immortal Load Information");
+        if (immortal)
+        {
+            LoadPlayer();
+        }
+    }
+    
 
     public void SavePlayer()
     {
