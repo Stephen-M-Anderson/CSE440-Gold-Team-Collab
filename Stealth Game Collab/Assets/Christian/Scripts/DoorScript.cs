@@ -15,7 +15,7 @@ public class DoorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isOpenable = false;
+        isOpenable = false; 
         isOpen = false;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -27,19 +27,20 @@ public class DoorScript : MonoBehaviour
         {
             Debug.Log("You pressed E");
 
-            if (isOpenable == true && isOpen == false)
+            if (isOpenable == true && isOpen == false) //This opens the door
             {
-                HingeJoint2D hinge = gameObject.GetComponent(typeof(HingeJoint2D)) as HingeJoint2D;
-                rb.constraints = RigidbodyConstraints2D.None;
+                HingeJoint2D hinge = gameObject.GetComponent(typeof(HingeJoint2D)) as HingeJoint2D; //locally initializing our 2D Hinge Point
+                rb.constraints = RigidbodyConstraints2D.None; //Removing the rotation constraints placed on the door originally
                 hinge.enabled = true; //Enabling our HingeJoint2D
-                isOpen = true;
+                isOpen = true; //Setting this bool to true tells us this door is open.
+                Door.GetComponent<BoxCollider2D>().enabled = false;
 
             }
             else if (isOpenable == true && isOpen == true)
             {
                 //HingeJoint2D hinge = gameObject.GetComponent(typeof(HingeJoint2D)) as HingeJoint2D;
                 //var motor = hinge.motor;
-                //motor.motorSpeed = 200;
+                //motor.motorSpeed = motor.motorSpeed * -1;
                 isOpen = false;
                 //rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 //hinge.enabled = false;
@@ -47,7 +48,7 @@ public class DoorScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) //This function and the one under it tell us whether or not the player is in contact with the door's trigger and the bool is set accordingly
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -62,6 +63,14 @@ public class DoorScript : MonoBehaviour
         {
             isOpenable = false;
             Debug.Log("isOpenable = " + isOpenable);
+
+            if (isOpen == true) //What this does is make it so that once the door has been opened it no longer has motor force applied to it. Before I added this to the script sometimes the player colliding with the opened door would shoot you across the map.
+            {
+                HingeJoint2D hinge = gameObject.GetComponent(typeof(HingeJoint2D)) as HingeJoint2D;
+                var motor = hinge.motor;
+                motor.motorSpeed = 0;
+            }
+            
         }
     }
 }
