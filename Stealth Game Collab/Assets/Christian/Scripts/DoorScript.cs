@@ -43,7 +43,6 @@ public class DoorScript : MonoBehaviour
                 //motor.motorSpeed = motor.motorSpeed * -1;
                 isOpen = false;
                 //rb.constraints = RigidbodyConstraints2D.FreezeAll;
-                //hinge.enabled = false;
             }
         }
     }
