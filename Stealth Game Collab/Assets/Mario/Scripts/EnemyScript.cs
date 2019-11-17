@@ -9,19 +9,20 @@ public class EnemyScript : MonoBehaviour
     public float startWaitTime;
     public GameObject actualPlayer;
     public bool inView = false;
-    
+    public bool heardSpeaker;
 
     public Transform[] routes;
     private int randomRoute;
 
     private Transform playerPosition;
-    
+    private Transform speakerPosition;
 
     void Start()
     {
         waitTime = startWaitTime;
         randomRoute = Random.Range(0, routes.Length);
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        speakerPosition = GameObject.FindGameObjectWithTag("Speaker").GetComponent<Transform>();
     }
 
     private void Update()
@@ -34,6 +35,11 @@ public class EnemyScript : MonoBehaviour
         if (inView == true)
         {
             chase();
+        }
+
+        if (heardSpeaker == true)
+        {
+            investigateSpeaker();
         }
     }
 
@@ -67,5 +73,13 @@ public class EnemyScript : MonoBehaviour
 
             }
         }
+    }
+
+    public void investigateSpeaker()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, speakerPosition.position, speed * Time.deltaTime);
+        Vector2 direction = new Vector2(speakerPosition.position.x - transform.position.x, speakerPosition.position.y - transform.position.y);
+        direction = direction.normalized;
+        transform.up = direction;
     }
 }
