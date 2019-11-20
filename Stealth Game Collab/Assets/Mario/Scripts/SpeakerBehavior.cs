@@ -6,11 +6,11 @@ public class SpeakerBehavior : MonoBehaviour
 {
     public EnemyScript enemyScript;
 
-    void OnTriggerEnter2D(Collider2D sp)
+    void OnTriggerStay2D(Collider2D sp)
     {
         if (sp.gameObject.tag == "Player")
         {
-            if (Input.GetKeyDown("e"))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 enemyScript.heardSpeaker = true;
                 Debug.Log("What's That?");

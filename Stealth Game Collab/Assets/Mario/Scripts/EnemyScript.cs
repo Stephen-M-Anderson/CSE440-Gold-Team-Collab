@@ -27,16 +27,14 @@ public class EnemyScript : MonoBehaviour
 
     private void Update()
     {
-        if (inView == false)
+        if (inView == false && heardSpeaker == false)
         {
             patrol();
         }
-
         if (inView == true)
         {
             chase();
         }
-
         if (heardSpeaker == true)
         {
             investigateSpeaker();
@@ -70,13 +68,13 @@ public class EnemyScript : MonoBehaviour
             else
             {
                 waitTime -= Time.deltaTime;
-
             }
         }
     }
 
     public void investigateSpeaker()
     {
+        Debug.Log("Found speaker");
         transform.position = Vector2.MoveTowards(transform.position, speakerPosition.position, speed * Time.deltaTime);
         Vector2 direction = new Vector2(speakerPosition.position.x - transform.position.x, speakerPosition.position.y - transform.position.y);
         direction = direction.normalized;
