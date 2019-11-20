@@ -12,6 +12,7 @@ public class DoorScript : MonoBehaviour
     public Rigidbody2D rb;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class DoorScript : MonoBehaviour
     // Update is called once per frame
     void Update() //I'm using Update rather than FixedUpdate because when I tried FixedUpdate, GetKeyDown was calling the interact key twice rather than once. And at that point what the fuck is the point of using GetKeyDown?
     {
+
         if (Input.GetKeyDown(interact))
         {
             Debug.Log("You pressed E");
@@ -38,11 +40,22 @@ public class DoorScript : MonoBehaviour
             }
             else if (isOpenable == true && isOpen == true)
             {
-                //HingeJoint2D hinge = gameObject.GetComponent(typeof(HingeJoint2D)) as HingeJoint2D;
-                //var motor = hinge.motor;
-                //motor.motorSpeed = motor.motorSpeed * -1;
-                isOpen = false;
+                HingeJoint2D hinge = gameObject.GetComponent(typeof(HingeJoint2D)) as HingeJoint2D;
+                JointMotor2D motor = hinge.motor;
+                motor.motorSpeed = -motor.motorSpeed;
+                hinge.motor = motor;
+                JointAngleLimits2D limits = this.gameObject.GetComponent<HingeJoint2D>().limits;
+                limits.min = limits.min + 90;
+                limits.max = limits.max; 
+                this.gameObject.GetComponent<HingeJoint2D>().limits = limits;
+
+                //This commented shit is what I want to do once the door is not moving and in the closed position.
+                //isOpen = false;
+                //Door.GetComponent<BoxCollider2D>().enabled = true;
                 //rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                //JointAngleLimits2D limits = this.gameObject.GetComponent<HingeJoint2D>().limits;
+                //limits.min = limits.min - 90;
+                //this.gameObject.GetComponent<HingeJoint2D>().limits = limits;
             }
         }
     }
