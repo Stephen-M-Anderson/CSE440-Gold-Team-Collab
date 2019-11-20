@@ -7,6 +7,7 @@ public class SecCam : MonoBehaviour
     public GameObject player; //Does nothing now, but will help Camera detect player and change to tracking
     public float trackingSpeed = 40.0f; //Speed of the Camera
 
+
     private Transform playerPosition;
     private bool isTrackingPlayer = false;
     void Start()
@@ -20,7 +21,7 @@ public class SecCam : MonoBehaviour
         {
             transform.Rotate((Vector3.forward * trackingSpeed * Time.deltaTime)); //rotates camera continuously
         }
-        else if(isTrackingPlayer == true)
+        else if(isTrackingPlayer == true)  //Tracks player when camera spots player
         {
             Vector2 direction = new Vector2(playerPosition.position.x - transform.position.x, playerPosition.position.y - transform.position.y);
             direction = direction.normalized;
@@ -35,12 +36,13 @@ public class SecCam : MonoBehaviour
         //Uses triggers to determine when the Camera will switch.
         if (collision.gameObject.tag == "Switch")
         {
+
             trackingSpeed = trackingSpeed * -1;
 
         }
         Debug.Log("Trigger detected.");
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player") //allows camera to spot player.
         {
             isTrackingPlayer = true;
             Debug.Log("Player spotted by camera");
@@ -48,7 +50,7 @@ public class SecCam : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")  //stops spotting player when player exits vision cone.
         {
             isTrackingPlayer = false;
         }
