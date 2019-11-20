@@ -46,6 +46,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -123,7 +124,7 @@ GameObject:
   - component: {fileID: 8955949284331359619}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Guard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,6 +179,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -226,8 +228,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  startWaitTime: 3
+  startWaitTime: 2
   actualPlayer: {fileID: 0}
+  inView: 0
+  heardSpeaker: 0
   routes:
   - {fileID: 786246770204499755, guid: 578fc52ead31f1848b5af898f71b982f, type: 3}
   - {fileID: 200434119763059432, guid: 322e137408574c74281758ad9ca8cb4d, type: 3}

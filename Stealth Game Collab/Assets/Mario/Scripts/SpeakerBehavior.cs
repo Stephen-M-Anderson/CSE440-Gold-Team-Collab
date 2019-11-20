@@ -5,16 +5,41 @@ using UnityEngine;
 public class SpeakerBehavior : MonoBehaviour
 {
     public EnemyScript enemyScript;
-
-    void OnTriggerEnter2D()
+    public float guardTimer;
+    private bool guardIsWaiting = false;
+    private void Start()
     {
-        if (gameObject.tag == "Player")
+        guardTimer = 0;
+    }
+    private void Update()
+    {
+        if (guardIsWaiting == true)
         {
-            if (Input.GetKeyDown("E"))
+            guardTimer = guardTimer + Time.deltaTime;
+        }
+
+        if (guardTimer >= 3)
+        {
+            enemyScript.heardSpeaker = false;
+            guardIsWaiting = false;
+            guardTimer = 0;
+            Debug.Log("Timer Ended");
+        }
+
+    }
+    void OnTriggerStay2D(Collider2D sp)
+    {
+        if (sp.gameObject.tag == "Player")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 enemyScript.heardSpeaker = true;
                 Debug.Log("What's That?");
             }
+        }
+        if (sp.gameObject.tag == "Guard")
+        {
+            guardIsWaiting = true;
         }
     }
 }
