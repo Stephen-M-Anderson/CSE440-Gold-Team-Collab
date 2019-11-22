@@ -46,7 +46,7 @@ public class CanThrowingScript : MonoBehaviour
             if (Vector2.Distance(rbPlayer.position, canStart) >= canDistance) 
             {
                 isThrowing = false;
-                rb.velocity = Vector2.zero;
+                rbPlayer.velocity = Vector2.zero;
                 if (canDistance != canDistanceOriginal)
                 {
                     canDistance = canDistanceOriginal;
