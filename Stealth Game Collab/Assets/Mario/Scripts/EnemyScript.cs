@@ -35,7 +35,7 @@ public class EnemyScript : MonoBehaviour
         {
             chase();
         }
-        if (heardSpeaker == true)
+        if (heardSpeaker == true && inView == false)
         {
             investigateSpeaker();
         }
