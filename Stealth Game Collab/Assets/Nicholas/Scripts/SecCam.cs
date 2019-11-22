@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class SecCam : MonoBehaviour
 {
-    public GameObject player; //Does nothing now, but will help Camera detect player and change to tracking
+    public Transform camCenter;
+    public LayerMask PlayerDetection;
     public float trackingSpeed = 40.0f; //Speed of the Camera
 
 
     private Transform playerPosition;
     private bool isTrackingPlayer = false;
+    private bool isOverlapped = false;
     void Start()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -17,6 +19,9 @@ public class SecCam : MonoBehaviour
 
     void Update()
     {
+        isOverlapped = Physics2D.OverlapCircle(camCenter.position, 0.5f, PlayerDetection); //Player detection
+
+        Debug.Log("Overlap is " + isOverlapped);
         if (isTrackingPlayer == false)
         {
             transform.Rotate((Vector3.forward * trackingSpeed * Time.deltaTime)); //rotates camera continuously
@@ -42,7 +47,15 @@ public class SecCam : MonoBehaviour
         }
         Debug.Log("Trigger detected.");
 
-        if (collision.gameObject.tag == "Player") //allows camera to spot player.
+        if (collision.gameObject.tag == "Player" && isOverlapped == false) //allows camera to spot player.
+        {
+            isTrackingPlayer = true;
+            Debug.Log("Player spotted by camera");
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && isOverlapped == false) //allows camera to spot player.
         {
             isTrackingPlayer = true;
             Debug.Log("Player spotted by camera");
