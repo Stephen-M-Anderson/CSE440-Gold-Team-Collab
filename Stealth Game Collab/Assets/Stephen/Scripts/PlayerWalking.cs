@@ -53,25 +53,61 @@ public class PlayerWalking : MonoBehaviour
         Vector2 newMovement;
         if (!cc.inCover)
         {
-            if (Input.GetKey(moveRight) & !isDashing)
+            if (Input.GetKey(moveRight))
             {
-                newMovement = new Vector2(rb.position.x + (moveSpeed * Time.deltaTime), rb.position.y);
-                rb.position = newMovement;
+                if (rb.velocity.x < 0)
+                {
+                    Vector2 stop = rb.velocity;
+                    stop.x = 0;
+                    rb.velocity = Vector2.Lerp(rb.velocity, stop, 0.5f);
+                }
+                rb.AddForce(Vector2.right * moveSpeed);
             }
-            if (Input.GetKey(moveLeft) & !isDashing)
+            else if (!Input.GetKey(moveLeft))
             {
-                newMovement = new Vector2(rb.position.x - (moveSpeed * Time.deltaTime), rb.position.y);
-                rb.position = newMovement;
+                Vector2 stop = rb.velocity;
+                stop.x = 0;
+                rb.velocity = Vector2.Lerp(rb.velocity, stop, 0.5f);
             }
-            if (Input.GetKey(moveUp) & !isDashing)
+            if (Input.GetKey(moveLeft))
             {
-                newMovement = new Vector2(rb.position.x, rb.position.y + (moveSpeed * Time.deltaTime));
-                rb.position = newMovement;
+                if (rb.velocity.x > 0)
+                {
+                    Vector2 stop = rb.velocity;
+                    stop.x = 0;
+                    rb.velocity = Vector2.Lerp(rb.velocity, stop, 0.5f);
+                }
+                rb.AddForce(Vector2.left * moveSpeed);
             }
-            if (Input.GetKey(moveDown) & !isDashing)
+            if (Input.GetKey(moveUp))
             {
-                newMovement = new Vector2(rb.position.x, rb.position.y - (moveSpeed * Time.deltaTime));
-                rb.position = newMovement;
+                if (rb.velocity.y < 0)
+                {
+                    Vector2 stop = rb.velocity;
+                    stop.y = 0;
+                    rb.velocity = Vector2.Lerp(rb.velocity, stop, 0.5f);
+                }
+                rb.AddForce(Vector2.up * moveSpeed);
+            }
+            else if (!Input.GetKey(moveDown))
+            {
+                Vector2 stop = rb.velocity;
+                stop.y = 0;
+                rb.velocity = Vector2.Lerp(rb.velocity, stop, 0.5f);
+            }
+            if (Input.GetKey(moveDown))
+            {
+                if (rb.velocity.y > 0)
+                {
+                    Vector2 stop = rb.velocity;
+                    stop.y = 0;
+                    rb.velocity = Vector2.Lerp(rb.velocity, stop, 0.5f);
+                }
+                rb.AddForce(Vector2.down * moveSpeed);
+            }
+            if (!Input.GetKey(moveRight) && !Input.GetKey(moveLeft) && !Input.GetKey(moveUp) && !Input.GetKey(moveDown))
+            {
+                rb.velocity = Vector2.zero;
             }
         }
         else if (cc.inCover) // if the player is in cover

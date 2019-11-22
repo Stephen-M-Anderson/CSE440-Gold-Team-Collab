@@ -15,6 +15,7 @@ public class DoorMechanics : MonoBehaviour
     public bool closing;
     private JointMotor2D mt;
     public float doorAngleDifference;
+    public bool counterClockwise;
 
     // Start is called before the first frame update
     void Start()
@@ -23,16 +24,16 @@ public class DoorMechanics : MonoBehaviour
         origPos = transform.position;
         origRot = transform.rotation;
         mt.maxMotorTorque = 1000;
+        if (counterClockwise)
+        {
+            openingForce *= -1;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         doorAngleDifference = Quaternion.Angle(transform.rotation, origRot); // lets you see how open the door is in the inspector
-        if (Input.GetKeyDown(player.interact)) // shows how far the player is from the object when the player hits e
-        {
-            Debug.Log("Distance: " + Vector2.Distance(transform.position, player.transform.position));
-        }
         if (Input.GetKeyDown(player.interact) && isOpen == false && Vector2.Distance(transform.position, player.transform.position) < doorOpenRange) // if the door is closed and the player presses interact while in range, open the door
         { 
             isOpen = true;
@@ -43,7 +44,7 @@ public class DoorMechanics : MonoBehaviour
         }
         else if (isOpen == true)
         {
-            if (Quaternion.Angle(transform.rotation, origRot) < 1) // if the door is open but very close to being shut, shut the door fully
+            if (Quaternion.Angle(transform.rotation, origRot) < 2) // if the door is open but very close to being shut, shut the door fully
             {
                 closing = false; 
                 isOpen = false;
@@ -73,7 +74,7 @@ public class DoorMechanics : MonoBehaviour
             }
             else if (!closing) // if the door is opening after the player has pressed interact
             {
-                mt.motorSpeed = mt.motorSpeed - (mt.motorSpeed / 3); // rapidly slows the doors opening speed, gives it a "popped open" feel
+                mt.motorSpeed *= (0.8f); // rapidly slows the doors opening speed, gives it a "popped open" feel
                 hinge.motor = mt;
             }
         }
