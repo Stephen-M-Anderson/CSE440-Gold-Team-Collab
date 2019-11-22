@@ -16,6 +16,7 @@ public class EnemyScript : MonoBehaviour
 
     private Transform playerPosition;
     private Transform speakerPosition;
+    private Transform guardPosition;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class EnemyScript : MonoBehaviour
         randomRoute = Random.Range(0, routes.Length);
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         speakerPosition = GameObject.FindGameObjectWithTag("Speaker").GetComponent<Transform>();
+        guardPosition = GameObject.FindGameObjectWithTag("Guard").GetComponent<Transform>();
     }
 
     private void Update()
