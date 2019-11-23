@@ -4,59 +4,91 @@ using UnityEngine;
 
 public class CanThrowingScript : MonoBehaviour
 {
-    public KeyCode item = KeyCode.Space;
-    public float canSpeed;
-    public float canDistance;
-    public GameObject SodaCan;
-    private float canDistanceOriginal;
-    private bool isThrowing;
-    public bool hasCan;
-    private Vector2 canStart;
-    public Rigidbody2D rbSodaCan;
-    public Rigidbody2D rbPlayer;
-    public Transform spawnPoint;
+    private Rigidbody2D rb; //This is the rigidbody component of the can.
+
+    public float canSpeed = 5.0f; //The spped of the can, no shit.
+    public float maxThrowDistance = 5.0f; //The maximum distance we want a can to be able to be thrown. I made this public so it could easily be edited in the inspector.
+    private float canDistance; //A float representing the distance between the initial positions of the can and the mouse
+
+    private Vector3 canStart; //The location of the can when it spawns
+    private Vector3 moveDirection; //The direction to move the can in. A vector that will later be defined as the starting position of the can minus the starting position of the mouse curser.
+    private Vector3 mousePosition; //The location of the mouse curser represented in a Vector3
+
+    //private KeyCode boolKey = KeyCode.O; //The key to activate the bool that would freeze the cans during testing
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        Vector3 currentPosition = transform.position;
+
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = Mathf.Abs(0.0f - Camera.main.transform.position.z);
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        moveDirection = mousePosition - currentPosition;
+        moveDirection.z = 0;
+        moveDirection.Normalize();
+
+        canStart = transform.position;
+        canDistance = Vector3.Distance(mousePosition, canStart);
+
+        rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(moveDirection * canSpeed, ForceMode2D.Impulse);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = Mathf.Abs(0.0f - Camera.main.transform.position.z);
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector2 direction = new Vector2(mousePosition.x - rbPlayer.position.x, mousePosition.y - rbPlayer.position.y);
-        //Vector2 direction = new Vector2(mousePosition.x, mousePosition.y);
-        direction = direction.normalized;
+        //These were for test purposes to make sure that I could ACTUALLY stop the cans under whatever conditions I wanted to set. 
+        //It was convenient for localizing the problem so I'll keep it here in case I break this shit again.
+        /*if (Input.GetKeyDown(boolKey))
+        {
+            if (freeze)
+            {
+                freeze = false;
+            }
+            else
+            {
+                freeze = true;
+            }
+        }
 
-        if (Input.GetKeyDown(item) && !isThrowing && hasCan)     
+        if (freeze)
         {
-            Instantiate(SodaCan, spawnPoint.position, spawnPoint.rotation);
-            //rbSodaCan = GetComponent<Rigidbody2D>(); //Pretty sure these two lines aren't needed I just added them to see if it solved my problem and it didn't
-            //rbPlayer = GetComponent<Rigidbody2D>();
-            rbSodaCan.AddForce(direction * canSpeed, ForceMode2D.Impulse); //this is the rb of the can
-            isThrowing = true;
-            canStart = spawnPoint.position;
-            canDistanceOriginal = canDistance;
-            if (Vector2.Distance(mousePosition, canStart) < canDistance)
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }*/
+
+        Vector3 currentPositionUpdate = transform.position;
+        float distanceTraveled = Vector3.Distance(currentPositionUpdate, canStart);
+
+        //The idea is that I want the can to stop once the distance between where it is on update and where it began becomes larger or
+        //equal to the distance between where it began and the mouse curser. My issue is that for some reason one of these values is
+        //fucked somehow. 
+
+        //Edit: It works now holy fuck its 4 am I am so happy please kill me.
+        if (distanceTraveled >= canDistance) 
             {
-                canDistance = Vector2.Distance(mousePosition, canStart) - 0.2f;
+                rb.velocity = Vector2.zero;
             }
-        }
-        if (isThrowing) 
+
+        if (distanceTraveled > maxThrowDistance)
         {
-            if (Vector2.Distance(mousePosition, canStart) >= canDistance) 
-            {
-                isThrowing = false;
-                rbPlayer.velocity = Vector2.zero;
-                if (canDistance != canDistanceOriginal)
-                {
-                    canDistance = canDistanceOriginal;
-                }
-            }
+            rb.velocity = Vector2.zero;
         }
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //Insert code of adding the soda can to your inventory here!
+
+            Destroy(gameObject);
+        }
+
+        
     }
 }

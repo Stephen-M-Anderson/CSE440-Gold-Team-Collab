@@ -62,8 +62,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Christian\Scripts\Busted Old Shit\Can.cs" />
+    <Compile Include="Assets\Christian\Scripts\Busted Old Shit\CanThrowingOld.cs" />
+    <Compile Include="Assets\Christian\Scripts\Busted Old Shit\DoorScript.cs" />
     <Compile Include="Assets\Christian\Scripts\CanThrowingScript.cs" />
-    <Compile Include="Assets\Christian\Scripts\DoorScript.cs" />
+    <Compile Include="Assets\Christian\Scripts\SpawnCan.cs" />
     <Compile Include="Assets\Mario\Scripts\EnemyScript.cs" />
     <Compile Include="Assets\Mario\Scripts\FlashlightDetection.cs" />
     <Compile Include="Assets\Mario\Scripts\SpeakerBehavior.cs" />
