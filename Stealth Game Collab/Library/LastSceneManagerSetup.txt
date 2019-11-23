@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Christian/Scenes/Map copy 11-20.unity
+- path: Assets/Real Fuckin Game/Museum Level.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
