@@ -13,6 +13,7 @@ public class CanThrowingScript : MonoBehaviour
     private Vector2 canStart;
     public Rigidbody2D rb;
     public Rigidbody2D rbPlayer;
+    public Transform spawnPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +27,12 @@ public class CanThrowingScript : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = Mathf.Abs(0.0f - Camera.main.transform.position.z);
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+        Vector2 direction = new Vector2(mousePosition.x - rbPlayer.position.x, mousePosition.y - rbPlayer.position.y);
         direction = direction.normalized;
 
         if (Input.GetKeyDown(item) && !isThrowing)     
         {
-            Instantiate(SodaCan, canStart, Quaternion.identity);
+            Instantiate(SodaCan, spawnPoint.position, spawnPoint.rotation);
             rb.AddForce(direction * canSpeed, ForceMode2D.Impulse); //this is the rb of the can
             isThrowing = true;
             canStart = rbPlayer.position;
