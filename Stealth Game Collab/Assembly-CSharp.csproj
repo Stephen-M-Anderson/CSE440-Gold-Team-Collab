@@ -77,7 +77,9 @@
     <Compile Include="Assets\Stephen\Scripts\CoverScript.cs" />
     <Compile Include="Assets\Stephen\Scripts\DoorMechanics.cs" />
     <Compile Include="Assets\Stephen\Scripts\EnemyBehavior.cs" />
+    <Compile Include="Assets\Stephen\Scripts\GuardMechanics.cs" />
     <Compile Include="Assets\Stephen\Scripts\PlayerWalking.cs" />
+    <Compile Include="Assets\Stephen\Scripts\WaypointScript.cs" />
     <Compile Include="Assets\Stephen\Scripts\WhereILeftOff.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\AlertHUD.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\HUD.cs" />

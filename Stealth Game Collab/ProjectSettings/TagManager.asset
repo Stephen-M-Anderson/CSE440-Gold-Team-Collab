@@ -8,6 +8,9 @@ TagManager:
   - Point1
   - Door
   - playerItem
+  - Guard
+  - Speaker
+  - Waypoint
   layers:
   - Default
   - TransparentFX
