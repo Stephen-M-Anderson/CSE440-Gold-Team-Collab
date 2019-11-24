@@ -70,6 +70,7 @@
     <Compile Include="Assets\Christian\Scripts\SpawnCan.cs" />
     <Compile Include="Assets\Mario\Scripts\EnemyScript.cs" />
     <Compile Include="Assets\Mario\Scripts\FlashlightDetection.cs" />
+    <Compile Include="Assets\Mario\Scripts\LocateNearestGuard.cs" />
     <Compile Include="Assets\Mario\Scripts\SpeakerBehavior.cs" />
     <Compile Include="Assets\Nicholas\Scripts\LaserWall.cs" />
     <Compile Include="Assets\Nicholas\Scripts\SecCam.cs" />
