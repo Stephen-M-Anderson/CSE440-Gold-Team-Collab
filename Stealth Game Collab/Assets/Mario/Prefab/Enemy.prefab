@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 7056508997759121037}
   - component: {fileID: 8955949284331359619}
   - component: {fileID: -8923976556700401169}
+  - component: {fileID: -4505749553159128478}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Guard
@@ -278,3 +279,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &-4505749553159128478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270252906308229962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a857e57a4a282489137b620b706d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverState: 0
+  friendly: 0
