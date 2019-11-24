@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Tintin(The Next Hideo Kojima)/Scenes/Main Scene.unity
+- path: Assets/Christian/Scenes/Test.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
