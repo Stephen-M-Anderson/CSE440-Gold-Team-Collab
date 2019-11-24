@@ -5,8 +5,12 @@ using UnityEngine;
 public class SpeakerBehavior : MonoBehaviour
 {
     public EnemyScript enemyScript;
+
+    public GameObject individualGuard;
+    public GameObject individualSpeaker;
     public float guardTimer;
     private bool guardIsWaiting = false;
+
     private void Start()
     {
         guardTimer = 0;
