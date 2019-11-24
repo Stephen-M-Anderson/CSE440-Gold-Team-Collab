@@ -27,7 +27,7 @@ public class EnemyScript : MonoBehaviour
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         speakerPosition = GameObject.FindGameObjectWithTag("Speaker").GetComponent<Transform>();
         guardPosition = GameObject.FindGameObjectWithTag("Guard").GetComponent<Transform>();
-    }
+}
 
     private void Update()
     {
