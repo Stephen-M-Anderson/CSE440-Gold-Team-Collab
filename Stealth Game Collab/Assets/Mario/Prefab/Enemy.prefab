@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4704602647375543728}
   - component: {fileID: 1933909255941445057}
   - component: {fileID: 6727523775194630172}
+  - component: {fileID: 2555463323204404275}
   m_Layer: 0
   m_Name: FlashlightRay
   m_TagString: Untagged
@@ -110,6 +111,19 @@ PolygonCollider2D:
     - - {x: 0, y: 0.5}
       - {x: -0.4330127, y: -0.25000003}
       - {x: 0.43301272, y: -0.24999996}
+--- !u!114 &2555463323204404275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623941058550951159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1fb682052dc9f4cbfa07b85c31fac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyScript: {fileID: 8955949284331359619}
 --- !u!1 &5270252906308229962
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +179,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!212 &7056508997759121037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -234,7 +248,7 @@ MonoBehaviour:
     type: 3}
   inView: 0
   heardSpeaker: 0
-  locateNearestGuard: {fileID: 0}
+  speakerBehavior: {fileID: 0}
   routes:
   - {fileID: 786246770204499755, guid: 578fc52ead31f1848b5af898f71b982f, type: 3}
   - {fileID: 200434119763059432, guid: 322e137408574c74281758ad9ca8cb4d, type: 3}

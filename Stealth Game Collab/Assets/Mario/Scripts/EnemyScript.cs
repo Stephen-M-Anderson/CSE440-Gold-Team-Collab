@@ -9,10 +9,10 @@ public class EnemyScript : MonoBehaviour
     public float startWaitTime;
     public GameObject actualPlayer;
     public bool inView = false;
-    public bool heardSpeaker;
+    public bool heardSpeaker = false;
 
-    public LocateNearestGuard locateNearestGuard;
-
+    public SpeakerBehavior speakerBehavior;
+    
     public Transform[] routes;
     private int randomRoute;
 
@@ -80,8 +80,10 @@ public class EnemyScript : MonoBehaviour
     {
         Debug.Log("Found speaker");
         
-        transform.position = Vector2.MoveTowards(transform.position, speakerPosition.position, speed * Time.deltaTime);
-        Vector2 direction = new Vector2(speakerPosition.position.x - transform.position.x, speakerPosition.position.y - transform.position.y);
+        transform.position = Vector2.MoveTowards(speakerBehavior.individualGuard.transform.position, 
+            speakerBehavior.individualSpeaker.transform.position, speed * Time.deltaTime);
+        Vector2 direction = new Vector2(speakerBehavior.individualSpeaker.transform.position.x - transform.position.x, 
+            speakerBehavior.individualSpeaker.transform.position.y - transform.position.y);
         direction = direction.normalized;
         transform.up = direction;
     }
