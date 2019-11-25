@@ -10,6 +10,7 @@ public class WaypointScript : MonoBehaviour
     private GameObject[] tempNodeArray;
     private float currentNodeDistance;
     private float closestNodeDistance;
+    public int numberOfAdjacentNodes;
 
     private int i, j;
 
@@ -58,6 +59,20 @@ public class WaypointScript : MonoBehaviour
                 j++;
             }
         }
+
+        foreach (GameObject node in adjacentWaypoints)
+        {
+            if (node != null)
+            {
+                numberOfAdjacentNodes += 1;
+            }
+        }
+        tempNodeArray = new GameObject[numberOfAdjacentNodes];
+        for ( i = 0; i < numberOfAdjacentNodes; i++)
+        {
+            tempNodeArray[i] = adjacentWaypoints[i];
+        }
+        adjacentWaypoints = tempNodeArray;
     }
 
     // Update is called once per frame

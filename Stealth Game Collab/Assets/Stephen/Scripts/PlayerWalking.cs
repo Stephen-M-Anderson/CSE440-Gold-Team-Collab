@@ -17,8 +17,6 @@ public class PlayerWalking : MonoBehaviour
     public float moveSpeed;
     public float dashSpeed;
     public float dashDistance;
-    private float dashDistanceOriginal;
-    private bool isDashing;
     private Vector2 dashStart;
 
     public Rigidbody2D rb;
