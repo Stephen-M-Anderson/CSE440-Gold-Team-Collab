@@ -8,6 +8,7 @@ public class DoorMechanics : MonoBehaviour
     private Vector2 origPos;
     private Quaternion origRot;
     public bool isOpen;
+    private float tempDistance;
     public PlayerWalking player;
     public HingeJoint2D hinge;
     public float openingForce;
@@ -33,10 +34,15 @@ public class DoorMechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        tempDistance = Vector2.Distance(transform.position, player.transform.position);
         doorAngleDifference = Quaternion.Angle(transform.rotation, origRot); // lets you see how open the door is in the inspector
-        if (Input.GetKeyDown(player.interact) && isOpen == false && Vector2.Distance(transform.position, player.transform.position) < doorOpenRange) // if the door is closed and the player presses interact while in range, open the door
-        { 
+        if (doorAngleDifference > 5)
+        {
             isOpen = true;
+        }
+        if (Input.GetKeyDown(player.interact) && isOpen == false && (tempDistance < doorOpenRange || Vector2.Distance(player.transform.position, origPos) < doorOpenRange)) // if the door is closed and the player presses interact while in range, open the door
+        { 
             rb.constraints = RigidbodyConstraints2D.None; // allows the door to move
             mt.motorSpeed = openingForce; // turns on the doors motor and gives it a force
             hinge.motor = mt;
@@ -53,7 +59,7 @@ public class DoorMechanics : MonoBehaviour
                 transform.position = origPos;
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
             }
-            else if (Input.GetKeyDown(player.interact) && Vector2.Distance(transform.position, player.transform.position) < doorOpenRange) // if the door is open and the player presses interact while in range, close the door
+            else if (Input.GetKeyDown(player.interact) && tempDistance < doorOpenRange) // if the door is open and the player presses interact while in range, close the door
             {
                 closing = true;
                 hinge.useMotor = true;
@@ -62,6 +68,8 @@ public class DoorMechanics : MonoBehaviour
                 hinge.useMotor = true;
             }
         }
+        else if (Input.GetKeyDown(player.interact))
+            Debug.Log("Door should have opened but didn't. IsOpen = " + isOpen + ", Door Open Range = " + doorOpenRange + ", Distance = " + tempDistance + " | " + Vector2.Distance(player.transform.position, origPos));
     }
 
     void FixedUpdate()
@@ -76,6 +84,20 @@ public class DoorMechanics : MonoBehaviour
             {
                 mt.motorSpeed *= (0.8f); // rapidly slows the doors opening speed, gives it a "popped open" feel
                 hinge.motor = mt;
+            }
+        }
+    }
+    public void GuardOpen(GameObject guard) // method to allow a guard to open a door, accessed by sendMessage function.
+    {
+        if (Vector2.Distance(transform.position, guard.transform.position) < doorOpenRange)
+        {
+            if (isOpen == false)
+            {
+                isOpen = true;
+                rb.constraints = RigidbodyConstraints2D.None; // allows the door to move
+                mt.motorSpeed = openingForce; // turns on the doors motor and gives it a force
+                hinge.motor = mt;
+                hinge.useMotor = true;
             }
         }
     }

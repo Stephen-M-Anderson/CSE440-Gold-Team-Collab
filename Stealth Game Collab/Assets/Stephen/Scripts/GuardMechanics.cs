@@ -8,27 +8,40 @@ public class GuardMechanics : MonoBehaviour
     private float waitTime;
     public float startWaitTime;
     public GameObject actualPlayer;
+
     public bool inView = false;
     public bool heardSpeaker;
 
-    public Transform[] routes;
+    public GameObject[] routeWaypoints;
+    private Transform[] patrolRoute;
     private int randomRoute;
+    private int index;
 
     private Transform playerPosition;
     private Transform speakerPosition;
     private Transform guardPosition;
 
     // Stephen's Variables start here
-    GameObject[] waypoints;
+    public ClosestWaypoint closestWaypoint;
 
     void Start()
     {
-        waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         waitTime = startWaitTime;
         actualPlayer = GameObject.FindGameObjectWithTag("Player");
+        closestWaypoint = gameObject.GetComponent<ClosestWaypoint>();
+        patrolRoute = new Transform[routeWaypoints.Length];
+
+        index = 0;
+        foreach (GameObject node in routeWaypoints)
+        {
+            patrolRoute[index] = node.transform;
+            index++;
+        }
+
+        waitTime = startWaitTime;
         /* Mario Code starts here
         waitTime = startWaitTime;
-        randomRoute = Random.Range(0, routes.Length);
+        randomRoute = Random.Range(0, patrolRoute.Length);
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         speakerPosition = GameObject.FindGameObjectWithTag("Speaker").GetComponent<Transform>();
         guardPosition = GameObject.FindGameObjectWithTag("Guard").GetComponent<Transform>();
@@ -39,11 +52,11 @@ public class GuardMechanics : MonoBehaviour
     {
         if (inView == false && heardSpeaker == false)
         {
-            patrol();
+            Patrol();
         }
         if (inView == true)
         {
-            chase();
+            Chase();
         }
         if (heardSpeaker == true && inView == false)
         {
@@ -51,7 +64,7 @@ public class GuardMechanics : MonoBehaviour
         }
     }
 
-    public void chase()
+    public void Chase()
     {
         transform.position = Vector2.MoveTowards(transform.position, playerPosition.position, speed * Time.deltaTime);
         Vector2 direction = new Vector2(playerPosition.position.x - transform.position.x, playerPosition.position.y - transform.position.y);
@@ -59,19 +72,19 @@ public class GuardMechanics : MonoBehaviour
         transform.up = direction;
     }
 
-    public void patrol()
+    public void Patrol()
     {
-        transform.position = Vector2.MoveTowards(transform.position, routes[randomRoute].position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, patrolRoute[randomRoute].position, speed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, routes[randomRoute].position) < 0.1f)
+        if (Vector2.Distance(transform.position, patrolRoute[randomRoute].position) < 0.1f)
         {
             if (waitTime <= 0)
             {
-                randomRoute = Random.Range(0, routes.Length);
+                randomRoute = Random.Range(0, patrolRoute.Length);
                 waitTime = startWaitTime;
 
-                transform.position = Vector2.MoveTowards(transform.position, routes[randomRoute].position, speed * Time.deltaTime);
-                Vector2 direction = new Vector2(routes[randomRoute].position.x - transform.position.x, routes[randomRoute].position.y - transform.position.y);
+                transform.position = Vector2.MoveTowards(transform.position, patrolRoute[randomRoute].position, speed * Time.deltaTime);
+                Vector2 direction = new Vector2(patrolRoute[randomRoute].position.x - transform.position.x, patrolRoute[randomRoute].position.y - transform.position.y);
                 direction = direction.normalized;
                 transform.up = direction;
             }

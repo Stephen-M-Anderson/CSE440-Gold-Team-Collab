@@ -11,6 +11,7 @@ public class WaypointScript : MonoBehaviour
     private float currentNodeDistance;
     private float closestNodeDistance;
     public int numberOfAdjacentNodes;
+    public bool connectsToDoor;
 
     private int i, j;
 
@@ -60,12 +61,16 @@ public class WaypointScript : MonoBehaviour
             }
         }
 
-        foreach (GameObject node in adjacentWaypoints)
+        foreach (GameObject node in adjacentWaypoints) // this loops lets us know how many adjacent waypoints this waypoint connects to
         {
             if (node != null)
             {
                 numberOfAdjacentNodes += 1;
             }
+        }
+        if (connectsToDoor)
+        {
+            numberOfAdjacentNodes += 1;
         }
         tempNodeArray = new GameObject[numberOfAdjacentNodes];
         for ( i = 0; i < numberOfAdjacentNodes; i++)
