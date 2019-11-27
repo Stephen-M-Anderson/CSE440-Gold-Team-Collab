@@ -68,6 +68,7 @@
     <Compile Include="Assets\AstarPathfindingProject\PackageTools\Editor\EnumFlagDrawer.cs" />
     <None Include="Assets\AstarPathfindingProject\PackageTools\Editor\PackageToolsEditor.asmdef" />
     <Reference Include="UnityEditor.UI">
+<<<<<<< HEAD
       <HintPath>C:/Users/valen/Desktop/Gaems/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
@@ -78,6 +79,18 @@
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
       <HintPath>C:/Users/valen/Desktop/Gaems/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+=======
+      <HintPath>C:/Users/Nicholas/Documents/GitHub/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Users/Nicholas/Documents/GitHub/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>C:/Users/Nicholas/Documents/GitHub/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>C:/Users/Nicholas/Documents/GitHub/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+>>>>>>> 4763fcbb6480104e5a396a1b4e6e796e71af2d53
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -269,6 +282,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+<<<<<<< HEAD
       <HintPath>C:/Users/valen/Desktop/Gaems/CSE440-Gold-Team-Collab/Stealth Game Collab/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
@@ -291,6 +305,30 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>C:/Users/valen/Desktop/Gaems/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+=======
+      <HintPath>C:/Users/Nicholas/Documents/GitHub/CSE440-Gold-Team-Collab/Stealth Game Collab/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>C:/Users/Nicholas/Documents/GitHub/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>C:/Users/Nicholas/Documents/GitHub/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>C:/Users/Nicholas/Documents/GitHub/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>C:/Users/Nicholas/Documents/GitHub/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>C:/Users/Nicholas/Documents/GitHub/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>C:/Users/Nicholas/Documents/GitHub/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/PackageCache/com.unity.render-pipelines.core@7.1.2/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>C:/Users/Nicholas/Documents/GitHub/CSE440-Gold-Team-Collab/Stealth Game Collab/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+>>>>>>> 4763fcbb6480104e5a396a1b4e6e796e71af2d53
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0b10/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

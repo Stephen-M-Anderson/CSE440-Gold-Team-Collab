@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Real Fuckin Game/Museum Level.unity
+=======
+- path: Assets/Real Fuckin Game/Tutorial Level.unity
+>>>>>>> 4763fcbb6480104e5a396a1b4e6e796e71af2d53
   isLoaded: 1
   isActive: 1
   isSubScene: 0
