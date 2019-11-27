@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{CA7E3AF3-E802-A462-CFBE-F2387BB1D0B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -699,10 +700,6 @@
     <ProjectReference Include="AstarPathfindingProject.csproj">
       <Project>{C0828E8D-70E9-BF38-128F-7B1866B6F851}</Project>
       <Name>AstarPathfindingProject</Name>
-    </ProjectReference>
-    <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{8F066067-4664-F560-FCA5-5B138CDC09FF}</Project>
-      <Name>PackageToolsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
       <Project>{319B2EB2-EDA8-7A7D-0492-10DA490BA994}</Project>

@@ -12,6 +12,7 @@ public class SecCam : MonoBehaviour
     public GameObject secCamera;
 
     public NicEnemyScript enemyScript;
+    public float overLapSize = 0.5f;
 
     private Transform playerPosition;
     private bool isTrackingPlayer = false;
@@ -25,8 +26,8 @@ public class SecCam : MonoBehaviour
 
     void Update()
     {
-        isOverlapped = Physics2D.OverlapCircle(camCenter.position, 0.5f, PlayerDetection); //Player detection
-        guardIsWaiting = Physics2D.OverlapCircle(camCenter.position, 0.5f, GuardDetection);
+        isOverlapped = Physics2D.OverlapCircle(camCenter.position, overLapSize, PlayerDetection); //Player detection
+        guardIsWaiting = Physics2D.OverlapCircle(camCenter.position, overLapSize, GuardDetection);
 
         if (isTrackingPlayer == false)
         {
@@ -53,6 +54,11 @@ public class SecCam : MonoBehaviour
             enemyScript.cameraSpotted = false;
             guardTimer = 0;
         }
+
+        if (isOverlapped)
+        {
+            Debug.Log("Overlapping");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,7 +70,7 @@ public class SecCam : MonoBehaviour
             trackingSpeed = trackingSpeed * -1;
 
         }
-        Debug.Log("Trigger detected.");
+
 
         if (collision.gameObject.tag == "Player" && isOverlapped == false) //allows camera to spot player.
         {
