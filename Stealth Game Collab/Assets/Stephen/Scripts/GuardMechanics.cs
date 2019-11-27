@@ -103,4 +103,8 @@ public class GuardMechanics : MonoBehaviour
         direction = direction.normalized;
         transform.up = direction;
     }
+    public void OpenDoor(GameObject doorWaypoint)
+    {
+
+    }
 }

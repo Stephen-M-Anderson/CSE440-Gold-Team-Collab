@@ -167,8 +167,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &23562300
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,8 +454,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &75823159
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,8 +506,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &87315616
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,8 +558,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1001 &111457207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -688,8 +704,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &186791592
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,8 +756,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &231155489
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,8 +808,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &339064588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,8 +1076,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &365263050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,8 +1128,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &369582989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,8 +1180,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &397023745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,8 +1232,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &411248475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,8 +1284,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &454914003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,8 +1336,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &480587124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,8 +1388,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &488766101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,8 +1440,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!114 &570404379 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8955949284331359619, guid: 1ffad6a7189ea734f8d2232536b2ea0e,
@@ -1444,8 +1504,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &638572236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,8 +1556,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &666764308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,8 +1740,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &689865023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,8 +1792,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &710768538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,8 +1844,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &716304041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,8 +1896,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &731759349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,8 +1948,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &739929790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,8 +2000,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &742463176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,8 +2151,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &920299234
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,8 +2203,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &926239440
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,8 +2255,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &927275450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,8 +2307,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &981188060
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,8 +2851,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1123026908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2791,8 +2903,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1146553591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2839,8 +2955,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1153538813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,8 +3007,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1160514091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,8 +3059,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1161340343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2983,8 +3111,64 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
+--- !u!1 &1170479117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1170479118}
+  - component: {fileID: 1170479119}
+  m_Layer: 0
+  m_Name: Waypoint (54)
+  m_TagString: Waypoint
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1170479118
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170479117}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.75, y: 4.77, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1734459405}
+  m_RootOrder: 54
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1170479119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170479117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfMapWaypoints: 54
+  waypoints: []
+  adjacentWaypoints: []
+  neighboringIndicies: 
+  numberOfAdjacentNodes: 0
+  connectsToDoor: 0
+  isDoor: 1
+  linkedDoor: {fileID: 986512721}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1219882632
 GameObject:
   m_ObjectHideFlags: 0
@@ -3031,8 +3215,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1263418942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3079,8 +3267,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1291911410
 GameObject:
   m_ObjectHideFlags: 0
@@ -3127,8 +3319,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1001 &1307466142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3249,8 +3445,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1431437664
 GameObject:
   m_ObjectHideFlags: 0
@@ -3297,8 +3497,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1468250513
 GameObject:
   m_ObjectHideFlags: 0
@@ -3530,8 +3734,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1506556280
 GameObject:
   m_ObjectHideFlags: 0
@@ -3578,8 +3786,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1512317550
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,8 +3838,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1001 &1603435259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3743,8 +3959,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1622976351
 GameObject:
   m_ObjectHideFlags: 0
@@ -3791,8 +4011,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!43 &1635911077
 Mesh:
   m_ObjectHideFlags: 0
@@ -4002,8 +4226,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1644736205 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4623941058550951159, guid: 1ffad6a7189ea734f8d2232536b2ea0e,
@@ -4069,8 +4297,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1734459404
 GameObject:
   m_ObjectHideFlags: 0
@@ -4152,6 +4384,7 @@ Transform:
   - {fileID: 1153538814}
   - {fileID: 731759350}
   - {fileID: 1291911411}
+  - {fileID: 1170479118}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4201,8 +4434,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1781629353
 GameObject:
   m_ObjectHideFlags: 0
@@ -4384,8 +4621,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1888732122
 GameObject:
   m_ObjectHideFlags: 0
@@ -4432,8 +4673,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1001 &1912720825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4571,8 +4816,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1951917860 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5270252906308229962, guid: 1ffad6a7189ea734f8d2232536b2ea0e,
@@ -4646,8 +4895,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &1974384998
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,8 +4947,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &2021808703
 GameObject:
   m_ObjectHideFlags: 0
@@ -4742,8 +4999,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!43 &2031489086
 Mesh:
   m_ObjectHideFlags: 0
@@ -4953,8 +5214,12 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}
 --- !u!1 &2126734184
 GameObject:
   m_ObjectHideFlags: 0
@@ -5001,5 +5266,9 @@ MonoBehaviour:
   numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
+  neighboringIndicies: 
   numberOfAdjacentNodes: 0
   connectsToDoor: 0
+  isDoor: 0
+  linkedDoor: {fileID: 0}
+  nodeForDjikstra: {fileID: 0}

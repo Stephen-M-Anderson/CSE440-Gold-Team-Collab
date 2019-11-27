@@ -7,13 +7,23 @@ public class WaypointScript : MonoBehaviour
     public int numberOfMapWaypoints;
     public GameObject[] waypoints;
     public GameObject[] adjacentWaypoints;
+    public int[] neighboringIndicies;
     private GameObject[] tempNodeArray;
     private float currentNodeDistance;
     private float closestNodeDistance;
     public int numberOfAdjacentNodes;
     public bool connectsToDoor;
+    public bool isDoor;
+    public GameObject linkedDoor;
 
     private int i, j;
+
+    // These variables are used for Djikstra's algorithm
+    private float[] djdistances;
+    private List<GameObject> djlist;
+    private bool[] djvisited;
+    public WaypointScript nodeForDjikstra;
+
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +78,8 @@ public class WaypointScript : MonoBehaviour
                 numberOfAdjacentNodes += 1;
             }
         }
+
+        // This logic is used to link a waypoint to an adjacent doorway node. 
         if (connectsToDoor)
         {
             numberOfAdjacentNodes += 1;
@@ -78,11 +90,99 @@ public class WaypointScript : MonoBehaviour
             tempNodeArray[i] = adjacentWaypoints[i];
         }
         adjacentWaypoints = tempNodeArray;
+
+        neighboringIndicies = new int[adjacentWaypoints.Length];
+        i = 0;
+        foreach (GameObject node in adjacentWaypoints) // finds the index for each of this waypoints adjactent waypoints
+        {
+            neighboringIndicies[i] = FindWaypointIndex(node);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    /*public GameObject[] FindShortestPath(GameObject targetNode) // uses djikstra's algorithm to find the shortest path from this node to targetNode
+    {
+        // private float[] djdistances;
+        // private Queue<GameObject> djq;
+        // private bool[] djvisited;
+
+        GameObject currentNode;
+        int[] visitedFrom = new int[numberOfMapWaypoints]; // lets us backtrack our path once we've found the path to the target
+        int dji = 0; // dj index, used for indexing in the method
+        djdistances = new float[numberOfMapWaypoints]; // array that stores the distance from our source node to each given node
+        djvisited = new bool[numberOfMapWaypoints]; // keeps track of which nodes we've visited
+        i = 0;
+        foreach (GameObject node in waypoints)
+        {
+            if (node == gameObject) // if this node is the source node, set distance to 0
+            {
+                djdistances[i] = 0;
+            }
+            else 
+            {
+                djdistances[i] = 1f / 0; // apparently this makes it infinity? 
+            }
+            Debug.Log("Set: djdistance [" + i + "] = " + djdistances[i]);
+            djlist.Insert(i, node); // Copies waypoints array into djlist List, better functionality with lists!
+            i++;
+        }
+        while (djlist.Count > 0) // while the list is not empty
+        {
+            dji = FindShortestDistanceIndex(djdistances, djvisited); // find index for the node with shortest distance 
+            djlist.RemoveAt(dji); // remove the node we are currently at from the list
+
+            currentNode = waypoints[dji]; // copies the node we are currently checking the branches of to see if we can't possibly 
+            nodeForDjikstra = currentNode.GetComponent<WaypointScript>(); // so we can access the adjacent waypoints of the node
+
+            if (waypoints[dji] == targetNode) // we've arrived at the target node! Break the loop!
+            {
+                break; // More code probably needed here haha
+            }
+
+            i = 0;
+            foreach (GameObject neighbor in nodeForDjikstra.adjacentWaypoints) // goes through each of our current node's neighbors
+            {
+                int neighborIndex = neighboringIndicies[i]; // grabs in index of the neighboring node in the waypoints array
+                float alt = djdistances[dji] + Vector2.Distance(currentNode.transform.position, neighbor.transform.position); 
+                if (alt < djdistances[neighborIndex])
+                {
+                    djdistances[neighborIndex] = alt;
+                    visitedFrom[neighborIndex] = dji;
+                }
+                i++;
+            }
+        }
+    }
+    private int FindShortestDistanceIndex(float[] dist, bool[] visited)
+    {
+        int k = 0;
+        int result = 0;
+        float min = 1f / 0;
+        foreach (float d in dist)
+        {
+            if (d < min && visited[k] != true) // if the examined distance is shorter than min and hasn't been visited...
+            {
+                min = d; 
+                result = k; // result = d's index in the dist array
+            }
+            k++;
+        }
+        return result;
+    }
+*/
+    private int FindWaypointIndex(GameObject target)
+    {
+        int k = 0;
+        foreach (GameObject node in waypoints)
+        {
+            if (node == target)
+                break;
+            k++;
+        }
+        return k;
     }
 }
