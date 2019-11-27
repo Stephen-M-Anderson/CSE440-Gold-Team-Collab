@@ -436,3 +436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91feaeaf360fa9a48ba9fc478b34e202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  guardIsWaiting: 0
+  enemyScript: {fileID: 0}
+  patrollingGuard: {fileID: 0}
+  laserWall: {fileID: 6403288568703979869}
+  guardTimer: 0
