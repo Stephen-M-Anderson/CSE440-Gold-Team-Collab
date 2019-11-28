@@ -8,9 +8,11 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     public static bool IsPaused = false;  //Begins at a false state so when you press escape it makes it true. Pressing esc again makes it unpause.
     public GameObject pauseMenuUI; //script needs to know where the Pause Menu is. Drag it in when your done.
+    public GameObject HUDpanel;
 
     void Start()
     {
+        HUDpanel.SetActive(true);
         pauseMenuUI.SetActive(false); // To make sure the pause menu only shows up when its key is pressed.
     }
 
@@ -32,6 +34,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        HUDpanel.SetActive(true);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f; //resumes life as we know it. 
         IsPaused = false;
@@ -39,9 +42,11 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        HUDpanel.SetActive(false);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f; //STOP. Time has halted. time has reached 0F. which means no time.
         IsPaused = true;
+        
     }
 
     public void LoadMenu()
