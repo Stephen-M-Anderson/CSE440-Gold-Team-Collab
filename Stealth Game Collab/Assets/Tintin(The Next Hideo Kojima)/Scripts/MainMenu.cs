@@ -8,7 +8,8 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject MainMenuUI;
-   // static bool isLoaded = false;
+    public GameObject WhichLevelUI;
+    // static bool isLoaded = false;
 
     // Update is called once per frame
     /*void Update()
@@ -40,14 +41,32 @@ public class MainMenu : MonoBehaviour
          IsPaused = true;
      }
      */
+
+
+    private void Start()
+    {
+        WhichLevelUI.SetActive(false);
+
+    }
     public void StartGame()
     {
         Time.timeScale = 1f;     //resumes0 time. This line doesn't really mean anything. Its just to fool mortals into thinking I don't psychically begin the game.
                                  // jkjk. Line actually resumes time within the game
-        SceneManager.LoadScene("Main Scene"); 
+        MainMenuUI.SetActive(false);
+        WhichLevelUI.SetActive(true);
     }
 
-    
+    public void TutorialLevel()
+    {
+        SceneManager.LoadScene("Tutorial Level");
+    }
+
+    public void LevelOne()
+    {
+        SceneManager.LoadScene("Museum Level");
+    }
+
+
     public void LoadSettings()
     {
         //SceneManager.LoadScene("SampleScene");

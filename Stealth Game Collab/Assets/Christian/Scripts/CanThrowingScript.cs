@@ -88,7 +88,5 @@ public class CanThrowingScript : MonoBehaviour
 
             Destroy(gameObject);
         }
-
-        
-    }
+    } 
 }

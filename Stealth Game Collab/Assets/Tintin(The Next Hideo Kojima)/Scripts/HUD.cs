@@ -5,6 +5,8 @@ using UnityEngine.UI;  //Really important
 
 public class HUD : MonoBehaviour
 {
+  //  public PauseMenu pausemenuscript; //to take the bool IsPaused from pausemenu script           IGNORE LINES 8 AND 9 IT WAS USELESS CAUSE ANOTHER METHOD WAS FOUNDED THAT WAS BETTER
+   // public GameObject HUDpanel; // To connect the HUD to the SETACTIVE components
     
     public CoverScript coverscript;  // This line is a bit weird. If you want to know when the PLAYER is inCover. Don't take a related script. 
                                      // You HAVE to take the PLAYER GAMEOBJECT into the PUBLIC COVERSCRIPT empty slot. It will then
@@ -26,12 +28,13 @@ public class HUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKey(moveLeft) || Input.GetKey(moveRight) || Input.GetKey(moveUp) || Input.GetKey(moveDown))
         {
             isMoving = true;
