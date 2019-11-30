@@ -10,52 +10,38 @@ public class SecCam : MonoBehaviour
     public float trackingSpeed = 40.0f; //Speed of the Camera
     public GameObject patrolGuard; //Guard that will respond to Camera.
     public GameObject secCamera;
-    public float detectionRadius = 0.5f;
-    public float guardTimer = 0.0f;
 
     public NicEnemyScript enemyScript;
 
     private Transform playerPosition;
-    public bool isTrackingPlayer = false;
-    public bool isOverlapped = false;
+    private bool isTrackingPlayer = false;
+    private bool isOverlapped = false;
     private bool guardIsWaiting = false;
-    public bool isResumingRotation = false;
-    private Quaternion startRotation;
-    private float resumeTimer = 0;
+    public float guardTimer = 0.0f;
 
     void Start()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        startRotation = transform.rotation;
     }
 
     void Update()
-    {   
-        isOverlapped = Physics2D.OverlapCircle(camCenter.position, detectionRadius, PlayerDetection); //Player detection
-        guardIsWaiting = Physics2D.OverlapCircle(camCenter.position, detectionRadius, GuardDetection);
+    {
+        isOverlapped = Physics2D.OverlapCircle(camCenter.position, 0.5f, PlayerDetection); //Player detection
+        guardIsWaiting = Physics2D.OverlapCircle(camCenter.position, 0.5f, GuardDetection);
 
-
-        if (isTrackingPlayer == false && isResumingRotation == false)
+        if (isTrackingPlayer == false)
         {
             transform.Rotate((Vector3.forward * trackingSpeed * Time.deltaTime)); //rotates camera continuously
         }
-        else if (isTrackingPlayer == true && isResumingRotation == false)  //Tracks player when camera spots player
+        else if(isTrackingPlayer == true)  //Tracks player when camera spots player
         {
             Vector2 direction = new Vector2(playerPosition.position.x - transform.position.x, playerPosition.position.y - transform.position.y);
             direction = direction.normalized;
             transform.up = direction;
+
         }
-        else if (isTrackingPlayer == false && isResumingRotation == true)
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, startRotation, Time.deltaTime * 2);
-            resumeTimer += Time.deltaTime;
-            if (resumeTimer >= 2)
-            {
-                resumeTimer = 0;
-                isResumingRotation = false;
-            }
-        }
-        if (guardIsWaiting) //adds delay between when guards arrives and when guard leaves.
+
+        if (guardIsWaiting)
         {
             guardTimer += Time.deltaTime;
         }
@@ -73,27 +59,25 @@ public class SecCam : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Uses triggers to determine when the Camera will switch.
-        if (collision.gameObject.tag == "Switch" && isResumingRotation == false)
+        if (collision.gameObject.tag == "Switch")
         {
 
             trackingSpeed = trackingSpeed * -1;
 
         }
+        Debug.Log("Trigger detected.");
 
-
-        if (collision.gameObject.tag == "Player") //allows camera to spot player.
+        if (collision.gameObject.tag == "Player" && isOverlapped == false) //allows camera to spot player.
         {
             RaycastHit2D hit = Physics2D.Linecast(camCenter.position, playerPosition.position,
                 LayerMask.GetMask("Player", "Default"));
-            if (hit && isOverlapped == false)
+            if (hit)
             {
                 Debug.Log("Hit " + hit.collider.name);
                 if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     isTrackingPlayer = true;
-                    isResumingRotation = false;
                     enemyScript.cameraSpotted = true;
-                    resumeTimer = 0;
                 }
             }
 #if false
@@ -115,16 +99,13 @@ public class SecCam : MonoBehaviour
                 if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     isTrackingPlayer = true;
-                    isResumingRotation = false;
-                    resumeTimer = 0;
-                    enemyScript.cameraSpotted = true; //calls guard by flipping this bool
+                    enemyScript.cameraSpotted = true;
                 }
             }
             else
             {
                 isTrackingPlayer = false;
                 enemyScript.cameraSpotted = true;
-
             }
 #if false
             isTrackingPlayer = true;
@@ -138,7 +119,6 @@ public class SecCam : MonoBehaviour
         if (collision.gameObject.tag == "Player")  //stops spotting player when player exits vision cone.
         {
             isTrackingPlayer = false;
-            isResumingRotation = true;
         }
     }
 }
