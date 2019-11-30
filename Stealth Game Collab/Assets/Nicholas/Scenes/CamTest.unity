@@ -352,7 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 244598749}
   - component: {fileID: 244598748}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Global Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -952,7 +952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 560026597}
   - component: {fileID: 560026598}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2018,7 +2018,7 @@ GameObject:
   - component: {fileID: 1451829439}
   - component: {fileID: 1451829440}
   - component: {fileID: 1451829441}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2119,7 +2119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1499838483}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CameraRightCorner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2153,7 +2153,7 @@ GameObject:
   - component: {fileID: 1534015238}
   - component: {fileID: 1534015242}
   - component: {fileID: 1534015243}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CameraPlaceholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

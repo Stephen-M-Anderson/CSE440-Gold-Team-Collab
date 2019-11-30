@@ -18,6 +18,7 @@ public class SecCam : MonoBehaviour
     private bool isOverlapped = false;
     private bool guardIsWaiting = false;
     public float guardTimer = 0.0f;
+
     void Start()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -68,18 +69,49 @@ public class SecCam : MonoBehaviour
 
         if (collision.gameObject.tag == "Player" && isOverlapped == false) //allows camera to spot player.
         {
-            isTrackingPlayer = true;
-            Debug.Log("Player spotted by camera");
-            enemyScript.cameraSpotted = true;
+            RaycastHit2D hit = Physics2D.Linecast(camCenter.position, playerPosition.position,
+                LayerMask.GetMask("Player", "Default"));
+            if (hit)
+            {
+                Debug.Log("Hit " + hit.collider.name);
+                if (hit.collider.gameObject.CompareTag("Player"))
+                {
+                    isTrackingPlayer = true;
+                    enemyScript.cameraSpotted = true;
+                }
+            }
+#if false
+                isTrackingPlayer = true;
+                Debug.Log("Player spotted by camera");
+                enemyScript.cameraSpotted = true;
+#endif
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" && isOverlapped == false) //allows camera to spot player.
         {
+            RaycastHit2D hit = Physics2D.Linecast(camCenter.position, playerPosition.position,
+                LayerMask.GetMask("Player", "Default"));
+            if (hit)
+            {
+                Debug.Log("Hit " + hit.collider.name);
+                if (hit.collider.gameObject.CompareTag("Player"))
+                {
+                    isTrackingPlayer = true;
+                    enemyScript.cameraSpotted = true;
+                }
+            }
+            else
+            {
+                isTrackingPlayer = false;
+                enemyScript.cameraSpotted = true;
+            }
+#if false
             isTrackingPlayer = true;
             Debug.Log("Player spotted by camera");
             enemyScript.cameraSpotted = true;
+#endif
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
