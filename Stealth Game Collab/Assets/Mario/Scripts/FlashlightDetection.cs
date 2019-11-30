@@ -12,6 +12,15 @@ public class FlashlightDetection : MonoBehaviour
         {
             enemyScript.inView = true;
             Debug.Log("HEY");
+            
+            if(enemyScript.speed < 3) 
+            {
+                enemyScript.speed = 2;
+            }else if(enemyScript.speed < 4)
+            {
+                enemyScript.speed = 3;
+            }
+            
         }
     }
 
@@ -21,6 +30,10 @@ public class FlashlightDetection : MonoBehaviour
         {
             enemyScript.inView = false;
             Debug.Log("Must Have Been the Wind");
+            if (enemyScript.speed >= 4)
+            {
+                enemyScript.speed--;
+            }
         }
     }
 }
