@@ -71,10 +71,6 @@ public class GuardMechanics : MonoBehaviour
         {
             Chase();
         }
-        else if (heardSpeaker == true && inView == false)
-        {
-            investigateSpeaker();
-        }
     }
 
     public void Chase()
@@ -106,6 +102,12 @@ public class GuardMechanics : MonoBehaviour
                 waitTime -= Time.deltaTime;
             }
         }
+        else
+        {
+            Vector2 direction = new Vector2(patrolRoute[randomRoute].position.x - transform.position.x, patrolRoute[randomRoute].position.y - transform.position.y);
+            direction = direction.normalized;
+            transform.up = direction;
+        }
     }
     public void FollowNodePath()
     {
@@ -114,9 +116,16 @@ public class GuardMechanics : MonoBehaviour
         {
             pathfindingPos.RemoveAt(0);
         }
-        Vector2 direction = new Vector2(pathfindingPos[0].position.x - transform.position.x, pathfindingPos[0].position.y - transform.position.y);
-        direction = direction.normalized;
-        transform.up = direction;
+        if (pathfindingPos.Count == 0) // if we are at the target node, meaning the list of nodes to travel to is empty
+        {
+            isPathfinding = false;
+        }
+        else
+        {
+            Vector2 direction = new Vector2(pathfindingPos[0].position.x - transform.position.x, pathfindingPos[0].position.y - transform.position.y);
+            direction = direction.normalized;
+            transform.up = direction;
+        }
     }
     public void investigateSpeaker()
     {
