@@ -9,7 +9,7 @@ public class FlashlightDetection : MonoBehaviour
 
     private void Start()
     {
-        chaseTimer = 30;
+        chaseTimer = 200;
     }
 
     private void Update()
@@ -26,17 +26,21 @@ public class FlashlightDetection : MonoBehaviour
             enemyScript.inView = true;
             Debug.Log("HEY");
             enemyScript.speed = 3;
-            chaseTimer = 30;
+            chaseTimer = 200;
         }
     }
 
     void OnTriggerExit2D(Collider2D o)
     {
-        if (o.gameObject.tag == "Player" && chaseTimer > 0)
+        if (o.gameObject.tag == "Player")
         {
-            enemyScript.inView = false;
-            Debug.Log("Must Have Been the Wind");
-            enemyScript.speed = 2;
+            if (chaseTimer <= 0)
+            {
+                enemyScript.inView = false;
+                Debug.Log("Must Have Been the Wind");
+                enemyScript.speed = 2;
+            }
+            
         }
     }
 }
