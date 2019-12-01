@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class WaypointScript : MonoBehaviour
@@ -23,6 +24,8 @@ public class WaypointScript : MonoBehaviour
     private List<GameObject> djlist;
     private bool[] djvisited;
     public WaypointScript nodeForDjikstra;
+    public GameObject[] pathNodesArray;
+    public GameObject targetNode;
 
 
     // Start is called before the first frame update
@@ -34,12 +37,12 @@ public class WaypointScript : MonoBehaviour
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint"); // grabs all the waypoints on the map and sticks them in the array
         closestNodeDistance = 0;
         i = 0;
-        
+
         foreach (GameObject node in waypoints) // iterates through the waypoints, each individual waypoint that it checks is called node
         {
             currentNodeDistance = Vector2.Distance(transform.position, node.transform.position);    // measures the distance between our main node (the one this script is attatched to)
                                                                                                     // and the node currently being iterated through
-            
+
             if (node == this.gameObject)
                 continue;
             if (closestNodeDistance == 0) // if this is the first node we've checked...
@@ -53,11 +56,11 @@ public class WaypointScript : MonoBehaviour
             {
                 tempNodeArray[i] = node;
                 i++;
-                if (currentNodeDistance < closestNodeDistance) 
+                if (currentNodeDistance < closestNodeDistance)
                     closestNodeDistance = currentNodeDistance;
             }
         }
-                                                                                                    
+
         j = 0;  // index for the adjacentWaypoints array
         foreach (GameObject node in tempNodeArray) // now we go through the temp array and find which nodes are actually the closest
         {
@@ -85,77 +88,119 @@ public class WaypointScript : MonoBehaviour
             numberOfAdjacentNodes += 1;
         }
         tempNodeArray = new GameObject[numberOfAdjacentNodes];
-        for ( i = 0; i < numberOfAdjacentNodes; i++)
+        for (i = 0; i < numberOfAdjacentNodes; i++)
         {
             tempNodeArray[i] = adjacentWaypoints[i];
         }
         adjacentWaypoints = tempNodeArray;
 
         neighboringIndicies = new int[adjacentWaypoints.Length];
-        i = 0;
-        foreach (GameObject node in adjacentWaypoints) // finds the index for each of this waypoints adjactent waypoints
+        for (i = 0; i < neighboringIndicies.Length; i++) // finds the index for each of this waypoints adjactent waypoints
         {
-            neighboringIndicies[i] = FindWaypointIndex(node);
+            neighboringIndicies[i] = FindWaypointIndex(adjacentWaypoints[i]);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    /*public GameObject[] FindShortestPath(GameObject targetNode) // uses djikstra's algorithm to find the shortest path from this node to targetNode
-    {
-        // private float[] djdistances;
-        // private Queue<GameObject> djq;
-        // private bool[] djvisited;
 
+    }
+    public IEnumerator FindShortestPath(GuardMechanics Guard) // uses djikstra's algorithm to find the shortest path from this node to targetNode
+    {
         GameObject currentNode;
-        int[] visitedFrom = new int[numberOfMapWaypoints]; // lets us backtrack our path once we've found the path to the target
-        int dji = 0; // dj index, used for indexing in the method
-        djdistances = new float[numberOfMapWaypoints]; // array that stores the distance from our source node to each given node
-        djvisited = new bool[numberOfMapWaypoints]; // keeps track of which nodes we've visited
-        i = 0;
-        foreach (GameObject node in waypoints)
+        Stack<GameObject> pathNodes = new Stack<GameObject>();
+        djlist = new List<GameObject>
         {
-            if (node == gameObject) // if this node is the source node, set distance to 0
+            Capacity = waypoints.Length
+        };
+        int[] visitedFrom = new int[waypoints.Length]; // lets us backtrack our path once we've found the path to the target
+        int dji = 0; // dj index, used for indexing in the method
+        djdistances = new float[waypoints.Length]; // array that stores the distance from our source node to each given node
+        djvisited = new bool[waypoints.Length]; // keeps track of which nodes we've visited
+        i = 0;
+        //Debug.Log("Waypoints array size = " + waypoints.Length);
+        //foreach (GameObject node in waypoints)
+        for (i = 0; i < waypoints.Length; i++)
+        {
+            //Debug.Log("Loop #" + i + ", node name is " + waypoints[i].name);
+            if (waypoints[i] == gameObject) // if this node is the source node, set distance to 0
             {
                 djdistances[i] = 0;
             }
-            else 
+            else
             {
                 djdistances[i] = 1f / 0; // apparently this makes it infinity? 
             }
-            Debug.Log("Set: djdistance [" + i + "] = " + djdistances[i]);
-            djlist.Insert(i, node); // Copies waypoints array into djlist List, better functionality with lists!
-            i++;
+            //Debug.Log("Set: djdistance [" + i + "] = " + djdistances[i]);
+            djlist.Insert(i, waypoints[i]); // Copies waypoints array into djlist List, better functionality with lists!
         }
         while (djlist.Count > 0) // while the list is not empty
         {
             dji = FindShortestDistanceIndex(djdistances, djvisited); // find index for the node with shortest distance 
-            djlist.RemoveAt(dji); // remove the node we are currently at from the list
+                                                                     // Debug.Log("DJ Index = " + dji + ", Node name = " + waypoints[dji].name);
+            currentNode = waypoints[dji]; // copies the node we are currently checking the branches of
 
-            currentNode = waypoints[dji]; // copies the node we are currently checking the branches of to see if we can't possibly 
-            nodeForDjikstra = currentNode.GetComponent<WaypointScript>(); // so we can access the adjacent waypoints of the node
+            if (djlist.Remove(currentNode)) // remove the node we are currently at from the list
+            {
+                //Debug.Log("Successfully removed the node from the list!");
+            }
+            else
+            {
+                //Debug.Log("Couldn't remove node from list! Oh no! Node = " + currentNode.name + " at index " + dji);
+                break;
+            }
 
             if (waypoints[dji] == targetNode) // we've arrived at the target node! Break the loop!
             {
                 break; // More code probably needed here haha
             }
 
-            i = 0;
-            foreach (GameObject neighbor in nodeForDjikstra.adjacentWaypoints) // goes through each of our current node's neighbors
+            nodeForDjikstra = currentNode.GetComponent<WaypointScript>(); // so we can access the adjacent waypoints of the node
+            //foreach (GameObject neighbor in nodeForDjikstra.adjacentWaypoints) // goes through each of our current node's neighbors
+            for (i = 0; i < nodeForDjikstra.numberOfAdjacentNodes; i++)
             {
-                int neighborIndex = neighboringIndicies[i]; // grabs in index of the neighboring node in the waypoints array
-                float alt = djdistances[dji] + Vector2.Distance(currentNode.transform.position, neighbor.transform.position); 
+                int neighborIndex = nodeForDjikstra.neighboringIndicies[i]; // grabs in index of the neighboring node in the waypoints array
+                float alt = djdistances[dji] + Vector2.Distance(currentNode.transform.position, waypoints[neighborIndex].transform.position);
+                //Debug.Log("N Loop: want to check " + nodeForDjikstra.adjacentWaypoints[i].name + ", currently checking neighbor: " + waypoints[neighborIndex].name + ", distance = " + alt);
+
                 if (alt < djdistances[neighborIndex])
                 {
+                    //Debug.Log("N Loop: new shortest distance to " + waypoints[neighborIndex].name + ", index = " + neighborIndex + ", visitedFrom array size = " + visitedFrom.Length);
                     djdistances[neighborIndex] = alt;
                     visitedFrom[neighborIndex] = dji;
                 }
-                i++;
+            }
+            djvisited[dji] = true;
+            //Debug.Log("Set visited to " + djvisited[dji] + " at node " + waypoints[dji]);
+
+            if (djlist.Count % 5 == 0) // this makes it so that we only check 8 nodes per frame to avoid freezing the game when we trigger the pathfinding. Change the mod value to change how many times we loop
+            {
+                yield return null;
             }
         }
+        bool done = false;
+        int targetIndex = FindWaypointIndex(targetNode);
+        while (!done)
+        {
+            pathNodes.Push(waypoints[targetIndex]);
+            //Debug.Log("Stack: Pushed " + waypoints[targetIndex] + ", new targetIndex = " + visitedFrom[targetIndex]);
+            targetIndex = visitedFrom[targetIndex];
+            if (waypoints[targetIndex] == gameObject)
+            {
+                done = true;
+            }
+        }
+        Debug.Log("Shortest path alg. finished!");
+        pathNodesArray = pathNodes.ToArray(); // put our path nodes stack into an array so we can iterate through it easier
+        Transform[] tempPos = new Transform[pathNodesArray.Length]; // make a new array to extract the transform of each path node, saves work later
+        for (i = 0; i < pathNodesArray.Length; i++) // copies the transform of the path nodes from pathNodesArray into tempPos
+        {
+            tempPos[i] = pathNodesArray[i].transform;
+        }
+        Guard.pathfindingPos = tempPos.ToList<Transform>();
+        Guard.pathfindingNodes = pathNodesArray;
+        Guard.isPathfinding = true;
     }
     private int FindShortestDistanceIndex(float[] dist, bool[] visited)
     {
@@ -166,23 +211,26 @@ public class WaypointScript : MonoBehaviour
         {
             if (d < min && visited[k] != true) // if the examined distance is shorter than min and hasn't been visited...
             {
-                min = d; 
+                min = d;
                 result = k; // result = d's index in the dist array
             }
             k++;
         }
         return result;
     }
-*/
+
     private int FindWaypointIndex(GameObject target)
     {
         int k = 0;
-        foreach (GameObject node in waypoints)
+        for (k = 0; k < waypoints.Length; k++)
         {
-            if (node == target)
+            if (waypoints[k] == target)
                 break;
-            k++;
         }
         return k;
+    }
+    public void StartShortestPath(GuardMechanics Guard)
+    {
+        StartCoroutine("FindShortestPath", Guard);
     }
 }
