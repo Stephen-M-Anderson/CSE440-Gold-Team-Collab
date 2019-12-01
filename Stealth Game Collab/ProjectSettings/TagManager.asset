@@ -12,6 +12,7 @@ TagManager:
   - Speaker
   - Waypoint
   - Switch
+  - EnemyLight
   layers:
   - Default
   - TransparentFX
