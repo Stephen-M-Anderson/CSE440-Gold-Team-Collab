@@ -102,7 +102,7 @@ public class GuardMechanics : MonoBehaviour
                 waitTime -= Time.deltaTime;
             }
         }
-        else
+        else // this bit lets the guard walk back to their patrol route normally, instead of moonwalking
         {
             Vector2 direction = new Vector2(patrolRoute[randomRoute].position.x - transform.position.x, patrolRoute[randomRoute].position.y - transform.position.y);
             direction = direction.normalized;
@@ -126,14 +126,6 @@ public class GuardMechanics : MonoBehaviour
             direction = direction.normalized;
             transform.up = direction;
         }
-    }
-    public void investigateSpeaker()
-    {
-        Debug.Log("Found speaker");
-        transform.position = Vector2.MoveTowards(transform.position, speakerPosition.position, speed * Time.deltaTime);
-        Vector2 direction = new Vector2(speakerPosition.position.x - transform.position.x, speakerPosition.position.y - transform.position.y);
-        direction = direction.normalized;
-        transform.up = direction;
     }
     public void OpenDoor(GameObject doorWaypoint)
     {

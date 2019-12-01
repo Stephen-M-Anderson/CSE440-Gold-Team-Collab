@@ -33,7 +33,10 @@ public class CoverScript : MonoBehaviour
     // Use Fixed Update for anything involving Rigid Bodies
     void FixedUpdate()
     {
-        nearestCover = Physics2D.OverlapCircle(playerStats.rb.position, coverRange, wall);
+        if (!inCover) // stops the nearest cover from updating if the player is already in cover
+        {
+            nearestCover = Physics2D.OverlapCircle(playerStats.rb.position, coverRange, wall);
+        }
         if (Input.GetKey(playerStats.cover))
         { 
             if (nearestCover) // if the player is within range of valid cover based on coverRange and not in cover

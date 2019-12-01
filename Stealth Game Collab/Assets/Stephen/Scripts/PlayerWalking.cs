@@ -116,10 +116,15 @@ public class PlayerWalking : MonoBehaviour
                 {
                     if (cc.whichCornerBool == true) // if the player is at the top or bottom right corner, player can only move left
                     {
+                        if (rb.velocity.x > 0)
+                        {
+                            rb.velocity = Vector2.zero;
+                        }
                         if (Input.GetKey(moveLeft))
                         {
-                            newMovement = new Vector2(rb.position.x - (moveSpeed * Time.deltaTime), rb.position.y);
-                            rb.position = newMovement;
+                            //newMovement = new Vector2(rb.position.x - (moveSpeed * Time.deltaTime), rb.position.y);
+                            //rb.position = newmovement;
+                            rb.AddForce(Vector2.left * moveSpeed);
                         }
                         if (Input.GetKey(interact))
                         {
@@ -130,10 +135,15 @@ public class PlayerWalking : MonoBehaviour
                     }
                     else                            // if the player is at the top or bottom left corner, player can only move right
                     {
+                        if (rb.velocity.x < 0)
+                        {
+                            rb.velocity = Vector2.zero;
+                        }
                         if (Input.GetKey(moveRight))
                         {
-                            newMovement = new Vector2(rb.position.x + (moveSpeed * Time.deltaTime), rb.position.y);
-                            rb.position = newMovement;
+                            //newMovement = new Vector2(rb.position.x + (moveSpeed * Time.deltaTime), rb.position.y);
+                            //rb.position = newmovement;
+                            rb.AddForce(Vector2.right * moveSpeed);
                         }
                         if (Input.GetKey(interact))
                         {
@@ -147,13 +157,27 @@ public class PlayerWalking : MonoBehaviour
                 {
                     if (Input.GetKey(moveRight))
                     {
-                        newMovement = new Vector2(rb.position.x + (moveSpeed * Time.deltaTime), rb.position.y);
-                        rb.position = newMovement;
+                        //newMovement = new Vector2(rb.position.x + (moveSpeed * Time.deltaTime), rb.position.y);
+                        //rb.position = newmovement;
+                        if (rb.velocity.x < 0)
+                        {
+                            Vector2 stop = rb.velocity;
+                            stop.x = 0;
+                            rb.velocity = Vector2.Lerp(rb.velocity, stop, 0.5f);
+                        }
+                        rb.AddForce(Vector2.right * moveSpeed);
                     }
                     if (Input.GetKey(moveLeft))
                     {
-                        newMovement = new Vector2(rb.position.x - (moveSpeed * Time.deltaTime), rb.position.y);
-                        rb.position = newMovement;
+                        //newMovement = new Vector2(rb.position.x - (moveSpeed * Time.deltaTime), rb.position.y);
+                        //rb.position = newmovement;
+                        if (rb.velocity.x > 0)
+                        {
+                            Vector2 stop = rb.velocity;
+                            stop.x = 0;
+                            rb.velocity = Vector2.Lerp(rb.velocity, stop, 0.5f);
+                        }
+                        rb.AddForce(Vector2.left * moveSpeed);
                     }
                 }
             }
@@ -163,10 +187,19 @@ public class PlayerWalking : MonoBehaviour
                 {
                     if (cc.whichCornerBool == true) // if the player is at the top left or right corner, player can only move down
                     {
+                        if (rb.velocity.y > 0)
+                        {
+                            //Vector2 stop = rb.velocity;
+                            //stop.y = 0;
+                            //rb.velocity = Vector2.Lerp(rb.velocity, stop, 0.5f);
+                            rb.velocity = Vector3.zero;
+                        }
                         if (Input.GetKey(moveDown))
                         {
-                            newMovement = new Vector2(rb.position.x, rb.position.y - (moveSpeed * Time.deltaTime));
-                            rb.position = newMovement;
+                            //newMovement = new Vector2(rb.position.x, rb.position.y - (moveSpeed * Time.deltaTime));
+                            //rb.position = newmovement;
+                            
+                            rb.AddForce(Vector2.down * moveSpeed);
                         }
                         if (Input.GetKey(interact))
                         {
@@ -177,10 +210,15 @@ public class PlayerWalking : MonoBehaviour
                     }
                     else                            // if the player is at the bottom left or right corner, player can only move up
                     {
+                        if (rb.velocity.y < 0)
+                        {
+                            rb.velocity = Vector3.zero;
+                        }
                         if (Input.GetKey(moveUp))
                         {
-                            newMovement = new Vector2(rb.position.x, rb.position.y + (moveSpeed * Time.deltaTime));
-                            rb.position = newMovement;
+                            //newMovement = new Vector2(rb.position.x, rb.position.y + (moveSpeed * Time.deltaTime));
+                            //rb.position = newmovement;
+                            rb.AddForce(Vector2.up * moveSpeed);
                         }
                         if (Input.GetKey(interact))
                         {
@@ -194,57 +232,133 @@ public class PlayerWalking : MonoBehaviour
                 {
                     if (Input.GetKey(moveUp))
                     {
-                        newMovement = new Vector2(rb.position.x, rb.position.y + (moveSpeed * Time.deltaTime));
-                        rb.position = newMovement;
+                        //newMovement = new Vector2(rb.position.x, rb.position.y + (moveSpeed * Time.deltaTime));
+                        //rb.position = newmovement;
+                        if (rb.velocity.y < 0)
+                        {
+                            Vector2 stop = rb.velocity;
+                            stop.y = 0;
+                            rb.velocity = Vector2.Lerp(rb.velocity, stop, 0.5f);
+                        }
+                        rb.AddForce(Vector2.up * moveSpeed);
                     }
                     if (Input.GetKey(moveDown))
                     {
-                        newMovement = new Vector2(rb.position.x, rb.position.y - (moveSpeed * Time.deltaTime));
-                        rb.position = newMovement;
+                        //newMovement = new Vector2(rb.position.x, rb.position.y - (moveSpeed * Time.deltaTime));
+                        //rb.position = newmovement;
+                        if (rb.velocity.y > 0)
+                        {
+                            Vector2 stop = rb.velocity;
+                            stop.y = 0;
+                            rb.velocity = Vector2.Lerp(rb.velocity, stop, 0.5f);
+                        }
+                        rb.AddForce(Vector2.down * moveSpeed);
                     }
                 }
             }
         }
-        /*        if (Input.GetKeyDown(dash) && rb.velocity.sqrMagnitude != 0)
+        if (Input.GetKey(moveRight) == false && Input.GetKey(moveLeft) == false && Input.GetKey(moveUp) == false && Input.GetKey(moveDown) == false && rb.velocity != Vector2.zero) // if no input is being pressed and the player is moving, stop them
+        {
+            Vector2 stop = Vector2.zero;
+            rb.velocity = stop;
+        }
+        /*         else if (cc.inCover) // if the player is in cover
+        {
+            if (cc.coverSide == 1 || cc.coverSide == 3) // player is against horizontal cover (they are facing up or down)
+            {
+                if (cc.atCoverCorner) // if the player is at a corner of their cover
                 {
-                    rb.AddForce(rb.velocity * dashSpeed, ForceMode2D.Impulse);
-                    isDashing = true;
-                    dashStart = rb.position;
-                    dashDistanceOriginal = dashDistance;
-                }
-                if (isDashing) // stops dashing once the player has reached the dash distance
-                {
-                    if (Vector2.Distance(rb.position, dashStart) >= dashDistance) 
+                    if (cc.whichCornerBool == true) // if the player is at the top or bottom right corner, player can only move left
                     {
-                        isDashing = false;
-                        rb.velocity = Vector2.zero;
+                        if (Input.GetKey(moveLeft))
+                        {
+                            //newMovement = new Vector2(rb.position.x - (moveSpeed * Time.deltaTime), rb.position.y);
+                            //rb.position = newmovement;
+                        }
+                        if (Input.GetKey(interact))
+                        {
+                            peeking = true;
+                        }
+                        else
+                            peeking = false;
+                    }
+                    else                            // if the player is at the top or bottom left corner, player can only move right
+                    {
+                        if (Input.GetKey(moveRight))
+                        {
+                            //newMovement = new Vector2(rb.position.x + (moveSpeed * Time.deltaTime), rb.position.y);
+                            //rb.position = newmovement;
+                        }
+                        if (Input.GetKey(interact))
+                        {
+                            peeking = true;
+                        }
+                        else
+                            peeking = false;
+                    } 
+                }
+                else                                // the player is not at a corner of their cover, they can move left or right
+                {
+                    if (Input.GetKey(moveRight))
+                    {
+                        //newMovement = new Vector2(rb.position.x + (moveSpeed * Time.deltaTime), rb.position.y);
+                        //rb.position = newmovement;
+                    }
+                    if (Input.GetKey(moveLeft))
+                    {
+                        //newMovement = new Vector2(rb.position.x - (moveSpeed * Time.deltaTime), rb.position.y);
+                        //rb.position = newmovement;
                     }
                 }
-        */
-        // WORKING CODE for dashing the player towards the mouse cursor and ending the dash early if the mouse is closer than the given dash distance.
-        // Could possibly be repurposed for throwing distraction items.
-        /* if (Input.GetKeyDown(dash) && !isDashing)     
-        {
-            rb.AddForce(direction * dashSpeed, ForceMode2D.Impulse);
-            isDashing = true;
-            dashStart = rb.position;
-            dashDistanceOriginal = dashDistance;
-            if (Vector2.Distance(mousePosition, dashStart) < dashDistance)
-            {
-                dashDistance = Vector2.Distance(mousePosition, dashStart) - 0.2f;
             }
-        }
-        if (isDashing) // stops dashing once the player has reached the dash distance
-        {
-            if (Vector2.Distance(rb.position, dashStart) >= dashDistance) 
+            else if (cc.coverSide == 2 || cc.coverSide == 4) // player is against verticle cover
             {
-                isDashing = false;
-                rb.velocity = Vector2.zero;
-                if (dashDistance != dashDistanceOriginal)
+                if (cc.atCoverCorner) // if the player is at a corner of their cover
                 {
-                    dashDistance = dashDistanceOriginal;
+                    if (cc.whichCornerBool == true) // if the player is at the top left or right corner, player can only move down
+                    {
+                        if (Input.GetKey(moveDown))
+                        {
+                            //newMovement = new Vector2(rb.position.x, rb.position.y - (moveSpeed * Time.deltaTime));
+                            //rb.position = newmovement;
+                        }
+                        if (Input.GetKey(interact))
+                        {
+                            peeking = true;
+                        }
+                        else
+                            peeking = false;
+                    }
+                    else                            // if the player is at the bottom left or right corner, player can only move up
+                    {
+                        if (Input.GetKey(moveUp))
+                        {
+                            //newMovement = new Vector2(rb.position.x, rb.position.y + (moveSpeed * Time.deltaTime));
+                            //rb.position = newmovement;
+                        }
+                        if (Input.GetKey(interact))
+                        {
+                            peeking = true;
+                        }
+                        else
+                            peeking = false;
+                    }
+                }
+                else                                // the player is not at a corner of their cover, they can move up or down
+                {
+                    if (Input.GetKey(moveUp))
+                    {
+                        //newMovement = new Vector2(rb.position.x, rb.position.y + (moveSpeed * Time.deltaTime));
+                        //rb.position = newmovement;
+                    }
+                    if (Input.GetKey(moveDown))
+                    {
+                        //newMovement = new Vector2(rb.position.x, rb.position.y - (moveSpeed * Time.deltaTime));
+                        //rb.position = newmovement;
+                    }
                 }
             }
-        }*/
+        }
+        */
     }
 }
