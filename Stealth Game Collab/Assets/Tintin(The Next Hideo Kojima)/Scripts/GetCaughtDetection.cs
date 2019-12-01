@@ -5,15 +5,16 @@ using UnityEngine;
 public class GetCaughtDetection : MonoBehaviour
 {
     public bool Sighted;
-    void OnTriggerEnter2D(Collider2D o)
+    public Collider2D player;
+    void OnTriggerStay2D(Collider2D o)
     {
         if (o.gameObject.tag == "EnemyLight")
         {
             Sighted = true;
-            Debug.Log("HEY");
+            Debug.Log("Must have been Hey");
         }
     }
-
+    
     void OnTriggerExit2D(Collider2D o)
     {
         if (o.gameObject.tag == "EnemyLight")
