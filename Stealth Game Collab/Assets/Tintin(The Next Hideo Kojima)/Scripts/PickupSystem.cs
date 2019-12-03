@@ -7,6 +7,7 @@ public class PickupSystem : MonoBehaviour
     public bool hasBodySpray;
     public bool hasSodaCan;
     public bool hasMustacheComb;
+  //  public bool hasPlayerItem= false;
 
 
     // Start is called before the first frame update
@@ -26,12 +27,14 @@ public class PickupSystem : MonoBehaviour
     {
         if (collision.gameObject.tag == "playerItem")
         {
+           // hasPlayerItem = true;
+            Debug.Log("WOOP WOOP I FOUND AN ITEM");
             //Insert code of adding the Body Spray to your inventory here!
             if(collision.gameObject.name == "SodaCan")
             {
                 hasSodaCan = true;
             }
-            else if (collision.gameObject.name == "BodySpray")
+            else if (collision.gameObject.name == "Body Spray")
             {
                 hasBodySpray = true;
             }
@@ -39,8 +42,8 @@ public class PickupSystem : MonoBehaviour
             {
                 hasMustacheComb = true;
             }
-
-            Destroy(gameObject);
+           // hasPlayerItem = false;
+            Destroy(collision.collider.gameObject);
         }
     }
 

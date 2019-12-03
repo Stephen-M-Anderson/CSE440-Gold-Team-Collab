@@ -85,9 +85,11 @@
     <Compile Include="Assets\Stephen\Scripts\DoorWaypoint.cs" />
     <Compile Include="Assets\Stephen\Scripts\GuardMechanics.cs" />
     <Compile Include="Assets\Stephen\Scripts\PlayerWalking.cs" />
+    <Compile Include="Assets\Stephen\Scripts\TESTForPathing.cs" />
     <Compile Include="Assets\Stephen\Scripts\WaypointScript.cs" />
     <Compile Include="Assets\Stephen\Scripts\WhereILeftOff.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\AlertHUD.cs" />
+    <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\GetCaughtDetection.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\HUD.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\MainMenu.cs" />
@@ -98,7 +100,9 @@
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\Save.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\SaveFile.cs" />
+    <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\Sound.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\fromLoaded.cs" />
+    <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\itemDesc.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\itemList.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\itemSodaCan.cs" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">

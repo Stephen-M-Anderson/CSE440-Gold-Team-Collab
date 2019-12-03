@@ -16,13 +16,13 @@ public class BodySprayPickup : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollision2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             //Insert code of adding the Body Spray to your inventory here!
-
-            Destroy(gameObject);
+            Debug.Log("woop BodySpray");
+            //Destroy(gameObject);
         }
     }
 

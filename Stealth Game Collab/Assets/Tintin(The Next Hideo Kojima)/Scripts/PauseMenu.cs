@@ -46,6 +46,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f; //STOP. Time has halted. time has reached 0F. which means no time.
         IsPaused = true;
+        FindObjectOfType<AudioManager>().Play("PauseMusic");
         
     }
 
