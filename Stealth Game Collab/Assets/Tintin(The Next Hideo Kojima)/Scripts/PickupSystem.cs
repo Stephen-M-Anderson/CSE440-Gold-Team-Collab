@@ -26,12 +26,13 @@ public class PickupSystem : MonoBehaviour
     {
         if (collision.gameObject.tag == "playerItem")
         {
+            Debug.Log("WOOP WOOP I FOUND AN ITEM");
             //Insert code of adding the Body Spray to your inventory here!
             if(collision.gameObject.name == "SodaCan")
             {
                 hasSodaCan = true;
             }
-            else if (collision.gameObject.name == "BodySpray")
+            else if (collision.gameObject.name == "Body Spray")
             {
                 hasBodySpray = true;
             }
@@ -39,8 +40,7 @@ public class PickupSystem : MonoBehaviour
             {
                 hasMustacheComb = true;
             }
-
-            Destroy(gameObject);
+            Destroy(collision.collider.gameObject);
         }
     }
 
