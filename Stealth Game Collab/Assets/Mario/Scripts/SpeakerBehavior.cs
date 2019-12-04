@@ -7,9 +7,12 @@ public class SpeakerBehavior : MonoBehaviour
     public EnemyScript enemyScript;
 
     public GameObject individualGuard;
+    public GameObject waypoint;
     public GameObject individualSpeaker;
     public float guardTimer;
     private bool guardIsWaiting = false;
+
+    
 
     private void Start()
     {
@@ -24,7 +27,6 @@ public class SpeakerBehavior : MonoBehaviour
 
         if (guardTimer >= 3)
         {
-            enemyScript.heardSpeaker = false;
             guardIsWaiting = false;
             guardTimer = 0;
             Debug.Log("Timer Ended");
@@ -37,7 +39,7 @@ public class SpeakerBehavior : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                enemyScript.heardSpeaker = true;
+                individualGuard.SendMessage("StartMoveToWaypoint", waypoint);
                 Debug.Log("What's That?");
             }
         }
