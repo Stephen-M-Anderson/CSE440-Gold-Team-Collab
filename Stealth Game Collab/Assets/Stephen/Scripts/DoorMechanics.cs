@@ -45,7 +45,8 @@ public class DoorMechanics : MonoBehaviour
             isOpen = true;
         }
         if (Input.GetKeyDown(player.interact) && isOpen == false && (tempDistance < doorOpenRange || Vector2.Distance(player.transform.position, origPos) < doorOpenRange)) // if the door is closed and the player presses interact while in range, open the door
-        { 
+        {
+            FindObjectOfType<AudioManager>().Play("DoorOpen");
             rb.constraints = RigidbodyConstraints2D.None; // allows the door to move
             mt.motorSpeed = openingForce; // turns on the doors motor and gives it a force
             hinge.motor = mt;
@@ -59,11 +60,12 @@ public class DoorMechanics : MonoBehaviour
                 isOpen = false;
                 hinge.useMotor = false;
                 transform.rotation = origRot; // reset the door to its shut position, aka it's original position
-                transform.position = origPos;
+                transform.position = origPos; 
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
             }
             else if (Input.GetKeyDown(player.interact) && tempDistance < doorOpenRange) // if the door is open and the player presses interact while in range, close the door
             {
+                FindObjectOfType<AudioManager>().Play("DoorClose");
                 closing = true;
                 hinge.useMotor = true;
                 mt.motorSpeed = 0 - (openingForce / 2); // play around with this number to make it close faster or slower. 
