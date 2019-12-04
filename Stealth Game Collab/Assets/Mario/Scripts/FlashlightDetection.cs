@@ -22,12 +22,13 @@ public class FlashlightDetection : MonoBehaviour
         {
            Invoke("SetViewToFalse", 2f);
            Debug.Log("Must Have Been the Wind");
-           guardMechanics.speed = 2;
+           
         }
     }
 
     private void SetViewToFalse()
     {
         guardMechanics.inView = false;
+        guardMechanics.speed = 2;
     }
 }

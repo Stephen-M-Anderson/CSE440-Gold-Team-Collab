@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class SpeakerBehavior : MonoBehaviour
 {
-    public EnemyScript enemyScript;
+    public GuardMechanics guardMechanics;
 
     public GameObject individualGuard;
     public GameObject waypoint;
     public GameObject individualSpeaker;
     public float guardTimer;
     private bool guardIsWaiting = false;
-
-    
 
     private void Start()
     {
