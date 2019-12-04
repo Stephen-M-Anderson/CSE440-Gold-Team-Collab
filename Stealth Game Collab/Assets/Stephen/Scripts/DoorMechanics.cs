@@ -7,6 +7,9 @@ public class DoorMechanics : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 origPos;
     private Quaternion origRot;
+    private GameObject[] guards;
+    private GameObject closestGuard;
+    private float guardDistance;
     public bool isOpen;
     private float tempDistance;
     public PlayerWalking player;
@@ -29,12 +32,12 @@ public class DoorMechanics : MonoBehaviour
         {
             openingForce *= -1;
         }
+        guards = GameObject.FindGameObjectsWithTag("Guard");
     }
 
     // Update is called once per frame
     void Update()
     {
-
         tempDistance = Vector2.Distance(transform.position, player.transform.position);
         doorAngleDifference = Quaternion.Angle(transform.rotation, origRot); // lets you see how open the door is in the inspector
         if (doorAngleDifference > 5)
@@ -68,8 +71,6 @@ public class DoorMechanics : MonoBehaviour
                 hinge.useMotor = true;
             }
         }
-        else if (Input.GetKeyDown(player.interact))
-            Debug.Log("Door should have opened but didn't. IsOpen = " + isOpen + ", Door Open Range = " + doorOpenRange + ", Distance = " + tempDistance + " | " + Vector2.Distance(player.transform.position, origPos));
     }
 
     void FixedUpdate()
@@ -87,18 +88,14 @@ public class DoorMechanics : MonoBehaviour
             }
         }
     }
-    public void GuardOpen(GameObject guard) // method to allow a guard to open a door, accessed by sendMessage function.
+    public void GuardOpen() // method to allow a guard to open a door, accessed by sendMessage function.
     {
-        if (Vector2.Distance(transform.position, guard.transform.position) < doorOpenRange)
+        if (isOpen == false)
         {
-            if (isOpen == false)
-            {
-                isOpen = true;
-                rb.constraints = RigidbodyConstraints2D.None; // allows the door to move
-                mt.motorSpeed = openingForce; // turns on the doors motor and gives it a force
-                hinge.motor = mt;
-                hinge.useMotor = true;
-            }
+            rb.constraints = RigidbodyConstraints2D.None; // allows the door to move
+            mt.motorSpeed = openingForce; // turns on the doors motor and gives it a force
+            hinge.motor = mt;
+            hinge.useMotor = true;
         }
     }
 }

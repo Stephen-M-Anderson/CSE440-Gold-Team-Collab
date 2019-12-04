@@ -83,10 +83,10 @@ public class WaypointScript : MonoBehaviour
         }
 
         // This logic is used to link a waypoint to an adjacent doorway node. 
-        if (connectsToDoor)
-        {
-            numberOfAdjacentNodes += 1;
-        }
+        //if (connectsToDoor)
+        //{
+         //   numberOfAdjacentNodes += 1;
+        //}
         tempNodeArray = new GameObject[numberOfAdjacentNodes];
         for (i = 0; i < numberOfAdjacentNodes; i++)
         {
@@ -199,6 +199,8 @@ public class WaypointScript : MonoBehaviour
             tempPos[i] = pathNodesArray[i].transform;
         }
         Guard.pathfindingPos = tempPos.ToList<Transform>();
+        Guard.pathfindingReturnPos = tempPos.ToList<Transform>();
+        Guard.pathfindingReturnPos.Reverse();
         Guard.pathfindingNodes = pathNodesArray;
         Guard.isPathfinding = true;
     }
