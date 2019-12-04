@@ -28,7 +28,13 @@ public class AlertHUD : MonoBehaviour
             alert.color = UnityEngine.Color.red;   //MAKE THE HUD SCARY RED
             Debug.Log("IN VIEW IN VIEW");
             hasAlerted = 1;
-            //hasAlerted++;
+            /*
+            if(hasAlerted == 1)
+            {
+                FindObjectOfType<AudioManager>().Play("AlertMusic");
+            }
+            hasAlerted++;
+            */
             //StartCoroutine(waitandStuff());
         }
         
