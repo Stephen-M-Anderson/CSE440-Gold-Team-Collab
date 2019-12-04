@@ -19,7 +19,7 @@ public class SecCam : MonoBehaviour
 
     private Transform playerPosition;
     private bool isTrackingPlayer = false;
-    private bool isOverlapped = false;
+    public bool isOverlapped = false;
     private bool guardIsWaiting = false;
     private Quaternion startRotation;
     private float resumeTimer = 0;
@@ -45,11 +45,11 @@ public class SecCam : MonoBehaviour
             direction = direction.normalized;
             transform.up = direction;
         }
-        else if (isTrackingPlayer == false && isResumingRotation == true)
+        else if (isTrackingPlayer == false && isResumingRotation == true) //Camera will return to original rotation when camera stops spotting player.
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, startRotation, Time.deltaTime * 2);
-            resumeTimer += Time.deltaTime;
-            if (resumeTimer >= 2)
+            transform.rotation = Quaternion.Lerp(transform.rotation, startRotation, Time.deltaTime * 2); // Lerp computers and translates current rotation and start rotation
+            resumeTimer += Time.deltaTime; // camera will spend some time resuming.
+            if (resumeTimer >= 1)
             {
                 resumeTimer = 0;
                 isResumingRotation = false;
@@ -138,7 +138,11 @@ public class SecCam : MonoBehaviour
         if (collision.gameObject.tag == "Player")  //stops spotting player when player exits vision cone.
         {
             isTrackingPlayer = false;
-            isResumingRotation = true;
+            if (isOverlapped == false)
+            {
+                isResumingRotation = true;
+            }
+
         }
     }
 }
