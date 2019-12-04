@@ -4,29 +4,15 @@ using UnityEngine;
 
 public class FlashlightDetection : MonoBehaviour
 {
-    public EnemyScript enemyScript;
-    public float chaseTimer;
+    public GuardMechanics guardMechanics;
 
-    private void Start()
-    {
-        chaseTimer = 200;
-    }
-
-    private void Update()
-    {
-        if (enemyScript.inView == true)
-        {
-            chaseTimer--;
-        }
-    }
     void OnTriggerEnter2D(Collider2D o)
     {
         if (o.gameObject.tag == "Player")
         {
-            enemyScript.inView = true;
+            guardMechanics.inView = true;
             Debug.Log("HEY");
-            enemyScript.speed = 3;
-            chaseTimer = 200;
+            guardMechanics.speed = 3;
         }
     }
 
@@ -34,13 +20,15 @@ public class FlashlightDetection : MonoBehaviour
     {
         if (o.gameObject.tag == "Player")
         {
-            if (chaseTimer <= 0)
-            {
-                enemyScript.inView = false;
-                Debug.Log("Must Have Been the Wind");
-                enemyScript.speed = 2;
-            }
-            
+           Invoke("SetViewToFalse", 2f);
+           Debug.Log("Must Have Been the Wind");
+           
         }
+    }
+
+    private void SetViewToFalse()
+    {
+        guardMechanics.inView = false;
+        guardMechanics.speed = 2;
     }
 }

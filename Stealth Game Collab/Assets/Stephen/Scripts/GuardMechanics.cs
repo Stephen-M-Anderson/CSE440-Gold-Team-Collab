@@ -17,7 +17,9 @@ public class GuardMechanics : MonoBehaviour
     private Transform[] patrolRoute;
     public GameObject[] pathfindingNodes;
     public List<Transform> pathfindingPos;
+    public List<Transform> pathfindingReturnPos;
     public bool isPathfinding;
+    public bool isReturning;
     private int pathfindingIndex;
     private int randomRoute;
     private int index;
@@ -118,7 +120,17 @@ public class GuardMechanics : MonoBehaviour
         }
         if (pathfindingPos.Count == 0) // if we are at the target node, meaning the list of nodes to travel to is empty
         {
-            isPathfinding = false;
+            if (isReturning == false)
+            {
+                isReturning = true;
+                pathfindingPos = GetPathfindingPositions(pathfindingNodes);
+                pathfindingPos.Reverse();
+            }
+            else
+            {
+                isReturning = false;
+                isPathfinding = false;
+            }
         }
         else
         {
@@ -155,4 +167,27 @@ public class GuardMechanics : MonoBehaviour
     {
         StartCoroutine("MoveToWaypoint", targetNode);
     }
+    private List<Transform> GetPathfindingPositions(GameObject[] origPath)
+    {
+        Transform[] positions = new Transform[origPath.Length];
+        for (int i = 0; i < origPath.Length; ++i)
+        {
+            positions[i] = origPath[i].transform;
+        }
+        return positions.ToList();
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Door")
+        {
+            DoorMechanics temp = col.gameObject.GetComponent<DoorMechanics>();
+            if (temp.isOpen == false)
+            {
+                temp.SendMessage("GuardOpen");
+                Debug.Log("Guard should have opened me!");
+            }
+        }
+    }
+
 }

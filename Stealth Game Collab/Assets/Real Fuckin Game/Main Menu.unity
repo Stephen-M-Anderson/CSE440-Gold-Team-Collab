@@ -1113,17 +1113,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1082197090}
-        m_MethodName: StartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 492673857}
         m_MethodName: sodaCans
         m_Mode: 1
@@ -1133,6 +1122,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1082197090}
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OnClick
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &919701996
@@ -1673,9 +1673,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: OnClick
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    clip: {fileID: 8300000, guid: afaea382409fc0541aa2d785709dce3a, type: 3}
+    volume: 0.456
+    pitch: 1
     source: {fileID: 0}
   - name: OnHover
     clip: {fileID: 0}
@@ -2087,7 +2087,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d5bf16e1dc55ee84498d0c0895fc3e69, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9a078f4b609917e40bd2d9957eb57baf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

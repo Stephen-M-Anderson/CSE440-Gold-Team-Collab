@@ -50,6 +50,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGame()
     {
+        FindObjectOfType<AudioManager>().Play("OnClick");
         Time.timeScale = 1f;     //resumes0 time. This line doesn't really mean anything. Its just to fool mortals into thinking I don't psychically begin the game.
                                  // jkjk. Line actually resumes time within the game
         MainMenuUI.SetActive(false);
@@ -58,11 +59,13 @@ public class MainMenu : MonoBehaviour
 
     public void TutorialLevel()
     {
+        FindObjectOfType<AudioManager>().Play("OnClick");
         SceneManager.LoadScene("Tutorial Level");
     }
 
     public void LevelOne()
     {
+        FindObjectOfType<AudioManager>().Play("OnClick");
         SceneManager.LoadScene("Museum Level");
     }
 
@@ -74,6 +77,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        FindObjectOfType<AudioManager>().Play("OnClick");
         Application.Quit();  
     }
 }

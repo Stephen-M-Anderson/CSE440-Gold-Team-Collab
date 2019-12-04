@@ -123,7 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1fb682052dc9f4cbfa07b85c31fac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyScript: {fileID: 8955949284331359619}
+  enemyScript: {fileID: 0}
+  chaseTimer: 0
 --- !u!1 &5270252906308229962
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,9 +136,9 @@ GameObject:
   - component: {fileID: 5563633701647811886}
   - component: {fileID: 2858343084330647090}
   - component: {fileID: 7056508997759121037}
-  - component: {fileID: 8955949284331359619}
   - component: {fileID: -8923976556700401169}
   - component: {fileID: -4505749553159128478}
+  - component: {fileID: -7827834785874524383}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Guard
@@ -231,28 +232,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8955949284331359619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5270252906308229962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71764c3b058357e4f9faaff999aea031, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  startWaitTime: 1
-  actualPlayer: {fileID: 3848207859077888568, guid: 506df8a86f9dbdc408524a255cafcfd4,
-    type: 3}
-  inView: 0
-  heardSpeaker: 0
-  speakerBehavior: {fileID: 0}
-  routes:
-  - {fileID: 786246770204499755, guid: 578fc52ead31f1848b5af898f71b982f, type: 3}
-  - {fileID: 200434119763059432, guid: 322e137408574c74281758ad9ca8cb4d, type: 3}
 --- !u!61 &-8923976556700401169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -293,3 +272,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverState: 0
   friendly: 0
+--- !u!114 &-7827834785874524383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270252906308229962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4f78f334bef0c448b7773c1bc4dedd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  startWaitTime: 0
+  actualPlayer: {fileID: 0}
+  inView: 0
+  heardSpeaker: 0
+  routeWaypoints: []
+  pathfindingNodes: []
+  pathfindingPos: []
+  isPathfinding: 0
+  closestWaypoint: {fileID: 0}
+  wscopy: {fileID: 0}
