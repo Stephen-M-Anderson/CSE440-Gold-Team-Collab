@@ -5,6 +5,7 @@ using UnityEngine;
 public class CanThrowingScript : MonoBehaviour
 {
     private Rigidbody2D rb; //This is the rigidbody component of the can.
+    public bool notStopped = true; //this bool checks if the soda can has stopped moving
 
     public float canSpeed = 5.0f; //The spped of the can, no shit.
     public float maxThrowDistance = 5.0f; //The maximum distance we want a can to be able to be thrown. I made this public so it could easily be edited in the inspector.
@@ -41,6 +42,11 @@ public class CanThrowingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(rb.velocity.y == 0 && notStopped) // if the can has stopped moving in the y axis
+        {
+            notStopped = false;  //has stopped
+            FindObjectOfType<AudioManager>().Play("SodaThrow");
+        }
         //These were for test purposes to make sure that I could ACTUALLY stop the cans under whatever conditions I wanted to set. 
         //It was convenient for localizing the problem so I'll keep it here in case I break this shit again.
         /*if (Input.GetKeyDown(boolKey))
@@ -71,22 +77,27 @@ public class CanThrowingScript : MonoBehaviour
         if (distanceTraveled >= canDistance) 
             {
                 rb.velocity = Vector2.zero;
-            }
+                //Debug.Log("I reached my max distance Soda Kun");
+                
+        }
 
         if (distanceTraveled > maxThrowDistance)
         {
             rb.velocity = Vector2.zero;
+            //FindObjectOfType<AudioManager>().Play("SodaThrow");
         }
 
     }
 
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             //Insert code of adding the soda can to your inventory here!
-
+            
             Destroy(gameObject);
         }
     } 
+    */
 }
