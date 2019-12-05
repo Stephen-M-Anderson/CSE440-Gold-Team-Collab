@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class GetCaughtDetection : MonoBehaviour
 {
-    public SecCam tracking;
     public bool Sighted;
     public Collider2D player;
     int AlreadySighted = 0;
     void OnTriggerStay2D(Collider2D o)
     {
-        if (o.gameObject.tag == "EnemyLight" && tracking.isTrackingPlayer)
+        if (o.gameObject.tag == "EnemyLight")
         {
             
             Sighted = true;
@@ -20,16 +19,18 @@ public class GetCaughtDetection : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D o)
     {
-        if (o.gameObject.tag == "EnemyLight" && tracking.isTrackingPlayer)
+        if (o.gameObject.tag == "EnemyLight")
         {
             if(AlreadySighted == 0)
             {
-                
+                FindObjectOfType<AudioManager>().Play("AlertMusic");
+                FindObjectOfType<AudioManager>().Pause("RegularMusic");
                 AlreadySighted++;
             }
             Debug.Log("Must have been Hey");
         }
     }
+
 
     void OnTriggerExit2D(Collider2D o)
     {
