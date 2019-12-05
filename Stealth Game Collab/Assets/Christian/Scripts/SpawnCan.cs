@@ -35,7 +35,7 @@ public class SpawnCan : MonoBehaviour
         }
         else if(!pickupsystemScript.hasSodaCan)
         {
-            Debug.Log("NUMBER 4");
+           // Debug.Log("NUMBER 4");
             threwCan = false;
         }
     }

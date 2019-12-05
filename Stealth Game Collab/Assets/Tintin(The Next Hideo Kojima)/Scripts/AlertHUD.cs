@@ -25,7 +25,8 @@ public class AlertHUD : MonoBehaviour
     {
         if (getcaughtbool.Sighted)  //IF SIGHTED by enemy
         {
-            alert.color = UnityEngine.Color.red;   //MAKE THE HUD SCARY RED
+            alert.color = UnityEngine.Color.red;
+            //MAKE THE HUD SCARY RED
             Debug.Log("IN VIEW IN VIEW");
             hasAlerted = 1;
             /*
