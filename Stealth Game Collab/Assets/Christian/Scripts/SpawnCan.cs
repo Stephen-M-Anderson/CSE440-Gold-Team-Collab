@@ -23,7 +23,7 @@ public class SpawnCan : MonoBehaviour
         if (pickupsystemScript.hasSodaCan)
         {
             //Debug.Log("look ma, a sody pop");
-            if (Input.GetKeyDown(item))
+            if (Input.GetKeyDown(item) && Time.timeScale == 1f)
             {
                 threwCan = true;
                 //Debug.Log("NUMBER 2");
