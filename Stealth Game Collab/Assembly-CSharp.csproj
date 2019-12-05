@@ -77,6 +77,8 @@
     <Compile Include="Assets\Mario\Scripts\SpeakerBehavior.cs" />
     <Compile Include="Assets\Nicholas\Scripts\LaserWall.cs" />
     <Compile Include="Assets\Nicholas\Scripts\NicEnemyScript.cs" />
+    <Compile Include="Assets\Nicholas\Scripts\PlayerAnimationScript.cs" />
+    <Compile Include="Assets\Nicholas\Scripts\PlayerAnimator.cs" />
     <Compile Include="Assets\Nicholas\Scripts\SecCam.cs" />
     <Compile Include="Assets\Stephen\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Stephen\Scripts\ClosestWaypoint.cs" />
