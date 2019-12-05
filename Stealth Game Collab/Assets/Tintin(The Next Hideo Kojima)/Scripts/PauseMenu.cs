@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("RegularMusic");
         HUDpanel.SetActive(true);
         pauseMenuUI.SetActive(false); // To make sure the pause menu only shows up when its key is pressed.
     }
@@ -39,6 +40,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f; //resumes life as we know it. 
         IsPaused = false;
         FindObjectOfType<AudioManager>().Pause("PauseMusic");
+        FindObjectOfType<AudioManager>().Play("RegularMusic");
     }
 
     void Pause()
@@ -48,7 +50,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f; //STOP. Time has halted. time has reached 0F. which means no time.
         IsPaused = true;
         FindObjectOfType<AudioManager>().Play("PauseMusic");
-        
+        FindObjectOfType<AudioManager>().Pause("RegularMusic");
+
     }
 
     public void LoadMenu()

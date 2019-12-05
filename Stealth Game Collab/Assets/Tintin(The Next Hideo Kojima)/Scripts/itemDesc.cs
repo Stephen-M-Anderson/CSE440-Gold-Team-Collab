@@ -28,24 +28,28 @@ public class itemDesc : MonoBehaviour
     {
         if(pickupsystem.hasBodySpray && !hasAlreadyPickedupBodySpray)
         {
+            Time.timeScale = 0f;  //pause game so player can read
             bodysprayUI.SetActive(true);
             hasAlreadyPickedupBodySpray = true;
             HUDpanel.SetActive(false);    
         }
         else if (pickupsystem.hasSodaCan && !hasAlreadyPickedupSoda)
         {
+            Time.timeScale = 0f;
             sodacantext.SetActive(true);
             hasAlreadyPickedupSoda = true;
             HUDpanel.SetActive(false);
         }
         else if (pickupsystem.hasMustacheComb && !hasAlreadyPickedupComb)
         {
+            Time.timeScale = 0f;
             MustacheComb.SetActive(true);
             hasAlreadyPickedupComb = true;
             HUDpanel.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Escape))
         {
+            Time.timeScale = 1f;
             sodacantext.SetActive(false);
             bodysprayUI.SetActive(false);
             HUDpanel.SetActive(true);

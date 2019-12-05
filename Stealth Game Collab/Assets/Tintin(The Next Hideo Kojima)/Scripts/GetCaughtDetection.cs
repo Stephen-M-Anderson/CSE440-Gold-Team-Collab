@@ -24,6 +24,7 @@ public class GetCaughtDetection : MonoBehaviour
             if(AlreadySighted == 0)
             {
                 FindObjectOfType<AudioManager>().Play("AlertMusic");
+                FindObjectOfType<AudioManager>().Pause("RegularMusic");
                 AlreadySighted++;
             }
             Debug.Log("Must have been Hey");
