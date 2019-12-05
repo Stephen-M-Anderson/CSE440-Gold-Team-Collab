@@ -13,13 +13,12 @@ public class SecCam : MonoBehaviour
     public float detectionRadius = 0.5f;
     public float guardTimer = 0.0f;
     public bool isResumingRotation = false;
-    public bool AlreadyDetected = false;
 
 
     public NicEnemyScript enemyScript;
 
     private Transform playerPosition;
-    public bool isTrackingPlayer = false;
+    private bool isTrackingPlayer = false;
     public bool isOverlapped = false;
     private bool guardIsWaiting = false;
     private Quaternion startRotation;
@@ -93,7 +92,6 @@ public class SecCam : MonoBehaviour
                 if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     isTrackingPlayer = true;
-                 
                     isResumingRotation = false;
                     enemyScript.cameraSpotted = true;
                     resumeTimer = 0;
