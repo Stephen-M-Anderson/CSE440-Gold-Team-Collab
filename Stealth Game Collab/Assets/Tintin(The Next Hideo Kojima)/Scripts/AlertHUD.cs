@@ -46,8 +46,16 @@ public class AlertHUD : MonoBehaviour
             
             alert.color = Color.Lerp(alert.color, Color.yellow, 0.01f);
             
+
         }
-        
+        else if(alert.color == Color.yellow)
+        {
+            Debug.Log("Hey Im yellow");
+        }
+        else if(alert.color == Color.red)
+        {
+            Debug.Log("Hey Im red");
+        }
 
 
     }
