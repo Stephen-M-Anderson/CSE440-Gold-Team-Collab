@@ -101,6 +101,7 @@
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\Save.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\SaveFile.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\Sound.cs" />
+    <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\UseBodySpray.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\fromLoaded.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\itemDesc.cs" />
     <Compile Include="Assets\Tintin(The Next Hideo Kojima)\Scripts\itemList.cs" />

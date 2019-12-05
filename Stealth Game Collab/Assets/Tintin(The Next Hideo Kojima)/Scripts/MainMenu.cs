@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 
     public GameObject MainMenuUI;
     public GameObject WhichLevelUI;
+    public GameObject CreditsUI;
     // static bool isLoaded = false;
 
     // Update is called once per frame
@@ -41,12 +42,23 @@ public class MainMenu : MonoBehaviour
          IsPaused = true;
      }
      */
+    
 
 
     private void Start()
     {
         WhichLevelUI.SetActive(false);
+        CreditsUI.SetActive(false);
 
+    }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            MainMenuUI.SetActive(true);
+            WhichLevelUI.SetActive(false);
+            CreditsUI.SetActive(false);
+        }
     }
     public void StartGame()
     {
@@ -70,9 +82,12 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    public void LoadSettings()
+    public void LoadCredits()
     {
-        //SceneManager.LoadScene("SampleScene");
+        CreditsUI.SetActive(true);
+        MainMenuUI.SetActive(false);
+        WhichLevelUI.SetActive(false);
+
     }
 
     public void QuitGame()
