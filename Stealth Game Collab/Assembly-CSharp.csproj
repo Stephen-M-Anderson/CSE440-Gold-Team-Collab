@@ -72,6 +72,7 @@
     <Compile Include="Assets\Christian\Scripts\GameOver.cs" />
     <Compile Include="Assets\Christian\Scripts\SpawnCan.cs" />
     <Compile Include="Assets\Christian\Scripts\SpawnCanMachine.cs" />
+    <Compile Include="Assets\FlashlightMechanics.cs" />
     <Compile Include="Assets\Mario\Scripts\EnemyScript.cs" />
     <Compile Include="Assets\Mario\Scripts\FlashlightDetection.cs" />
     <Compile Include="Assets\Mario\Scripts\SpeakerBehavior.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Stephen\Scripts\CoverScript.cs" />
     <Compile Include="Assets\Stephen\Scripts\DoorMechanics.cs" />
     <Compile Include="Assets\Stephen\Scripts\DoorWaypoint.cs" />
+    <Compile Include="Assets\Stephen\Scripts\FlashlightScript.cs" />
     <Compile Include="Assets\Stephen\Scripts\GuardMechanics.cs" />
     <Compile Include="Assets\Stephen\Scripts\PlayerWalking.cs" />
     <Compile Include="Assets\Stephen\Scripts\TESTForPathing.cs" />

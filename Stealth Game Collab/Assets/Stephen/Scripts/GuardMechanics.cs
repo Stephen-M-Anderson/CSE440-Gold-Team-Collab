@@ -69,20 +69,20 @@ public class GuardMechanics : MonoBehaviour
         {
             Patrol();
         }
-        else if (inView == true)
+       /* else if (inView == true)
         {
             Chase();
-        }
+        }*/
     }
 
-    public void Chase()
+   /* public void Chase()
     {
         transform.position = Vector2.MoveTowards(transform.position, playerPosition.position, speed * Time.deltaTime);
         Vector2 direction = new Vector2(playerPosition.position.x - transform.position.x, playerPosition.position.y - transform.position.y);
         direction = direction.normalized;
         transform.up = direction;
     }
-
+    */
     public void Patrol()
     {
         transform.position = Vector2.MoveTowards(transform.position, patrolRoute[randomRoute].position, speed * Time.deltaTime);
