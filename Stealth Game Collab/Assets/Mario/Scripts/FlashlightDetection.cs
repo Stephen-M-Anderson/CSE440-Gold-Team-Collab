@@ -10,9 +10,9 @@ public class FlashlightDetection : MonoBehaviour
     {
         if (o.gameObject.tag == "Player")
         {
-            guardMechanics.inView = true;
+           // guardMechanics.inView = true;
             Debug.Log("HEY");
-            guardMechanics.speed = 3;
+           // guardMechanics.speed = 3;
         }
     }
 
@@ -20,15 +20,15 @@ public class FlashlightDetection : MonoBehaviour
     {
         if (o.gameObject.tag == "Player")
         {
-           Invoke("SetViewToFalse", 2f);
-           Debug.Log("Must Have Been the Wind");
+         //  Invoke("SetViewToFalse", 2f);
+         //  Debug.Log("Must Have Been the Wind");
            
         }
     }
 
     private void SetViewToFalse()
     {
-        guardMechanics.inView = false;
-        guardMechanics.speed = 2;
+       // guardMechanics.inView = false;
+       // guardMechanics.speed = 2;
     }
 }
