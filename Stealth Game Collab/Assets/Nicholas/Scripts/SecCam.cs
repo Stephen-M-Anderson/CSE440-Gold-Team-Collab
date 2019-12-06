@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SecCam : MonoBehaviour
 {
@@ -82,29 +83,31 @@ public class SecCam : MonoBehaviour
 
         }
         Debug.Log("Trigger detected.");
-
+/*
         if (collision.gameObject.tag == "Player" && isOverlapped == false) //allows camera to spot player.
         {
-            RaycastHit2D hit = Physics2D.Linecast(camCenter.position, playerPosition.position,
-                LayerMask.GetMask("Player", "Default"));
-            if (hit)
-            {
-                Debug.Log("Hit " + hit.collider.name);
-                if (hit.collider.gameObject.CompareTag("Player"))
-                {
-                    isTrackingPlayer = true;
-                    isResumingRotation = false;
-                    enemyScript.cameraSpotted = true;
-                    resumeTimer = 0;
-                }
-            }
+            ClosestWaypoint cwCopy = collision.gameObject.GetComponent<ClosestWaypoint>();
+            GuardMechanics gmCopy = patrolGuard.GetComponent<GuardMechanics>();
+            isTrackingPlayer = true;
+            isResumingRotation = false;
+           // enemyScript.cameraSpotted = true;
+            resumeTimer = 0;
+            gmCopy.SendMessage("StartMoveToWaypoint", cwCopy.closestWaypoint);
+            Debug.Log("Told guard " + gmCopy.gameObject.name + " to move to " + cwCopy.closestWaypoint);
+*/
+        if (collision.gameObject.tag == "Player" && isOverlapped == false)
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("Main Menu"); //loads the Main Menu scene. Simple as that.   
+        }
+    }
 #if false
                 isTrackingPlayer = true;
                 Debug.Log("Player spotted by camera");
                 enemyScript.cameraSpotted = true;
 #endif
-        }
-    }
+
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" && isOverlapped == false) //allows camera to spot player.
@@ -122,13 +125,13 @@ public class SecCam : MonoBehaviour
                     isTrackingPlayer = true;
                     isResumingRotation = false;
                     resumeTimer = 0;
-                    enemyScript.cameraSpotted = true;
+                  //  enemyScript.cameraSpotted = true;
                 }
             }
             else
             {
                 isTrackingPlayer = false;
-                enemyScript.cameraSpotted = true;
+              //  enemyScript.cameraSpotted = true;
             }
 #if false
             isTrackingPlayer = true;
