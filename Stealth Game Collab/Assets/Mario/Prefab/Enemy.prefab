@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4704602647375543728}
   - component: {fileID: 1933909255941445057}
   - component: {fileID: 6727523775194630172}
+  - component: {fileID: 2555463323204404275}
   m_Layer: 0
   m_Name: FlashlightRay
   m_TagString: Untagged
@@ -46,6 +47,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -109,6 +111,20 @@ PolygonCollider2D:
     - - {x: 0, y: 0.5}
       - {x: -0.4330127, y: -0.25000003}
       - {x: 0.43301272, y: -0.24999996}
+--- !u!114 &2555463323204404275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623941058550951159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1fb682052dc9f4cbfa07b85c31fac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyScript: {fileID: 0}
+  chaseTimer: 0
 --- !u!1 &5270252906308229962
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,10 +136,12 @@ GameObject:
   - component: {fileID: 5563633701647811886}
   - component: {fileID: 2858343084330647090}
   - component: {fileID: 7056508997759121037}
-  - component: {fileID: 8955949284331359619}
+  - component: {fileID: -8923976556700401169}
+  - component: {fileID: -4505749553159128478}
+  - component: {fileID: -7827834785874524383}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Guard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,7 +181,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!212 &7056508997759121037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -178,6 +196,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -213,7 +232,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8955949284331359619
+--- !u!61 &-8923976556700401169
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270252906308229962}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5}
+  m_EdgeRadius: 0
+--- !u!114 &-4505749553159128478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,12 +267,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 5270252906308229962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71764c3b058357e4f9faaff999aea031, type: 3}
+  m_Script: {fileID: 11500000, guid: f6a857e57a4a282489137b620b706d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  startWaitTime: 3
+  gameOverState: 0
+  friendly: 0
+--- !u!114 &-7827834785874524383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270252906308229962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4f78f334bef0c448b7773c1bc4dedd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  startWaitTime: 0
   actualPlayer: {fileID: 0}
-  routes:
-  - {fileID: 786246770204499755, guid: 578fc52ead31f1848b5af898f71b982f, type: 3}
-  - {fileID: 200434119763059432, guid: 322e137408574c74281758ad9ca8cb4d, type: 3}
+  inView: 0
+  heardSpeaker: 0
+  routeWaypoints: []
+  pathfindingNodes: []
+  pathfindingPos: []
+  isPathfinding: 0
+  closestWaypoint: {fileID: 0}
+  wscopy: {fileID: 0}

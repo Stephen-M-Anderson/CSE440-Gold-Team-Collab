@@ -33,9 +33,12 @@ public class CoverScript : MonoBehaviour
     // Use Fixed Update for anything involving Rigid Bodies
     void FixedUpdate()
     {
-        nearestCover = Physics2D.OverlapCircle(playerStats.rb.position, coverRange, wall);
+        if (!inCover) // stops the nearest cover from updating if the player is already in cover
+        {
+            nearestCover = Physics2D.OverlapCircle(playerStats.rb.position, coverRange, wall);
+        }
         if (Input.GetKey(playerStats.cover))
-        { 
+        {
             if (nearestCover) // if the player is within range of valid cover based on coverRange and not in cover
             {
                 coverPoint = Physics2D.ClosestPoint(playerStats.rb.position, nearestCover); // finds the closest point on the perimeter of the collider and stores it in coverPoint
@@ -45,9 +48,9 @@ public class CoverScript : MonoBehaviour
 
                 if (!inCover) // if player is just entering cover
                 {
-                    playerStats.moveSpeed = playerStats.moveSpeed * speedMultiplier;
+                    playerStats.maxSpeed = playerStats.maxSpeed * speedMultiplier;
                     inCover = true;
-                    
+
                     Debug.Log("Extents: " + nearestCover.bounds.extents);
 
                     if (playerStats.transform.up == Vector3.up)
@@ -69,7 +72,7 @@ public class CoverScript : MonoBehaviour
                     else
                         coverSide = 0;
                 }
-                
+
                 if (coverSide == 1 || coverSide == 3) // if player is taking cover on the top or bottom of the cover 
                 {
                     if (playerStats.rb.position.x < nearestCover.bounds.center.x) // the player is on the left half of the cover
@@ -123,12 +126,12 @@ public class CoverScript : MonoBehaviour
             }
         }
         if (!Input.GetKey(playerStats.cover) && inCover == true) // if cover button isn't pressed, inCover = false
-        { 
+        {
+            playerStats.maxSpeed = playerStats.maxSpeed / speedMultiplier;
+            playerStats.rb.constraints = RigidbodyConstraints2D.None;
             inCover = false;
             atCoverCorner = false;
             playerStats.peeking = false;
-            playerStats.moveSpeed = playerStats.moveSpeed / speedMultiplier;
-            playerStats.rb.constraints = RigidbodyConstraints2D.None;
         }
     }
 }
@@ -157,5 +160,4 @@ for (int i = 0; i < coverCount; ++i)
 Debug.Log("Distance to Cover = " + distanceToCover);
 if (Input.GetKey(playerStats.cover)) // if the player is pressing or holding the Cover input in PlayerWalking
 {
-
 } */
