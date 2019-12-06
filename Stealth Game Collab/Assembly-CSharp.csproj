@@ -68,6 +68,7 @@
     <Compile Include="Assets\Christian\Scripts\Busted Old Shit\DoorScript.cs" />
     <Compile Include="Assets\Christian\Scripts\CanThrowingScript.cs" />
     <Compile Include="Assets\Christian\Scripts\CanThrowingScriptMachine.cs" />
+    <Compile Include="Assets\Christian\Scripts\CombPickup.cs" />
     <Compile Include="Assets\Christian\Scripts\DogMechanics.cs" />
     <Compile Include="Assets\Christian\Scripts\GameOver.cs" />
     <Compile Include="Assets\Christian\Scripts\SpawnCan.cs" />
