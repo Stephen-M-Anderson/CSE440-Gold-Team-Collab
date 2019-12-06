@@ -48,7 +48,7 @@ public class CoverScript : MonoBehaviour
 
                 if (!inCover) // if player is just entering cover
                 {
-                    playerStats.maxSpeed = playerStats.maxSpeed * speedMultiplier;
+                    playerStats.moveSpeed = playerStats.moveSpeed * speedMultiplier;
                     inCover = true;
                     
                     Debug.Log("Extents: " + nearestCover.bounds.extents);
@@ -127,11 +127,11 @@ public class CoverScript : MonoBehaviour
         }
         if (!Input.GetKey(playerStats.cover) && inCover == true) // if cover button isn't pressed, inCover = false
         { 
-            playerStats.maxSpeed = playerStats.maxSpeed / speedMultiplier;
-            playerStats.rb.constraints = RigidbodyConstraints2D.None;
             inCover = false;
             atCoverCorner = false;
             playerStats.peeking = false;
+            playerStats.moveSpeed = playerStats.moveSpeed / speedMultiplier;
+            playerStats.rb.constraints = RigidbodyConstraints2D.None;
         }
     }
 }

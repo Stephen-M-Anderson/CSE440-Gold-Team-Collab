@@ -19,22 +19,14 @@ public class PlayerAnimator : MonoBehaviour
             case AnimationState.NONE:
                 animator.SetBool("isIdling", false);
                 animator.SetBool("isWalking", false);
-                animator.SetBool("isThrowing", false);
                 break;
             case AnimationState.IDLE:
                 animator.SetBool("isIdling", true);
                 animator.SetBool("isWalking", false);
-                animator.SetBool("isThrowing", false);
                 break;
             case AnimationState.WALK:
                 animator.SetBool("isIdling", false);
                 animator.SetBool("isWalking", true);
-                animator.SetBool("isThrowing", false);
-                break;
-            case AnimationState.THROW:
-                animator.SetBool("isIdling", false);
-                animator.SetBool("isWalking", false);
-                animator.SetBool("isThrowing", true);
                 break;
             default:
                 break;
@@ -44,7 +36,6 @@ public class PlayerAnimator : MonoBehaviour
 {
     NONE = 0,
     IDLE = 1,
-    WALK = 2,
-    THROW = 3
+    WALK = 2
 };
 }
