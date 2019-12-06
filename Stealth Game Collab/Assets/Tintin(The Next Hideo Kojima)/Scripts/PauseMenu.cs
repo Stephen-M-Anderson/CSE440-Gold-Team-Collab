@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     public static bool IsPaused = false;  //Begins at a false state so when you press escape it makes it true. Pressing esc again makes it unpause.
     public GameObject pauseMenuUI; //script needs to know where the Pause Menu is. Drag it in when your done.
     public GameObject HUDpanel;
+    public AlertHUD AlreadyAlerted;
+    public bool isSpicyMus = false;
 
     void Start()
     {
@@ -32,7 +34,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
-
+    
     public void Resume()
     {
         HUDpanel.SetActive(true);
@@ -40,7 +42,16 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f; //resumes life as we know it. 
         IsPaused = false;
         FindObjectOfType<AudioManager>().Pause("PauseMusic");
-        FindObjectOfType<AudioManager>().Play("RegularMusic");
+        
+        if(!AlreadyAlerted.AlreadyAlerted)
+        {
+            FindObjectOfType<AudioManager>().Play("RegularMusic");
+        }
+        else if(AlreadyAlerted.AlreadyAlerted)
+        {
+            FindObjectOfType<AudioManager>().Play("AlertMusic");
+        }
+        
     }
 
     void Pause()
@@ -50,7 +61,15 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f; //STOP. Time has halted. time has reached 0F. which means no time.
         IsPaused = true;
         FindObjectOfType<AudioManager>().Play("PauseMusic");
-        FindObjectOfType<AudioManager>().Pause("RegularMusic");
+
+        if (!AlreadyAlerted.AlreadyAlerted)
+        {
+            FindObjectOfType<AudioManager>().Pause("RegularMusic");
+        }
+        else if (AlreadyAlerted.AlreadyAlerted)
+        {
+            FindObjectOfType<AudioManager>().Pause("AlertMusic");
+        }
 
     }
 

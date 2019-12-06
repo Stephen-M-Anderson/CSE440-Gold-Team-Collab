@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class GetCaughtDetection : MonoBehaviour
 {
-    public bool Sighted;
+    public bool Sighted = false;
     public Collider2D player;
     int AlreadySighted = 0;
+
+
+    public void YourCaught()
+    {
+        Sighted = true;
+    }
+    /*
     void OnTriggerStay2D(Collider2D o)
     {
         if (o.gameObject.tag == "EnemyLight")
@@ -16,7 +23,7 @@ public class GetCaughtDetection : MonoBehaviour
             Debug.Log("Must have been Hey");
         }
     }
-
+    
     void OnTriggerEnter2D(Collider2D o)
     {
         if (o.gameObject.tag == "EnemyLight")
@@ -31,7 +38,7 @@ public class GetCaughtDetection : MonoBehaviour
         }
     }
 
-
+    */
     void OnTriggerExit2D(Collider2D o)
     {
         if (o.gameObject.tag == "EnemyLight")
@@ -40,4 +47,5 @@ public class GetCaughtDetection : MonoBehaviour
             Debug.Log("Must Have Been the Wind");
         }
     }
+    
 }

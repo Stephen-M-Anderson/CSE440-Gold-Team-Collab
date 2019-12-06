@@ -13,6 +13,7 @@ public class SecCam : MonoBehaviour
     public float detectionRadius = 0.5f;
     public float guardTimer = 0.0f;
     public bool isResumingRotation = false;
+    
 
 
     public NicEnemyScript enemyScript;
@@ -108,6 +109,7 @@ public class SecCam : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && isOverlapped == false) //allows camera to spot player.
         {
+
             RaycastHit2D hit = Physics2D.Linecast(camCenter.position, playerPosition.position,
                 LayerMask.GetMask("Player", "Default"));
             if (hit)
@@ -115,6 +117,8 @@ public class SecCam : MonoBehaviour
                 Debug.Log("Hit " + hit.collider.name);
                 if (hit.collider.gameObject.CompareTag("Player"))
                 {
+                    GetCaughtDetection temp = collision.gameObject.GetComponent<GetCaughtDetection>();
+                    temp.SendMessage("YourCaught");
                     isTrackingPlayer = true;
                     isResumingRotation = false;
                     resumeTimer = 0;
