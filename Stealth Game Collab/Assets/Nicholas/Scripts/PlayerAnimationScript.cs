@@ -8,6 +8,7 @@ public class PlayerAnimationScript : MonoBehaviour
     private KeyCode moveRight = KeyCode.D;
     private KeyCode moveUp = KeyCode.W;
     private KeyCode moveDown = KeyCode.S;
+    private KeyCode useKey = KeyCode.Space;
 
     // Animations
     private AnimationState animationState = AnimationState.NONE;
@@ -16,7 +17,8 @@ public class PlayerAnimationScript : MonoBehaviour
     {
         NONE = 0,
         IDLE = 1,
-        WALK = 2
+        WALK = 2,
+        THROW = 3
     };
 
     void Start()
@@ -37,6 +39,10 @@ public class PlayerAnimationScript : MonoBehaviour
         {
             animationState = AnimationState.WALK;
         }
+        else if(Input.GetKey(useKey))
+        {
+            animationState = AnimationState.THROW;
+        }
         else
         {
             animationState = AnimationState.IDLE;
@@ -47,14 +53,22 @@ public class PlayerAnimationScript : MonoBehaviour
             case AnimationState.NONE:
                 animator.SetBool("isIdling", false);
                 animator.SetBool("isWalking", false);
+                animator.SetBool("isThrowing", false);
                 break;
             case AnimationState.IDLE:
                 animator.SetBool("isIdling", true);
                 animator.SetBool("isWalking", false);
+                animator.SetBool("isThrowing", false);
                 break;
             case AnimationState.WALK:
                 animator.SetBool("isIdling", false);
                 animator.SetBool("isWalking", true);
+                animator.SetBool("isThrowing", false);
+                break;
+            case AnimationState.THROW:
+                animator.SetBool("isIdling", false);
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isThrowing", true);
                 break;
             default:
                 break;
