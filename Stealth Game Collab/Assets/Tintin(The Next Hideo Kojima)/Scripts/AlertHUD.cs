@@ -12,6 +12,7 @@ public class AlertHUD : MonoBehaviour
     public GetCaughtDetection getcaughtbool;
     public Image alert;
     int hasAlerted = 0;
+    public bool AlreadyAlerted = false;
     float waitTimeNumber = 5.0f;
     bool doingthings = false; // This bool will STOP the fucking courtine function from doings things
 
@@ -28,6 +29,12 @@ public class AlertHUD : MonoBehaviour
             alert.color = UnityEngine.Color.red;   //MAKE THE HUD SCARY RED
             Debug.Log("IN VIEW IN VIEW");
             hasAlerted = 1;
+            if (!AlreadyAlerted)
+            {
+                FindObjectOfType<AudioManager>().Play("AlertMusic");
+                FindObjectOfType<AudioManager>().Pause("RegularMusic");
+                AlreadyAlerted = true;
+            }
             /*
             if(hasAlerted == 1)
             {
