@@ -6,6 +6,8 @@ public class SecurityCamera : MonoBehaviour
 {
     [SerializeField]
     private HingeJoint2D hinge;
+    [SerializeField]
+    private GuardMechanics assignedGuard;
     private JointMotor2D motorCopy;
     private Quaternion origRot;
     private Transform origPos;
@@ -18,6 +20,10 @@ public class SecurityCamera : MonoBehaviour
     private Quaternion minRot, maxRot;
     private float minLim, maxLim;
     public bool trackingPlayer;
+    private bool guardSummoned = false;
+    [SerializeField]
+    private float guardCooldown;
+    private float guardwait;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +37,7 @@ public class SecurityCamera : MonoBehaviour
         minLim = hinge.limits.min;
         maxLim = hinge.limits.max;
         waitTime = rotationWaitTime;
+        guardwait = guardCooldown;
         rotationSpeed = motorCopy.motorSpeed;
         Debug.Log("Min = " + minLim + ", Max = " + maxLim);
     }
@@ -81,6 +88,24 @@ public class SecurityCamera : MonoBehaviour
             if (hinge.jointAngle < maxLim && hinge.jointAngle > minLim)
             {
                 transform.up = direction;
+                if (guardSummoned == false)
+                {
+                    ClosestWaypoint cwcopy = player.GetComponent<ClosestWaypoint>();
+                    assignedGuard.SendMessage("StartMoveToWaypoint", cwcopy.closestWaypoint);
+                    guardSummoned = true;
+                }
+            }
+        }
+        if (guardSummoned == true)
+        {
+            if (guardwait <= 0)
+            {
+                guardSummoned = false;
+                guardwait = guardCooldown;
+            }
+            else
+            {
+                guardwait -= Time.fixedDeltaTime;
             }
         }
     }

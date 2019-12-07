@@ -29,7 +29,7 @@ public class GuardMechanics : MonoBehaviour
 
     // Stephen's Variables start here
     public ClosestWaypoint closestWaypoint;
-    public WaypointScript wscopy;
+    private WaypointScript wscopy;
 
     void Start()
     {
@@ -60,29 +60,29 @@ public class GuardMechanics : MonoBehaviour
 
     private void Update()
     {
-        wscopy = closestWaypoint.closestWaypoint.GetComponent<WaypointScript>();
+        wscopy = closestWaypoint.GetComponent<WaypointScript>();
         if (isPathfinding)
         {
             FollowNodePath();
         }
-        else if (inView == false && heardSpeaker == false)
+        else if (inView == true)
+        {
+            Chase();
+        }
+        else 
         {
             Patrol();
         }
-       /* else if (inView == true)
-        {
-            Chase();
-        }*/
     }
 
-   /* public void Chase()
+    public void Chase()
     {
-        transform.position = Vector2.MoveTowards(transform.position, playerPosition.position, speed * Time.deltaTime);
-        Vector2 direction = new Vector2(playerPosition.position.x - transform.position.x, playerPosition.position.y - transform.position.y);
+        transform.position = Vector2.MoveTowards(transform.position, actualPlayer.transform.position, speed * Time.deltaTime);
+        Vector2 direction = new Vector2(actualPlayer.transform.position.x - transform.position.x, actualPlayer.transform.position.y - transform.position.y);
         direction = direction.normalized;
         transform.up = direction;
     }
-    */
+
     public void Patrol()
     {
         transform.position = Vector2.MoveTowards(transform.position, patrolRoute[randomRoute].position, speed * Time.deltaTime);
@@ -120,11 +120,10 @@ public class GuardMechanics : MonoBehaviour
         }
         if (pathfindingPos.Count == 0) // if we are at the target node, meaning the list of nodes to travel to is empty
         {
-            if (isReturning == false)
+            if (isReturning == false) // when the guard reaches the point, they will path back to their starting point 
             {
                 isReturning = true;
-                pathfindingPos = GetPathfindingPositions(pathfindingNodes);
-                pathfindingPos.Reverse();
+                StartMoveToWaypoint(routeWaypoints[0]);
             }
             else
             {
@@ -157,9 +156,9 @@ public class GuardMechanics : MonoBehaviour
     public IEnumerator MoveToWaypoint(GameObject targetNode)
     {
         GetNodePath(targetNode); // the path that we have to follow is now stored in pathfindingNodes
-        if (pathfindingNodes.Length == 0)
+        if (pathfindingNodes.Length == 0) 
         {
-            yield return null;
+            yield return null; // keeps the execution paused here until the pathfinding algorithm is complete
         }
         //Debug.Log("Pathfinding Nodes = " + pathfindingNodes.ToString());
     }
@@ -185,7 +184,6 @@ public class GuardMechanics : MonoBehaviour
             if (temp.isOpen == false)
             {
                 temp.SendMessage("GuardOpen");
-                Debug.Log("Guard should have opened me!");
             }
         }
     }
