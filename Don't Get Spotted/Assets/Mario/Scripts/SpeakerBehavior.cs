@@ -27,7 +27,7 @@ public class SpeakerBehavior : MonoBehaviour
         {
             guardIsWaiting = false;
             guardTimer = 0;
-            Debug.Log("Timer Ended");
+    //        Debug.Log("Timer Ended");
         }
 
     }

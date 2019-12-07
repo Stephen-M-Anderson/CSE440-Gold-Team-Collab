@@ -82,6 +82,7 @@
     <Compile Include="Assets\Nicholas\Scripts\PlayerAnimationScript.cs" />
     <Compile Include="Assets\Nicholas\Scripts\PlayerAnimator.cs" />
     <Compile Include="Assets\Nicholas\Scripts\SecCam.cs" />
+    <Compile Include="Assets\Stephen\Scripts\CameraDetection.cs" />
     <Compile Include="Assets\Stephen\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Stephen\Scripts\ClosestWaypoint.cs" />
     <Compile Include="Assets\Stephen\Scripts\CoverScript.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\Stephen\Scripts\FlashlightScript.cs" />
     <Compile Include="Assets\Stephen\Scripts\GuardMechanics.cs" />
     <Compile Include="Assets\Stephen\Scripts\PlayerWalking.cs" />
+    <Compile Include="Assets\Stephen\Scripts\SecurityCamera.cs" />
     <Compile Include="Assets\Stephen\Scripts\TESTForPathing.cs" />
     <Compile Include="Assets\Stephen\Scripts\WaypointScript.cs" />
     <Compile Include="Assets\Stephen\Scripts\WhereILeftOff.cs" />
@@ -179,6 +181,33 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>E:/Coding/Unity/Projects/CSE 440 files/CSE440-Gold-Team-Collab/Don't Get Spotted/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Runtime">
+      <HintPath>E:/Coding/Unity/Projects/CSE 440 files/CSE440-Gold-Team-Collab/Don't Get Spotted/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Triangle.Runtime">
+      <HintPath>E:/Coding/Unity/Projects/CSE 440 files/CSE440-Gold-Team-Collab/Don't Get Spotted/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>E:/Coding/Unity/Projects/CSE 440 files/CSE440-Gold-Team-Collab/Don't Get Spotted/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEngineBridge.001">
+      <HintPath>E:/Coding/Unity/Projects/CSE 440 files/CSE440-Gold-Team-Collab/Don't Get Spotted/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Runtime">
+      <HintPath>E:/Coding/Unity/Projects/CSE 440 files/CSE440-Gold-Team-Collab/Don't Get Spotted/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Editor">
+      <HintPath>E:/Coding/Unity/Projects/CSE 440 files/CSE440-Gold-Team-Collab/Don't Get Spotted/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>E:/Coding/Unity/Projects/CSE 440 files/CSE440-Gold-Team-Collab/Don't Get Spotted/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+      <HintPath>E:/Coding/Unity/Projects/CSE 440 files/CSE440-Gold-Team-Collab/Don't Get Spotted/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>E:/Coding/Unity/Projects/CSE 440 files/CSE440-Gold-Team-Collab/Don't Get Spotted/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>E:/Coding/Unity/2019.3.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
