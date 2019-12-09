@@ -20,6 +20,7 @@ public class GuardMechanics : MonoBehaviour
     public List<Transform> pathfindingReturnPos;
     public bool isPathfinding;
     public bool isReturning;
+    public bool isSearching;
     private int pathfindingIndex;
     private int randomRoute;
     private int index;
@@ -30,12 +31,14 @@ public class GuardMechanics : MonoBehaviour
     // Stephen's Variables start here
     public ClosestWaypoint closestWaypoint;
     private WaypointScript wscopy;
+    private GameObject lastKnownPlayerLocation;
 
     void Start()
     {
         waitTime = startWaitTime;
         pathfindingIndex = 0;
         isPathfinding = false;
+        isSearching = false;
         actualPlayer = GameObject.FindGameObjectWithTag("Player");
         closestWaypoint = gameObject.GetComponent<ClosestWaypoint>();
         wscopy = closestWaypoint.GetComponent<WaypointScript>();
@@ -61,7 +64,7 @@ public class GuardMechanics : MonoBehaviour
     private void Update()
     {
         wscopy = closestWaypoint.GetComponent<WaypointScript>();
-        if (isPathfinding)
+        if (isPathfinding && !isSearching)
         {
             FollowNodePath();
         }
@@ -138,14 +141,12 @@ public class GuardMechanics : MonoBehaviour
             transform.up = direction;
         }
     }
-    public void OpenDoor(GameObject doorWaypoint)
-    {
 
-    }
     public void GetNodePath(GameObject targetNode) // This is where the shortest path algorithm in WaypointScript is called
     {
         if (targetNode)
         {
+            Debug.Log("Get Node Path TargetNode = " + targetNode.gameObject.name);
             wscopy.targetNode = targetNode; // tells the waypoints script what our target node is
             wscopy.SendMessage("StartShortestPath", this); // starts the pathfinding functions, tells the waypoint script who the guard is
             //Debug.Log("path nodes array = " + wscopy.pathNodesArray.ToString());

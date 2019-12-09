@@ -28,6 +28,7 @@ public class FlashlightScript : MonoBehaviour
             if (hit.collider == null)
             {
                 gmcopy.inView = true;
+                Debug.Log("In view set to true in Trigger enter");
             }
         }
     }
@@ -39,6 +40,7 @@ public class FlashlightScript : MonoBehaviour
         if (hit.collider == null) // as long as the player is in sight
         {
             gmcopy.inView = true;
+            Debug.Log("In view set to true in trigger stay");
         }
         else // if the player loses line of sight 
         {
@@ -51,6 +53,8 @@ public class FlashlightScript : MonoBehaviour
                 else if (playercw.closestWaypoint != tempNode) // waits until the player has moved to the next closest waypoint once out of view, lets the guard path around corners simply 
                 {
                     gmcopy.inView = false;
+                    gmcopy.isSearching = true;
+                    Debug.Log("In view set to false in trigger stay, lost sight");
                     gmcopy.SendMessage("StartMoveToWaypoint", playercw.closestWaypoint); // sends the guard to the players current location 
                     Debug.Log("I think he went this way!");
                 }

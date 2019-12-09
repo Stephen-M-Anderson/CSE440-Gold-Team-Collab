@@ -49,7 +49,6 @@ public class SecurityCamera : MonoBehaviour
         {
             if (hinge.jointAngle >= maxLim) // if we've rotated our maximum amount, rotate the other way 
             {
-                Debug.Log("Hit Max");
                 if (waitTime <= 0)
                 {
                     motorCopy.motorSpeed = 0 - rotationSpeed;
@@ -64,7 +63,6 @@ public class SecurityCamera : MonoBehaviour
             }
             else if (hinge.jointAngle <= minLim)
             {
-                Debug.Log("Hit Min");
                 if (waitTime <= 0)
                 {
                     motorCopy.motorSpeed = rotationSpeed;
