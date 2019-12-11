@@ -5,17 +5,15 @@ using UnityEngine;
 
 public class WaypointScript : MonoBehaviour
 {
-    public int numberOfMapWaypoints;
+    private int numberOfMapWaypoints;
     public GameObject[] waypoints;
     public GameObject[] adjacentWaypoints;
-    public int[] neighboringIndicies;
+    private int[] neighboringIndicies;
     private GameObject[] tempNodeArray;
     private float currentNodeDistance;
     private float closestNodeDistance;
-    public int numberOfAdjacentNodes;
-    public bool connectsToDoor;
-    public bool isDoor;
-    public GameObject linkedDoor;
+    private int numberOfAdjacentNodes;
+    public float waypointLinkRange;
 
     private int i, j;
 
@@ -23,7 +21,7 @@ public class WaypointScript : MonoBehaviour
     private float[] djdistances;
     private List<GameObject> djlist;
     private bool[] djvisited;
-    public WaypointScript nodeForDjikstra;
+    private WaypointScript nodeForDjikstra;
     public GameObject[] pathNodesArray;
     public GameObject targetNode;
 
@@ -31,6 +29,7 @@ public class WaypointScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        numberOfMapWaypoints = 54;
         waypoints = new GameObject[numberOfMapWaypoints];
         tempNodeArray = new GameObject[numberOfMapWaypoints];
         adjacentWaypoints = new GameObject[8];
@@ -52,7 +51,7 @@ public class WaypointScript : MonoBehaviour
                 i++; // Do it yourself for-loop, baby!
             }
 
-            else if (currentNodeDistance < 3f)
+            else if (currentNodeDistance < waypointLinkRange)
             {
                 tempNodeArray[i] = node;
                 i++;

@@ -164,15 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &23562300
@@ -187,9 +181,9 @@ GameObject:
   - component: {fileID: 23562302}
   - component: {fileID: 874291249200039558}
   - component: {fileID: 874291249200039559}
-  m_Layer: 0
-  m_Name: Guard Flashlight
-  m_TagString: Untagged
+  m_Layer: 14
+  m_Name: Guard Flashlight A0
+  m_TagString: Flashlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,7 +225,7 @@ MonoBehaviour:
   m_UseNormalMap: 0
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
+  m_ShadowIntensity: 1
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 74.97
   m_PointLightOuterAngle: 89.97
@@ -288,15 +282,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &75823159
@@ -342,15 +330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &87315616
@@ -396,15 +378,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &156036872
@@ -450,15 +426,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &186791592
@@ -504,180 +474,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
---- !u!43 &192665634
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 18
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0.00025218725, y: -0.0017998815, z: 0}
-      m_Extent: {x: 0.4999895, y: 0.5098911, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200010000000300020004000000000005000300010006000200030007000100
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 224
-    _typelessdata: e59dffbea39cfe3e00000000d922313c2bfc7fbf0000008000000080d70f003f2efe02bf000000000c21c3380000803f0000008000000080f9ebff3e4412023f00000000feff7fbfe3d0cab9000000000000008092ddffbe15f802bf00000000feff7f3fa675fcb90000008000000080f9ebff3e4412023f00000000d922313c2bfc7fbf0000008000000080e59dffbea39cfe3e00000000feff7f3fa675fcb90000008000000080d70f003f2efe02bf00000000feff7fbfe3d0cab9000000000000008092ddffbe15f802bf000000000c21c3380000803f0000008000000080
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0.00025218725, y: -0.0017998815, z: 0}
-    m_Extent: {x: 0.4999895, y: 0.5098911, z: 0}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &231155489
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,15 +522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 1
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &339064588
@@ -748,7 +543,6 @@ GameObject:
   - component: {fileID: 339064590}
   - component: {fileID: 339064589}
   - component: {fileID: 339064596}
-  - component: {fileID: 339064597}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -948,21 +742,6 @@ MonoBehaviour:
   rb: {fileID: 339064593}
   closestWaypoint: {fileID: 0}
   distanceToWaypoint: 0
---- !u!114 &339064597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339064588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e2c836e28419d44898b1196e6c37980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Guard: {fileID: 1468250513}
-  playerWalkingCopy: {fileID: 339064591}
-  closestWaypointCopy: {fileID: 339064596}
 --- !u!1 &350714418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,8 +785,8 @@ MonoBehaviour:
   - {x: 0.4998472, y: 0.5080912, z: 0}
   - {x: -0.4992515, y: 0.4972888, z: 0}
   m_ShapePathHash: -737369402
-  m_Mesh: {fileID: 1332288984}
-  m_InstanceId: 54232
+  m_Mesh: {fileID: 1522004608}
+  m_InstanceId: 16436
 --- !u!61 &350714420
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1141,15 +920,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &365263050
@@ -1195,15 +968,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 1
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &369582989
@@ -1249,15 +1016,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &397023745
@@ -1303,15 +1064,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &411248475
@@ -1357,15 +1112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &454914003
@@ -1411,15 +1160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &471389443
@@ -1465,15 +1208,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 1
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &480587124
@@ -1519,15 +1256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &488766101
@@ -1573,17 +1304,174 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
+--- !u!43 &502247935
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 18
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0.00025218725, y: -0.0017998815, z: 0}
+      m_Extent: {x: 0.4999895, y: 0.5098911, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000001000200010000000300020004000000000005000300010006000200030007000100
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 224
+    _typelessdata: e59dffbea39cfe3e00000000d922313c2bfc7fbf0000008000000080d70f003f2efe02bf000000000c21c3380000803f0000008000000080f9ebff3e4412023f00000000feff7fbfe3d0cab9000000000000008092ddffbe15f802bf00000000feff7f3fa675fcb90000008000000080f9ebff3e4412023f00000000d922313c2bfc7fbf0000008000000080e59dffbea39cfe3e00000000feff7f3fa675fcb90000008000000080d70f003f2efe02bf00000000feff7fbfe3d0cab9000000000000008092ddffbe15f802bf000000000c21c3380000803f0000008000000080
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0.00025218725, y: -0.0017998815, z: 0}
+    m_Extent: {x: 0.4999895, y: 0.5098911, z: 0}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &634979278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,15 +1515,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &638572236
@@ -1681,15 +1563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &666764308
@@ -1867,15 +1743,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &689865023
@@ -1921,15 +1791,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &710768538
@@ -1975,15 +1839,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &716304041
@@ -2029,15 +1887,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &731759349
@@ -2083,15 +1935,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &739929790
@@ -2137,15 +1983,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &742463176
@@ -2220,6 +2060,169 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!43 &847063624
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 18
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0.00025218725, y: -0.0017998815, z: 0}
+      m_Extent: {x: 0.4999895, y: 0.5098911, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000001000200010000000300020004000000000005000300010006000200030007000100
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 224
+    _typelessdata: e59dffbea39cfe3e00000000d922313c2bfc7fbf0000008000000080d70f003f2efe02bf000000000c21c3380000803f0000008000000080f9ebff3e4412023f00000000feff7fbfe3d0cab9000000000000008092ddffbe15f802bf00000000feff7f3fa675fcb90000008000000080f9ebff3e4412023f00000000d922313c2bfc7fbf0000008000000080e59dffbea39cfe3e00000000feff7f3fa675fcb90000008000000080d70f003f2efe02bf00000000feff7fbfe3d0cab9000000000000008092ddffbe15f802bf000000000c21c3380000803f0000008000000080
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0.00025218725, y: -0.0017998815, z: 0}
+    m_Extent: {x: 0.4999895, y: 0.5098911, z: 0}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &911207334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,15 +2266,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &920299234
@@ -2317,15 +2314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &926239440
@@ -2371,15 +2362,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &927275450
@@ -2425,15 +2410,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &981188060
@@ -2555,11 +2534,8 @@ MonoBehaviour:
   isOpen: 0
   player: {fileID: 339064591}
   hinge: {fileID: 986512723}
-  openingForce: 200
+  openingForce: 1000
   doorOpenRange: 2
-  closing: 0
-  doorAngleDifference: 0
-  counterClockwise: 0
 --- !u!233 &986512723
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -2629,8 +2605,8 @@ MonoBehaviour:
   - {x: 0.4998472, y: 0.5080912, z: 0}
   - {x: -0.4992515, y: 0.4972888, z: 0}
   m_ShapePathHash: -737369402
-  m_Mesh: {fileID: 1762184089}
-  m_InstanceId: 54400
+  m_Mesh: {fileID: 1628910307}
+  m_InstanceId: 16602
 --- !u!61 &986512726
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2764,8 +2740,8 @@ MonoBehaviour:
   - {x: 0.4998472, y: 0.5080912, z: 0}
   - {x: -0.4992515, y: 0.4972888, z: 0}
   m_ShapePathHash: -737369402
-  m_Mesh: {fileID: 192665634}
-  m_InstanceId: 54410
+  m_Mesh: {fileID: 502247935}
+  m_InstanceId: 16612
 --- !u!61 &987992253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2971,17 +2947,129 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
+--- !u!1 &1055228550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055228551}
+  - component: {fileID: 1055228554}
+  - component: {fileID: 1055228553}
+  - component: {fileID: 1055228552}
+  m_Layer: 14
+  m_Name: Guard Flashlight A1
+  m_TagString: Flashlight
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1055228551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055228550}
+  m_LocalRotation: {x: -0, y: -0, z: 0.017174147, w: 0.99985254}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 1.00035, y: 1.29965, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1468250515}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1055228552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055228550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9942a1542c03fa45ac029b189df00c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionBlockers:
+    serializedVersion: 2
+    m_Bits: 14336
+--- !u!60 &1055228553
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055228550}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.4216553, y: 3.0813613}
+      - {x: 0.14864795, y: 3.2721608}
+      - {x: -1.1568925, y: 3.157126}
+      - {x: -2.0073967, y: 2.8913474}
+      - {x: -2.5805929, y: 2.5757947}
+      - {x: 0.01389501, y: -0.0161162}
+      - {x: -0.009904613, y: -0.011975817}
+      - {x: 2.5805228, y: 2.5986037}
+--- !u!114 &1055228554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055228550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 0.40457398, b: 0, a: 1}
+  m_Intensity: 0.75
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 1
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 74.97
+  m_PointLightOuterAngle: 89.97
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 8.5
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath: []
 --- !u!1 &1123026908
 GameObject:
   m_ObjectHideFlags: 0
@@ -3025,15 +3113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1146553591
@@ -3079,15 +3161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1153538813
@@ -3133,15 +3209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1160514091
@@ -3187,15 +3257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1161340343
@@ -3241,15 +3305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1170479117
@@ -3295,15 +3353,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 1
-  linkedDoor: {fileID: 986512721}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1219882632
@@ -3349,17 +3401,135 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
+--- !u!1 &1233357685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1233357686}
+  - component: {fileID: 1233357688}
+  - component: {fileID: 1233357687}
+  - component: {fileID: 1233357689}
+  m_Layer: 14
+  m_Name: Guard Flashlight A2
+  m_TagString: Flashlight
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1233357686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233357685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1468250515}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1233357687
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233357685}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.6863527, y: 4.1989164}
+      - {x: 1.8308661, y: 4.646379}
+      - {x: 1.0006607, y: 4.8950253}
+      - {x: 0.016553879, y: 5.0308065}
+      - {x: -1.0485036, y: 4.892173}
+      - {x: -1.9456847, y: 4.6131635}
+      - {x: -2.768916, y: 4.1633344}
+      - {x: -3.5251448, y: 3.553527}
+      - {x: 0.00050640106, y: 0.015409827}
+      - {x: 3.5364735, y: 3.5308177}
+--- !u!114 &1233357688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233357685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 0.122641504, b: 0.122641504, a: 1}
+  m_Intensity: 0.75
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 1
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 90
+  m_PointLightOuterAngle: 110
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 10
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &1233357689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233357685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9942a1542c03fa45ac029b189df00c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionBlockers:
+    serializedVersion: 2
+    m_Bits: 14336
 --- !u!1 &1254829469
 GameObject:
   m_ObjectHideFlags: 0
@@ -3403,15 +3573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 1
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1263418942
@@ -3457,15 +3621,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1291911410
@@ -3511,15 +3669,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1001 &1307466142
@@ -3639,8 +3791,8 @@ MonoBehaviour:
   - {x: 0.4998472, y: 0.5080912, z: 0}
   - {x: -0.4992515, y: 0.4972888, z: 0}
   m_ShapePathHash: -737369402
-  m_Mesh: {fileID: 1818531787}
-  m_InstanceId: 54494
+  m_Mesh: {fileID: 847063624}
+  m_InstanceId: 16696
 --- !u!61 &1322298430
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3731,7 +3883,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!43 &1332288984
+--- !u!1 &1387862196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1387862197}
+  - component: {fileID: 1387862198}
+  m_Layer: 0
+  m_Name: Waypoint (42)
+  m_TagString: Waypoint
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1387862197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387862196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3, y: -5.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1734459405}
+  m_RootOrder: 42
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1387862198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387862196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  adjacentWaypoints: []
+  waypointLinkRange: 3
+  pathNodesArray: []
+  targetNode: {fileID: 0}
+--- !u!43 &1394388116
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3894,60 +4094,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1387862196
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1387862197}
-  - component: {fileID: 1387862198}
-  m_Layer: 0
-  m_Name: Waypoint (42)
-  m_TagString: Waypoint
-  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1387862197
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387862196}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3, y: -5.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1734459405}
-  m_RootOrder: 42
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1387862198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387862196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
-  waypoints: []
-  adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
-  pathNodesArray: []
-  targetNode: {fileID: 0}
 --- !u!1 &1431437664
 GameObject:
   m_ObjectHideFlags: 0
@@ -3991,15 +4137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1468250513
@@ -4017,8 +4157,7 @@ GameObject:
   - component: {fileID: 1468250518}
   - component: {fileID: 1468250517}
   - component: {fileID: 1468250516}
-  - component: {fileID: 1468250522}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Guard
   m_TagString: Guard
   m_Icon: {fileID: 0}
@@ -4087,6 +4226,8 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 23562301}
+  - {fileID: 1055228551}
+  - {fileID: 1233357686}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4106,7 +4247,6 @@ MonoBehaviour:
   startWaitTime: 1
   actualPlayer: {fileID: 339064588}
   inView: 0
-  heardSpeaker: 0
   routeWaypoints:
   - {fileID: 411248475}
   - {fileID: 87315616}
@@ -4117,6 +4257,9 @@ MonoBehaviour:
   isPathfinding: 0
   isReturning: 0
   isSearching: 0
+  isChasing: 0
+  flashlightObject: []
+  flashlightLight2D: []
   closestWaypoint: {fileID: 0}
 --- !u!114 &1468250517
 MonoBehaviour:
@@ -4194,39 +4337,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &1468250522
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468250513}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.26, y: 0.38}
-    newSize: {x: 0.5, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.1852126, y: 3.6070142}
-      - {x: 0.010990858, y: 3.8103232}
-      - {x: -1.283016, y: 3.5510058}
-      - {x: -2.4028084, y: 2.8838124}
-      - {x: -0.40017533, y: 0.5437193}
-      - {x: 0.018651009, y: 0.10172188}
-      - {x: 0.014852762, y: 0.09076285}
-      - {x: 2.1177363, y: 3.098023}
 --- !u!1 &1492869823
 GameObject:
   m_ObjectHideFlags: 0
@@ -4270,15 +4380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1506556280
@@ -4324,15 +4428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1512317550
@@ -4378,17 +4476,174 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
+--- !u!43 &1522004608
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 18
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0.00025218725, y: -0.0017998815, z: 0}
+      m_Extent: {x: 0.4999895, y: 0.5098911, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000001000200010000000300020004000000000005000300010006000200030007000100
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 224
+    _typelessdata: e59dffbea39cfe3e00000000d922313c2bfc7fbf0000008000000080d70f003f2efe02bf000000000c21c3380000803f0000008000000080f9ebff3e4412023f00000000feff7fbfe3d0cab9000000000000008092ddffbe15f802bf00000000feff7f3fa675fcb90000008000000080f9ebff3e4412023f00000000d922313c2bfc7fbf0000008000000080e59dffbea39cfe3e00000000feff7f3fa675fcb90000008000000080d70f003f2efe02bf00000000feff7fbfe3d0cab9000000000000008092ddffbe15f802bf000000000c21c3380000803f0000008000000080
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0.00025218725, y: -0.0017998815, z: 0}
+    m_Extent: {x: 0.4999895, y: 0.5098911, z: 0}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1001 &1603435259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4501,15 +4756,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1622976351
@@ -4555,213 +4804,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
---- !u!1 &1641796290
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1641796291}
-  - component: {fileID: 1641796292}
-  m_Layer: 0
-  m_Name: Waypoint (30)
-  m_TagString: Waypoint
-  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1641796291
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641796290}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.3, y: -3.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1734459405}
-  m_RootOrder: 30
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1641796292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641796290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
-  waypoints: []
-  adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
-  pathNodesArray: []
-  targetNode: {fileID: 0}
---- !u!1 &1658540237
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1658540238}
-  - component: {fileID: 1658540239}
-  m_Layer: 0
-  m_Name: Waypoint (17)
-  m_TagString: Waypoint
-  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1658540238
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658540237}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7, y: 0.75, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1734459405}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1658540239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658540237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
-  waypoints: []
-  adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
-  pathNodesArray: []
-  targetNode: {fileID: 0}
---- !u!1 &1734459404
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1734459405}
-  m_Layer: 0
-  m_Name: Waypoint Grid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1734459405
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734459404}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.2842994, y: 1.2034522, z: -155.65218}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 186791593}
-  - {fileID: 369582990}
-  - {fileID: 231155490}
-  - {fileID: 365263051}
-  - {fileID: 75823160}
-  - {fileID: 1622976352}
-  - {fileID: 1512317551}
-  - {fileID: 1263418943}
-  - {fileID: 1160514092}
-  - {fileID: 156036873}
-  - {fileID: 87315617}
-  - {fileID: 689865024}
-  - {fileID: 1015425147}
-  - {fileID: 72057131}
-  - {fileID: 397023746}
-  - {fileID: 12666121}
-  - {fileID: 634979279}
-  - {fileID: 1658540238}
-  - {fileID: 911207335}
-  - {fileID: 2021808704}
-  - {fileID: 1506556281}
-  - {fileID: 1219882633}
-  - {fileID: 1607649146}
-  - {fileID: 361588487}
-  - {fileID: 920299235}
-  - {fileID: 1942508991}
-  - {fileID: 1770157514}
-  - {fileID: 1123026909}
-  - {fileID: 1817062150}
-  - {fileID: 1146553592}
-  - {fileID: 1641796291}
-  - {fileID: 716304042}
-  - {fileID: 1161340344}
-  - {fileID: 927275451}
-  - {fileID: 1956014598}
-  - {fileID: 480587125}
-  - {fileID: 1888732123}
-  - {fileID: 411248476}
-  - {fileID: 926239441}
-  - {fileID: 454914004}
-  - {fileID: 1492869824}
-  - {fileID: 1974384999}
-  - {fileID: 1387862197}
-  - {fileID: 710768539}
-  - {fileID: 2056952980}
-  - {fileID: 1431437665}
-  - {fileID: 739929791}
-  - {fileID: 638572237}
-  - {fileID: 488766102}
-  - {fileID: 669718163}
-  - {fileID: 2126734185}
-  - {fileID: 1153538814}
-  - {fileID: 731759350}
-  - {fileID: 1291911411}
-  - {fileID: 1170479118}
-  - {fileID: 1254829470}
-  - {fileID: 471389444}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1762184089
+--- !u!43 &1628910307
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4924,6 +4972,189 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1641796290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1641796291}
+  - component: {fileID: 1641796292}
+  m_Layer: 0
+  m_Name: Waypoint (30)
+  m_TagString: Waypoint
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1641796291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641796290}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.3, y: -3.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1734459405}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1641796292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641796290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  adjacentWaypoints: []
+  waypointLinkRange: 3
+  pathNodesArray: []
+  targetNode: {fileID: 0}
+--- !u!1 &1658540237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1658540238}
+  - component: {fileID: 1658540239}
+  m_Layer: 0
+  m_Name: Waypoint (17)
+  m_TagString: Waypoint
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1658540238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658540237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.7, y: 0.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1734459405}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1658540239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658540237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  adjacentWaypoints: []
+  waypointLinkRange: 3
+  pathNodesArray: []
+  targetNode: {fileID: 0}
+--- !u!1 &1734459404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1734459405}
+  m_Layer: 0
+  m_Name: Waypoint Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1734459405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734459404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.2842994, y: 1.2034522, z: -155.65218}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 186791593}
+  - {fileID: 369582990}
+  - {fileID: 231155490}
+  - {fileID: 365263051}
+  - {fileID: 75823160}
+  - {fileID: 1622976352}
+  - {fileID: 1512317551}
+  - {fileID: 1263418943}
+  - {fileID: 1160514092}
+  - {fileID: 156036873}
+  - {fileID: 87315617}
+  - {fileID: 689865024}
+  - {fileID: 1015425147}
+  - {fileID: 72057131}
+  - {fileID: 397023746}
+  - {fileID: 12666121}
+  - {fileID: 634979279}
+  - {fileID: 1658540238}
+  - {fileID: 911207335}
+  - {fileID: 2021808704}
+  - {fileID: 1506556281}
+  - {fileID: 1219882633}
+  - {fileID: 1607649146}
+  - {fileID: 361588487}
+  - {fileID: 920299235}
+  - {fileID: 1942508991}
+  - {fileID: 1770157514}
+  - {fileID: 1123026909}
+  - {fileID: 1817062150}
+  - {fileID: 1146553592}
+  - {fileID: 1641796291}
+  - {fileID: 716304042}
+  - {fileID: 1161340344}
+  - {fileID: 927275451}
+  - {fileID: 1956014598}
+  - {fileID: 480587125}
+  - {fileID: 1888732123}
+  - {fileID: 411248476}
+  - {fileID: 926239441}
+  - {fileID: 454914004}
+  - {fileID: 1492869824}
+  - {fileID: 1974384999}
+  - {fileID: 1387862197}
+  - {fileID: 710768539}
+  - {fileID: 2056952980}
+  - {fileID: 1431437665}
+  - {fileID: 739929791}
+  - {fileID: 638572237}
+  - {fileID: 488766102}
+  - {fileID: 669718163}
+  - {fileID: 2126734185}
+  - {fileID: 1153538814}
+  - {fileID: 731759350}
+  - {fileID: 1291911411}
+  - {fileID: 1170479118}
+  - {fileID: 1254829470}
+  - {fileID: 471389444}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1770157513
 GameObject:
   m_ObjectHideFlags: 0
@@ -4967,15 +5198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1781629353
@@ -5021,8 +5246,8 @@ MonoBehaviour:
   - {x: 0.4998472, y: 0.5080912, z: 0}
   - {x: -0.4992515, y: 0.4972888, z: 0}
   m_ShapePathHash: -737369402
-  m_Mesh: {fileID: 1866167386}
-  m_InstanceId: 54590
+  m_Mesh: {fileID: 1394388116}
+  m_InstanceId: 16794
 --- !u!61 &1781629355
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5156,343 +5381,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
---- !u!43 &1818531787
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 18
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0.00025218725, y: -0.0017998815, z: 0}
-      m_Extent: {x: 0.4999895, y: 0.5098911, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200010000000300020004000000000005000300010006000200030007000100
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 224
-    _typelessdata: e59dffbea39cfe3e00000000d922313c2bfc7fbf0000008000000080d70f003f2efe02bf000000000c21c3380000803f0000008000000080f9ebff3e4412023f00000000feff7fbfe3d0cab9000000000000008092ddffbe15f802bf00000000feff7f3fa675fcb90000008000000080f9ebff3e4412023f00000000d922313c2bfc7fbf0000008000000080e59dffbea39cfe3e00000000feff7f3fa675fcb90000008000000080d70f003f2efe02bf00000000feff7fbfe3d0cab9000000000000008092ddffbe15f802bf000000000c21c3380000803f0000008000000080
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0.00025218725, y: -0.0017998815, z: 0}
-    m_Extent: {x: 0.4999895, y: 0.5098911, z: 0}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
---- !u!43 &1866167386
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 18
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0.00025218725, y: -0.0017998815, z: 0}
-      m_Extent: {x: 0.4999895, y: 0.5098911, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200010000000300020004000000000005000300010006000200030007000100
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 224
-    _typelessdata: e59dffbea39cfe3e00000000d922313c2bfc7fbf0000008000000080d70f003f2efe02bf000000000c21c3380000803f0000008000000080f9ebff3e4412023f00000000feff7fbfe3d0cab9000000000000008092ddffbe15f802bf00000000feff7f3fa675fcb90000008000000080f9ebff3e4412023f00000000d922313c2bfc7fbf0000008000000080e59dffbea39cfe3e00000000feff7f3fa675fcb90000008000000080d70f003f2efe02bf00000000feff7fbfe3d0cab9000000000000008092ddffbe15f802bf000000000c21c3380000803f0000008000000080
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0.00025218725, y: -0.0017998815, z: 0}
-    m_Extent: {x: 0.4999895, y: 0.5098911, z: 0}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1888732122
 GameObject:
   m_ObjectHideFlags: 0
@@ -5536,15 +5429,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1942508990
@@ -5590,15 +5477,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1956014597
@@ -5644,15 +5525,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &1974384998
@@ -5698,15 +5573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &2021808703
@@ -5752,15 +5621,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &2056952979
@@ -5806,15 +5669,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!1 &2126734184
@@ -5860,15 +5717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ebfe2d4fe17aa4e97852ca7b1984ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMapWaypoints: 54
   waypoints: []
   adjacentWaypoints: []
-  neighboringIndicies: 
-  numberOfAdjacentNodes: 0
-  connectsToDoor: 0
-  isDoor: 0
-  linkedDoor: {fileID: 0}
-  nodeForDjikstra: {fileID: 0}
+  waypointLinkRange: 3
   pathNodesArray: []
   targetNode: {fileID: 0}
 --- !u!60 &874291249200039558

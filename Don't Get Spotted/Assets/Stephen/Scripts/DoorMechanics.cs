@@ -16,10 +16,10 @@ public class DoorMechanics : MonoBehaviour
     public HingeJoint2D hinge;
     public float openingForce;
     public float doorOpenRange;
-    public bool closing;
+    private bool closing;
     private JointMotor2D mt;
-    public float doorAngleDifference;
-    public bool counterClockwise;
+    private float doorAngleDifference;
+    //public bool counterClockwise;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +28,6 @@ public class DoorMechanics : MonoBehaviour
         origPos = transform.position;
         origRot = transform.rotation;
         mt.maxMotorTorque = 1000;
-        if (counterClockwise)
-        {
-            openingForce *= -1;
-        }
         guards = GameObject.FindGameObjectsWithTag("Guard");
     }
 
@@ -46,7 +42,7 @@ public class DoorMechanics : MonoBehaviour
         }
         if (Input.GetKeyDown(player.interact) && isOpen == false && (tempDistance < doorOpenRange || Vector2.Distance(player.transform.position, origPos) < doorOpenRange)) // if the door is closed and the player presses interact while in range, open the door
         {
-            FindObjectOfType<AudioManager>().Play("DoorOpen");
+            //FindObjectOfType<AudioManager>().Play("DoorOpen");
             rb.constraints = RigidbodyConstraints2D.None; // allows the door to move
             mt.motorSpeed = openingForce; // turns on the doors motor and gives it a force
             hinge.motor = mt;
@@ -65,7 +61,7 @@ public class DoorMechanics : MonoBehaviour
             }
             else if (Input.GetKeyDown(player.interact) && tempDistance < doorOpenRange) // if the door is open and the player presses interact while in range, close the door
             {
-                FindObjectOfType<AudioManager>().Play("DoorClose");
+                //FindObjectOfType<AudioManager>().Play("DoorClose");
                 closing = true;
                 hinge.useMotor = true;
                 mt.motorSpeed = 0 - (openingForce / 2); // play around with this number to make it close faster or slower. 

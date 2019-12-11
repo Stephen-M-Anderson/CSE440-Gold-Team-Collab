@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class GuardMechanics : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class GuardMechanics : MonoBehaviour
     public GameObject actualPlayer;
 
     public bool inView = false;
-    public bool heardSpeaker;
 
     public GameObject[] routeWaypoints;
     private Transform[] patrolRoute;
@@ -21,12 +21,13 @@ public class GuardMechanics : MonoBehaviour
     public bool isPathfinding;
     public bool isReturning;
     public bool isSearching;
+    public bool isChasing;
     private int pathfindingIndex;
     private int randomRoute;
     private int index;
 
-    private Transform playerPosition;
-    private Transform speakerPosition;
+    public GameObject[] flashlightObject;
+    public Light2D[] flashlightLight2D;
 
     // Stephen's Variables start here
     public ClosestWaypoint closestWaypoint;
@@ -35,6 +36,36 @@ public class GuardMechanics : MonoBehaviour
 
     void Start()
     {
+        GameObject[] templightarray = new GameObject[1];
+        templightarray = GameObject.FindGameObjectsWithTag("Flashlight"); // grabs a copy of every flashlight in the scene
+        Light2D templightobject;
+        flashlightObject = new GameObject[3];
+        flashlightLight2D = new Light2D[3];
+        int j = 0;
+        for (int i = 0; i < templightarray.Length; ++i)
+        {
+            if (Vector2.Distance(transform.position, templightarray[i].transform.position) < 1f) 
+            {
+                templightobject = templightarray[i].GetComponent<Light2D>();
+                if (templightobject.pointLightOuterRadius == 7.5f) // change the float to be the outter radius of the lowest alert level flashlight
+                {
+                    flashlightObject[0] = templightarray[i];
+                    flashlightLight2D[0] = templightobject;
+                }
+                else if (templightobject.pointLightOuterRadius == 8.5f) // change the float to be the outter radius of the medium alert level flashlight
+                {
+                    flashlightObject[1] = templightarray[i];
+                    flashlightLight2D[1] = templightobject;
+                }
+                else if (templightobject.pointLightOuterRadius == 10f) // change the float to be the outter radius of the highest alert level flashlight
+                {
+                    flashlightObject[2] = templightarray[i];
+                    flashlightLight2D[2] = templightobject;
+                }
+            }
+        }
+        flashlightObject[1].SetActive(false); // disables the two higher alert flashlights
+        flashlightObject[2].SetActive(false);
         waitTime = startWaitTime;
         pathfindingIndex = 0;
         isPathfinding = false;
@@ -50,15 +81,7 @@ public class GuardMechanics : MonoBehaviour
             patrolRoute[index] = node.transform;
             index++;
         }
-
         waitTime = startWaitTime;
-        /* Mario Code starts here
-        waitTime = startWaitTime;
-        randomRoute = Random.Range(0, patrolRoute.Length);
-        playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        speakerPosition = GameObject.FindGameObjectWithTag("Speaker").GetComponent<Transform>();
-        guardPosition = GameObject.FindGameObjectWithTag("Guard").GetComponent<Transform>();
-        */
     }
 
     private void Update()
@@ -70,7 +93,13 @@ public class GuardMechanics : MonoBehaviour
         }
         else if (inView == true)
         {
+            isChasing = true;
             Chase();
+        }
+        else if (inView == false && isChasing == true && isPathfinding == false)
+        {
+            isSearching = true;
+
         }
         else 
         {
