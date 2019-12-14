@@ -34,8 +34,8 @@ public class PickupSystem : MonoBehaviour
            // hasPlayerItem = true;
             //Debug.Log("WOOP WOOP I FOUND AN ITEM");
             //Insert code of adding the Body Spray to your inventory here!
-            if(collision.gameObject.name == "Soda Can" && !spawncanScript.threwCan)
-            {
+            if(collision.gameObject.name == "Soda Can Variant(Clone)" && !spawncanScript.threwCan)
+            {                                //funny enough I didn't realize the Soda Machine had a different name for its Soda so now the soda can pickup works
                 //Debug.Log("NUMBER 1");
                 FindObjectOfType<AudioManager>().Play("SodaPickup");
                 hasSodaCan = true;

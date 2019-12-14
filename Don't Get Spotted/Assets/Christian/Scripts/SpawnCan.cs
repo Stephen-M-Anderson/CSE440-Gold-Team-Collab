@@ -7,7 +7,6 @@ public class SpawnCan : MonoBehaviour
     public PickupSystem pickupsystemScript;
     public GameObject Can;
     public Transform spawnPoint1;
-    public bool hasCan = true; //this bool tells us whether or not there is a can in your inventory
     private KeyCode item = KeyCode.Space;
     public bool threwCan = false; //a bool to tell us whether we threw the can or not
 
